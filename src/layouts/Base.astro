@@ -14,6 +14,14 @@ interface Props {
 }
 const { title, description, path, noindex = false, jsonLd = [] } = Astro.props;
 const canonical = absUrl(path);
+const current = Astro.url.pathname;
+const NAV = [
+  { href: '/chongyang-bonus/', label: '重陽敬老金' },
+  { href: '/denture-subsidy/', label: '假牙補助' },
+  { href: '/senior-card/', label: '敬老卡' },
+  { href: '/long-term-care/', label: '長照試算' },
+  { href: '/low-income-elderly-allowance/', label: '津貼檢核' },
+];
 ---
 <!doctype html>
 <html lang="zh-Hant-TW">
@@ -42,20 +50,41 @@ const canonical = absUrl(path);
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="border-b border-teal-200 bg-white">
-      <div class="mx-auto max-w-4xl px-4 py-3 flex flex-wrap items-center justify-between gap-2">
+      <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between px-4 py-2">
         <a href="/" class="flex items-center" aria-label={`${SITE_NAME}（${SITE_DOMAIN}）首頁`}><img src="/brand/logo-horizontal.svg" alt={`${SITE_NAME} ${SITE_DOMAIN}`} width="114" height="40" class="h-10 w-auto" /></a>
-        <nav aria-label="主要導覽" class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/chongyang-bonus/">重陽敬老金</a>
-          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/denture-subsidy/">假牙補助</a>
-          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/senior-card/">敬老卡</a>
-          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/long-term-care/">長照試算</a>
-          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/low-income-elderly-allowance/">津貼檢核</a>
+        <button id="nav-toggle" type="button" class="-mr-2 flex h-11 w-11 items-center justify-center rounded-lg text-brand-dark hover:bg-teal-50 md:hidden" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單">
+          <svg id="nav-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          <svg id="nav-icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" class="hidden"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+        <nav id="site-nav" aria-label="主要導覽" class="hidden basis-full flex-col border-t border-teal-100 pt-1 text-base md:flex md:basis-auto md:flex-row md:gap-x-5 md:border-0 md:pt-0 md:text-sm">
+          {NAV.map((n) => (
+            <a href={n.href} aria-current={current.startsWith(n.href) ? 'page' : undefined} class={`block whitespace-nowrap py-3 underline-offset-4 hover:underline md:py-0 ${current.startsWith(n.href) ? 'font-bold text-brand-dark' : ''}`}>{n.label}</a>
+          ))}
         </nav>
+        <noscript><style is:inline>#site-nav{display:flex!important;flex-direction:column}#nav-toggle{display:none!important}@media(min-width:768px){#site-nav{flex-direction:row}}</style></noscript>
       </div>
     </header>
     <main class="mx-auto w-full max-w-4xl flex-1 px-4 py-6">
       <slot />
     </main>
+    <script is:inline>
+      // 手機漢堡選單：連結本來就在 HTML 裡，JS 只負責展開／收合
+      (function () {
+        var btn = document.getElementById('nav-toggle'), nav = document.getElementById('site-nav');
+        if (!btn || !nav) return;
+        var open = document.getElementById('nav-icon-open'), close = document.getElementById('nav-icon-close');
+        function set(on) {
+          nav.classList.toggle('hidden', !on);
+          btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+          btn.setAttribute('aria-label', on ? '關閉選單' : '開啟選單');
+          open.classList.toggle('hidden', on);
+          close.classList.toggle('hidden', !on);
+        }
+        btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); } });
+        window.matchMedia('(min-width: 768px)').addEventListener('change', function (m) { if (m.matches) set(false); });
+      })();
+    </script>
     <script is:inline define:vars={{ CLASSES: BADGE_CLASS }}>
       // 依台灣時間重算「已截止」標示，避免靜態頁面因太久沒重新 build 而過期
       (function () {
