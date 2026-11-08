@@ -102,6 +102,9 @@ for (const c of src.counties) {
   const age = AGE[c.county];
   const file = `data/chongyang-bonus/${c.county}.json`;
 
+  // 連江縣改由 scripts/import-lienchiang.ts 處理（採媒體報導數字，頁面明確標示），此處略過避免覆蓋
+  if (c.county === 'lienchiang') continue;
+
   // 沒有任何已查證內容（全為待查證）→ 維持 todo
   const hasReal = c.items.some((i) => i.amount_twd !== null || nul(i.eligibility) || nul(i.method) || nul(i.deadline));
   if (!hasReal) {
