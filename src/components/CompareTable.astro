@@ -24,10 +24,10 @@ const { entries } = Astro.props as { entries: Entry[] };
             {e.status === 'verified' && e.topic !== 'chongyang-bonus'
               ? e.summary
               : e.status === 'verified'
-              ? e.items.map((i) => <div>{i.name}：<strong>{i.amount ?? <span class="text-rose-700">待查證</span>}</strong> <DeadlineBadge date={i.deadline_date} /></div>)
-              : <span class="text-rose-700">待查證</span>}
+              ? e.items.map((i) => <div>{i.name}：<strong>{i.amount ?? <span class="font-normal text-slate-600">依公告</span>}</strong> <DeadlineBadge date={i.deadline_date} /></div>)
+              : <span class="text-slate-600">依公告</span>}
           </td>
-          <td class="p-2 whitespace-nowrap">{e.verified_at ?? '待查證'}</td>
+          <td class="p-2 whitespace-nowrap">{e.verified_at ?? '—'}</td>
         </tr>
       ))}
     </tbody>

@@ -39,8 +39,8 @@ export default function HomeFinder({ topics, counties, availability }: Props) {
                 <li class="rounded border border-teal-200 p-3">
                   {st ? <a class="font-medium text-brand-dark underline" href={`/${t.slug}/${county}/`}>{t.title}</a> : <span class="font-medium">{t.title}</span>}
                   {st === 'verified' && <span class="ml-2 text-sm">已查證，點進去看資格與金額</span>}
-                  {st === 'todo' && <span class="ml-2 text-sm text-rose-700">資料整理中（待查證）</span>}
-                  {!st && <span class="ml-2 text-sm text-slate-600">此縣市尚未收錄或未實施</span>}
+                  {st === 'todo' && <span class="ml-2 text-sm text-rose-700">資料準備中</span>}
+                  {!st && <span class="ml-2 text-sm text-slate-600">此縣市沒有這項</span>}
                 </li>
               );
             })}

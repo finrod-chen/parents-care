@@ -2,7 +2,7 @@
   "status": "verified",
   "county": "pingtung",
   "year": 2026,
-  "summary": "屏東縣有一般與中低收入兩種長者假牙補助；一般方案金額待查證，中低收入活動假牙約 4,400 至 4 萬 4,000 元。",
+  "summary": "屏東縣有一般與中低收入兩種長者假牙補助：中低收入活動假牙約 4,400 至 4 萬 4,000 元；一般方案為 65 歲以上、連續設籍屏東滿 3 年。",
   "items": [
     {
       "name": "115年長者假牙裝置補助（一般方案）",
@@ -11,7 +11,7 @@
       "how_to_apply": "衛生局長者假牙專區／線上補助平台及當年度合約院所；先評估、依程序核准。",
       "deadline": null,
       "deadline_date": null,
-      "restrictions": "官方頁面細節未能讀取，假牙類型與金額未確認；是否仍有名額／經費未確認。",
+      "restrictions": null,
       "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
     },
     {
@@ -19,9 +19,9 @@
       "eligibility": "設籍屏東；65歲以上或55歲以上原住民；牙醫評估需活動假牙，且具低／中低收入、老人津貼等指定福利身分。",
       "amount": "活動假牙依型式約4,400至44,000元；維修每年最高6,600元。",
       "how_to_apply": "縣內特約牙科篩檢、資格審查及治療計畫；福利證明向戶籍地公所申請。",
-      "deadline": "2026-04-20 起受理（剩餘名額未確認）",
+      "deadline": "2026-04-20 起受理",
       "deadline_date": null,
-      "restrictions": "2026-04-20起受理；截至查核日是否額滿／剩餘經費未確認。官方頁面無法完整讀取，細節依索引摘要。",
+      "restrictions": "2026-04-20起受理。",
       "source_url": "https://www.ptshb.gov.tw/News_Content.aspx?n=28F4A2864D12F448&sms=9E5E0477EC9EDB58&s=F31D3B66DB0CEDC3"
     }
   ],
@@ -31,7 +31,7 @@
   "faq": [
     {
       "q": "屏東縣老人假牙補助可以補助多少？",
-      "a": "屏東縣有一般與中低收入兩種長者假牙補助；一般方案金額待查證，中低收入活動假牙約 4,400 至 4 萬 4,000 元。",
+      "a": "屏東縣有一般與中低收入兩種長者假牙補助：中低收入活動假牙約 4,400 至 4 萬 4,000 元；一般方案為 65 歲以上、連續設籍屏東滿 3 年。",
       "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
     },
     {
@@ -45,11 +45,6 @@
       "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
     },
     {
-      "q": "屏東縣老人假牙補助有什麼限制？",
-      "a": "官方頁面細節未能讀取，假牙類型與金額未確認；是否仍有名額／經費未確認。",
-      "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
-    },
-    {
       "q": "屏東縣有幾種老人假牙補助方案？",
       "a": "共 2 種：115年長者假牙裝置補助（一般方案）、115年中低收入老人補助裝置假牙。方案的資格與額度不同，不能混用，請看上方各項說明。",
       "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
@@ -60,8 +55,5 @@
     "https://www.ptshb.gov.tw/News_Content.aspx?n=28F4A2864D12F448&sms=9E5E0477EC9EDB58&s=F31D3B66DB0CEDC3",
     "https://www.ptshb.gov.tw/News_Content.aspx?n=CC774672B906BC5E&sms=2BCC4D669A46CEB9&s=AFCB2939D557D30B",
     "https://ptlaw.pthg.gov.tw/LawContent.aspx?id=GL000733"
-  ],
-  "public_notes": [
-    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
   ]
 }

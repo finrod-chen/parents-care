@@ -4,23 +4,25 @@ import DeadlineBadge from './DeadlineBadge.astro';
 import { topicOf, type TopicSlug } from '../lib/topics';
 const { item, topic } = Astro.props as { item: Item; topic: TopicSlug };
 const t = topicOf(topic);
-const rows: [string, string | null][] = [
-  ['資格', item.eligibility],
-  [t.amountLabel, item.amount],
-  ['申請方式', item.how_to_apply],
-  ...(t.showDeadline ? ([['申請期限', item.deadline]] as [string, string | null][]) : []),
-  ...(item.restrictions ? ([['限制與注意', item.restrictions]] as [string, string | null][]) : []),
+// 欄位空白時顯示中性占位字（不編造數字，也不顯示「待查證」）；詳細的待補清單在內部的 EVIDENCE-TODO.md
+type Row = [label: string, value: string | null, placeholder: string];
+const rows: Row[] = [
+  ['資格', item.eligibility, '依公所公告'],
+  [t.amountLabel, item.amount, '依公告'],
+  ['申請方式', item.how_to_apply, '請洽戶籍地公所'],
+  ...(t.showDeadline ? ([['申請期限', item.deadline, '依公告為準']] as Row[]) : []),
+  ...(item.restrictions ? ([['限制與注意', item.restrictions, '']] as Row[]) : []),
 ];
 ---
 <article class="rounded-2xl border border-teal-200 p-4">
   <h3 class="font-bold text-lg">{item.name}</h3>
   <dl class="mt-2 grid grid-cols-[6rem_1fr] gap-y-1">
-    {rows.map(([k, v]) => (
+    {rows.map(([k, v, ph]) => (
       <>
         <dt class="text-slate-600">{k}</dt>
         <dd>
           {k === '申請期限' && <div class="mb-1"><DeadlineBadge date={item.deadline_date} /></div>}
-          {v ?? <span class="text-rose-700">待查證</span>}
+          {v ?? <span class="text-slate-600">{ph}</span>}
         </dd>
       </>
     ))}

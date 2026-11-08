@@ -59,7 +59,7 @@ tests/
 
 `status: "todo"`（佔位）：`items: []`、`source_url: null`、`verified_at: null`。頁面一律 `noindex`，且不進 sitemap。
 
-**禁止編數字**：找不到官方來源的欄位填 `null`。`rules.min_age` 為 null 時試算一律顯示「待查證」。
+**禁止編數字**：找不到官方來源的欄位填 `null`。頁面會顯示中性占位字（金額「依公告」、期限「依公告為準」、資格「依公所公告」、申請方式「請洽戶籍地公所」），**不顯示「待查證」**；待補清單只放在 `EVIDENCE-TODO.md`。`rules.min_age` 為 null 時試算顯示「依公告或需另符合其他條件」。
 
 ## SOP：新增縣市資料
 
@@ -118,7 +118,7 @@ tests/
 - 重陽敬老金（2026／民國 115 年）：由 `scripts/import/chongyang-bonus-2026-all.json` 經 `scripts/import-chongyang.ts` 轉成 `data/chongyang-bonus/*.json`（21 縣市已查證，連江縣官方尚未公告，維持 `todo`）。
 - 金額一律來自來源檔；`rules` 的年齡級距只收「一般（非原住民）長者」，需另符合福利身分、排富或非現金的項目不放 `rules`（試算顯示「待查證，或需另符合其他條件」）。
 - 每縣市 FAQ 4–5 則（領多少、誰可以領、怎麼領、最晚何時、百歲／高齡級距怎麼領），答案全部取自該縣市資料欄位，沒有補充來源檔沒有的事實。日後若有官方 Q&A，建議替換。
-- `notes` 為內部查證紀錄，不顯示在頁面；要給讀者看的提醒寫在 `public_notes`。
+- `notes` 為內部查證紀錄，不顯示在頁面；匯入腳本會用 `scripts/lib/scrub.ts` 移除來源檔文字中的研究過程用語（「未找到」「搜尋索引」「查核日未核實」…），頁面只留規則與事實；要給讀者看的提醒寫在 `public_notes`。
 
 - 老人假牙補助、敬老卡（2026／民國 115 年）：由 `scripts/import/denture-senior-2026-detailed.json`（主）與 `…-compact.json`（交叉核對）經 `scripts/import-denture-senior.ts` 轉成 `data/denture-subsidy/*.json`、`data/senior-card/*.json`（各 21 縣市已查證；苗栗縣不在來源檔內，另由 `scripts/import-miaoli.ts` 依苗栗縣政府官方頁面補齊，見下）。
   - 詳細版的連江縣第二個假牙方案內容其實是臺東縣的中央計畫（疑似誤植），精簡版也沒有，故不匯入；詳細版金門縣重複出現，取第一筆。

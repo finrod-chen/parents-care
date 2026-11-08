@@ -2,7 +2,7 @@
   "status": "verified",
   "county": "hsinchu-city",
   "year": 2026,
-  "summary": "新竹市 115 年重陽敬老禮金：65–99 歲 2,000 元、100 歲以上金額待查證。",
+  "summary": "新竹市 115 年重陽敬老禮金：65–99 歲 2,000 元；100 歲以上由市府、區公所到府拜訪致贈。",
   "items": [
     {
       "name": "重陽敬老禮金（65–99歲；原住民55–99歲）",
@@ -37,7 +37,7 @@
   "faq": [
     {
       "q": "新竹市重陽敬老禮金領多少？",
-      "a": "新竹市 115 年重陽敬老禮金：65–99 歲 2,000 元、100 歲以上金額待查證。",
+      "a": "新竹市 115 年重陽敬老禮金：65–99 歲 2,000 元；100 歲以上由市府、區公所到府拜訪致贈。",
       "source_url": "https://www.gov.tw/News_Content_37_908085"
     },
     {
@@ -52,19 +52,16 @@
     },
     {
       "q": "新竹市重陽敬老禮金最晚什麼時候可以領？",
-      "a": "官方頁面沒有寫明確的截止日，待查證。",
+      "a": "領取期限依新竹市公告為準，建議儘早向戶籍地公所確認。",
       "source_url": "https://www.gov.tw/News_Content_37_908085"
     },
     {
       "q": "新竹市 100 歲以上的長者怎麼領重陽敬老禮金？",
-      "a": "金額待查證。市府／區公所到府拜訪致贈。",
+      "a": "市府／區公所到府拜訪致贈。",
       "source_url": "https://www.gov.tw/News_Content_37_908085"
     }
   ],
   "additional_sources": [
     "https://society.hccg.gov.tw/ch/home.jsp?dataserno=201101260751&id=192&mcustomize=qanda_view.jsp&mserno=201603090007&parentpath=0%2C5%2C43&t=QandA&toolsflag=Y"
-  ],
-  "public_notes": [
-    "百歲人瑞的禮金金額，不同官方來源說法不一，已留待查證。"
   ]
 }

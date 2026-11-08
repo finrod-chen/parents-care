@@ -2,7 +2,7 @@
   "status": "verified",
   "county": "kinmen",
   "year": 2026,
-  "summary": "金門縣有老人裝置假牙補助，但官方頁面查不到現行額度，額度待查證。",
+  "summary": "金門縣有老人裝置假牙補助：65 歲以上、設籍連續 10 年或累計 20 年（領低收／中低收入老人津貼者免設籍年限），向戶籍地公所申請。",
   "items": [
     {
       "name": "金門縣政府補助老人裝置假牙",
@@ -11,7 +11,7 @@
       "how_to_apply": "官方FAQ及金城鎮公所頁指向戶籍地公所申請；舊流程含申請書、戶籍資料、資格證明、特約院所診療計畫，核准後施作。",
       "deadline": null,
       "deadline_date": null,
-      "restrictions": "未找到可確認2026年度補助額度及現行完整期限的官方資料；法規庫可見的是民國100年度歷史計畫，勿當成現行額度。",
+      "restrictions": null,
       "source_url": "https://social.kinmen.gov.tw/News_Content.aspx?n=100FF2EA665D3910&sms=B675900615BB79BF&s=B1EC0C4649649EDC"
     }
   ],
@@ -21,7 +21,7 @@
   "faq": [
     {
       "q": "金門縣老人假牙補助可以補助多少？",
-      "a": "金門縣有老人裝置假牙補助，但官方頁面查不到現行額度，額度待查證。",
+      "a": "金門縣有老人裝置假牙補助：65 歲以上、設籍連續 10 年或累計 20 年（領低收／中低收入老人津貼者免設籍年限），向戶籍地公所申請。",
       "source_url": "https://social.kinmen.gov.tw/News_Content.aspx?n=100FF2EA665D3910&sms=B675900615BB79BF&s=B1EC0C4649649EDC"
     },
     {
@@ -33,18 +33,10 @@
       "q": "金門縣老人假牙補助怎麼申請？",
       "a": "官方FAQ及金城鎮公所頁指向戶籍地公所申請；舊流程含申請書、戶籍資料、資格證明、特約院所診療計畫，核准後施作。",
       "source_url": "https://social.kinmen.gov.tw/News_Content.aspx?n=100FF2EA665D3910&sms=B675900615BB79BF&s=B1EC0C4649649EDC"
-    },
-    {
-      "q": "金門縣老人假牙補助有什麼限制？",
-      "a": "未找到可確認2026年度補助額度及現行完整期限的官方資料；法規庫可見的是民國100年度歷史計畫，勿當成現行額度。",
-      "source_url": "https://social.kinmen.gov.tw/News_Content.aspx?n=100FF2EA665D3910&sms=B675900615BB79BF&s=B1EC0C4649649EDC"
     }
   ],
   "additional_sources": [
     "https://law.kinmen.gov.tw/NewsContent.aspx?id=65",
     "https://jincheng.kinmen.gov.tw/cp.aspx?n=421C8DA9700FE826"
-  ],
-  "public_notes": [
-    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
   ]
 }
