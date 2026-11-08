@@ -8,10 +8,10 @@ const isoDate = z
 
 const httpUrl = z.string().url().refine((u) => /^https?:\/\//.test(u), '須為 http(s) 網址');
 
-/** 找不到官方來源的欄位必須明確填 null（頁面顯示「待查證」），不可省略 key，也不可填空字串。 */
+/** 找不到官方來源的欄位必須明確填 null（頁面顯示中性占位字，如「依公告」），不可省略 key，也不可填空字串。 */
 const nullableText = z.string().trim().min(1, '不可為空字串，查不到請填 null').nullable();
 
-/** 結構化規則：試算只吃這裡，不解析中文敘述。null = 待查證。 */
+/** 結構化規則：試算只吃這裡，不解析中文敘述。null = 未取得官方數字（頁面顯示占位字，不編造）。 */
 export const RulesSchema = z
   .object({
     min_age: z.number().int().min(0).max(120).nullable(),
@@ -62,6 +62,8 @@ export const VerifiedSchema = z
     faq: z.array(FaqSchema).min(3).max(5),
     /** 輔助的官方來源（例如各區公所、新聞稿、我的E政府） */
     additional_sources: z.array(httpUrl).optional(),
+    /** 主要來源的顯示名稱（預設「{縣市}官方公告」）；來源不是官方公告時使用，例如「新聞報導」 */
+    source_label: z.string().trim().min(1).optional(),
     /** 給讀者看的重要提醒（短句）；notes 為內部查證紀錄，不會顯示在頁面上 */
     public_notes: z.array(z.string().trim().min(1)).optional(),
   })

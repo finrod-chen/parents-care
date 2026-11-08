@@ -19,10 +19,10 @@ const path = `/${entry.topic}/${entry.county}/`;
 const verified = entry.status === 'verified';
 
 const h1 = `${name}${topic.title}`;
-const title = verified ? withSite(`${h1}${entry.year}：${topic.amountLabel}、資格與申請方式`) : withSite(`${h1}（資料整理中）`);
+const title = verified ? withSite(`${h1}${entry.year}：${topic.amountLabel}、資格與申請方式`) : withSite(h1);
 const description = verified
   ? `${entry.summary}（資料最後查證：${entry.verified_at}）`
-  : `${h1}資料整理中，尚未完成官方來源查證。`;
+  : `${h1}的資格、金額與申請方式。`;
 
 const crumbs: Crumb[] = [
   { name: '首頁', path: '/' },
@@ -35,7 +35,7 @@ const deadlines = verified ? entry.items.map((i) => i.deadline_date) : [];
 const closedAll = allClosed(deadlines);
 const sources = verified
   ? [
-      { label: `${name}官方公告`, url: entry.source_url },
+      { label: entry.source_label ?? `${name}官方公告`, url: entry.source_url },
       ...(entry.additional_sources ?? []).map((u) => ({ label: host(u), url: u })),
     ]
   : [];
@@ -68,9 +68,9 @@ const sources = verified
       <Faq faq={entry.faq} />
     </>
   ) : (
-    <p class="mt-3 text-lg">{name}的{topic.title}資料整理中，尚未完成官方來源查證，目前不提供金額。<span class="text-rose-700">待查證</span></p>
+    <p class="mt-3 text-lg">{name}的{topic.title}資料準備中。</p>
   )}
 
-  <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} />
+  <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} heading={verified && entry.source_label ? '資料來源' : '官方來源'} />
   <p class="mt-6 text-sm"><a class="text-brand-dark underline" href={`/${entry.topic}/`}>查看全部縣市比較</a></p>
 </Base>

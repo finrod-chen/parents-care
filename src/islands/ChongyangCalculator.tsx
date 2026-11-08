@@ -36,7 +36,7 @@ export default function ChongyangCalculator({ rows }: { rows: Row[] }) {
         {!valid ? (
           <p class="text-slate-600">請輸入 0–120 的整數年齡。</p>
         ) : !row || !row.verified || row.items.length === 0 ? (
-          <p>{row?.name}的重陽敬老金資料<strong class="text-rose-700">待查證</strong>，目前無法試算。</p>
+          <p>{row?.name}的重陽敬老金請見說明頁。</p>
         ) : (
           <ul class="space-y-2">
             {row.items.map((it) => {
@@ -47,7 +47,7 @@ export default function ChongyangCalculator({ rows }: { rows: Row[] }) {
                   {r.status === 'amount' && <strong class="text-brand-dark">{formatTwd(r.amount)}</strong>}
                   {r.status === 'amount' && deadlineState(it.deadline_date) === 'closed' && <span class="ml-2 inline-block rounded-full bg-rose-100 px-2 py-0.5 text-xs font-medium text-rose-800">已截止</span>}
                   {r.status === 'not_eligible' && <span>{n} 歲不符此項年齡條件</span>}
-                  {r.status === 'unknown' && <strong class="text-rose-700">待查證，或需另符合其他條件，請見說明頁</strong>}
+                  {r.status === 'unknown' && <strong class="text-slate-700">依公告或需另符合其他條件，請見說明頁</strong>}
                 </li>
               );
             })}

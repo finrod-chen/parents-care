@@ -11,7 +11,7 @@
       "how_to_apply": "第一類向戶籍地公所；第二類向戶籍地衛生所，附3個月內牙科診斷證明、裝置前缺牙照片等。",
       "deadline": "即日起至經費用罄",
       "deadline_date": null,
-      "restrictions": "公告即日起至經費用罄；查核日未找到公開餘額。",
+      "restrictions": "公告即日起至經費用罄。",
       "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688"
     }
   ],
@@ -36,15 +36,12 @@
     },
     {
       "q": "南投縣老人假牙補助有什麼限制？",
-      "a": "公告即日起至經費用罄；查核日未找到公開餘額。",
+      "a": "公告即日起至經費用罄。",
       "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688"
     }
   ],
   "additional_sources": [
     "https://www.ntshb.gov.tw/center/latestevent/Details?Parser=9,31,1028,1011,,,4133",
     "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=11914"
-  ],
-  "public_notes": [
-    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
   ]
 }

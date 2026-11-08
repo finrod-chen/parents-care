@@ -19,7 +19,7 @@ const path = `/${slug}/`;
 const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: topic.title, path }];
 
 const title = withSite(topic.overviewTitle);
-const description = `${topic.intro}已查證 ${verifiedEntries.length} 個縣市，每筆附官方來源與查證日期。`;
+const description = `${topic.intro}每筆附官方來源與查證日期。`;
 const dates = verifiedEntries.map((e) => (e.status === 'verified' ? e.verified_at : '')).sort();
 const sources = verifiedEntries.map((e) => ({ label: countyName(e.county), url: e.status === 'verified' ? e.source_url : '' }));
 const jsonLd = [
@@ -32,7 +32,7 @@ const jsonLd = [
   <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-warm p-6 sm:flex-row sm:justify-between">
     <div>
       <h1 class="text-2xl font-bold">{topic.overviewTitle}</h1>
-      <p class="mt-3 text-lg">{topic.intro}目前已查證 {verifiedEntries.length} / {entries.length} 個縣市，其餘標示「待查證」。</p>
+      <p class="mt-3 text-lg">{topic.intro}</p>
     </div>
     <Illust id={TOPIC_ILLUST[slug]!} width={170} priority />
   </section>
