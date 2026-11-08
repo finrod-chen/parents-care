@@ -12,6 +12,26 @@ type SrcItem = { name: string; eligibility: string; amount_twd: number | null; m
 type SrcCounty = { county: string; year: number; items: SrcItem[]; source_url: string; additional_sources?: string[]; verified_at: string; notes: string };
 const src = JSON.parse(fs.readFileSync('scripts/import/chongyang-bonus-2026-all.json', 'utf8')) as { counties: SrcCounty[] };
 
+// ---- 2026-11-08 證據補充與更正（scripts/import/evidence-supplement-2026-11-08.json）----
+type SupRow = { 地區: string; 來源?: { 網址: string }[] };
+const sup = JSON.parse(fs.readFileSync('scripts/import/evidence-supplement-2026-11-08.json', 'utf8')) as { 重陽敬老禮金及禮品: SupRow[] };
+const supUrls = (region: string) => sup.重陽敬老禮金及禮品.find((r) => r.地區 === region)?.來源?.map((x) => x.網址) ?? [];
+const FIX: Record<string, { amount?: Record<number, number>; deadline?: Record<number, string>; extraSources?: string[] }> = {
+  // 新竹市：市府社會處 115 年公告，百歲人瑞禮金由 6,000 元提高為 10,000 元；一般禮金須於該年度最後一個上班日前領取（常見問答）
+  'hsinchu-city': { amount: { 1: 10000 }, deadline: { 0: '於該年度最後一個上班日前領取，逾期不能再領（市府社會處常見問答）' }, extraSources: supUrls('新竹市') },
+  // 新竹縣：縣府高齡長照處報導（2026-09-28）：致贈每位百歲人瑞祝賀禮金 1 萬元
+  'hsinchu-county': { amount: { 1: 10000 }, extraSources: supUrls('新竹縣') },
+  // 臺東縣：一般縣級禮金未領者可於當年 12/31 前補申請（臺東市補發至 12/31）
+  taitung: { deadline: { 0: '115/10/8 至 115/11/2；未領者可於 115/12/31 前補申請（臺東縣重陽敬老禮金發放要點）' } },
+};
+for (const c of src.counties) {
+  const f = FIX[c.county];
+  if (!f) continue;
+  for (const [i, v] of Object.entries(f.amount ?? {})) c.items[Number(i)]!.amount_twd = v;
+  for (const [i, v] of Object.entries(f.deadline ?? {})) c.items[Number(i)]!.deadline = v;
+  if (f.extraSources?.length) c.additional_sources = [...new Set([...(c.additional_sources ?? []), ...f.extraSources])];
+}
+
 /** [min_age, max_age]：僅一般（非原住民）長者的年齡級距；null = 此項不參與年齡試算（需另符合其他條件或非現金） */
 const AGE: Record<string, ([number, number | null] | null)[]> = {
   keelung: [[65, 99], [100, null]],
@@ -60,14 +80,13 @@ const DEADLINE: Record<string, (string | null)[]> = {
   pingtung: [null, null],
   yilan: ['2026-10-18', '2026-10-18'],
   hualien: ['2026-11-27', '2026-11-27', '2026-11-27', null],
-  taitung: ['2026-11-02', null],
+  taitung: ['2026-12-31', null],
   penghu: ['2026-11-12', '2026-11-12', '2026-11-12', '2026-11-12'],
   kinmen: [null, null, null],
 };
 
 const SUMMARY: Record<string, string> = {
-  'hsinchu-county': '新竹縣沒有全縣普發的重陽敬老禮金；115 年有申請制、需通過排富審查的敬老禮金 10,000 元（65 歲以上、設籍滿 10 年），百歲人瑞另有縣長到府慰訪致贈的重陽祝賀禮金。',
-  'hsinchu-city': '新竹市 115 年重陽敬老禮金：65–99 歲 2,000 元；100 歲以上由市府、區公所到府拜訪致贈。',
+  'hsinchu-county': '新竹縣沒有全縣普發的重陽敬老禮金；115 年有申請制、需通過排富審查的敬老禮金 10,000 元（65 歲以上、設籍滿 10 年），百歲人瑞另有縣長到府慰訪致贈的重陽祝賀禮金 10,000 元。',
   taitung: '台東縣 115 年重陽敬老禮金：65–99 歲 2,000 元；100 歲以上由縣府另贈禮金。',
   changhua: '彰化縣 115 年重陽敬老禮金：一般戶 65–99 歲 1,000 元；符合福利身分者 65–79 歲 3,000 元、80–89 歲 6,000 元、90–99 歲 9,000 元；百歲人瑞 10,000 元。',
   pingtung: '屏東縣府的重陽敬老慰問金只發 90 歲以上：90–99 歲 2,000 元、100 歲以上 10,000 元；65–89 歲縣府沒有這項，部分鄉鎮市公所另有自辦。',

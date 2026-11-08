@@ -15,6 +15,19 @@ type Row = { 名稱: string; 老人假牙補助: Policy[]; 敬老卡: Card };
 const src = JSON.parse(fs.readFileSync('scripts/import/denture-senior-2026-detailed.json', 'utf8')) as { 縣市: Row[]; 資料截點: string };
 
 const VERIFIED_AT = '2026-11-08';
+
+// ---- 2026-11-08 證據補充與更正（scripts/import/evidence-supplement-2026-11-08.json）----
+type SupFix = { 地區: string; 來源?: { 網址: string }[] };
+const sup = JSON.parse(fs.readFileSync('scripts/import/evidence-supplement-2026-11-08.json', 'utf8')) as { 假牙補助更正: SupFix[] };
+const supUrls = (region: string) => sup.假牙補助更正.find((r) => r.地區 === region)?.來源?.map((x) => x.網址) ?? [];
+/** 金額更正（slug → 各方案金額字串；undefined = 沿用來源檔） */
+const DENTURE_AMOUNT: Record<string, (string | undefined)[]> = {
+  // 金門：我的E政府現行服務頁補助表
+  kinmen: ['低收入戶、中低收入戶：上、下顎全口 4 萬元；單顎全口 2 萬元；單顎部分活動假牙最高 2 萬元（每齒 3,000 元）；上、下顎部分固定式最高 4 萬元（每齒 3,000 元）。一般戶：上、下顎全口 2 萬元；單顎全口 1 萬元；單顎部分活動假牙最高 1 萬元（每齒 1,500 元）；上、下顎部分固定式最高 2 萬元（每齒 1,500 元）。'],
+  // 屏東：一般長者方案（法規索引）；中低收入方案維持原額度
+  pingtung: ['上、下顎全口活動假牙最高 3 萬元；單上顎全口 1 萬 5,000 元；單下顎全口 1 萬 5,000 元。'],
+};
+const DENTURE_EXTRA_SOURCES: Record<string, string[]> = { kinmen: supUrls('金門縣'), pingtung: supUrls('屏東縣') };
 const slugOf = (name: string) => COUNTIES.find((c) => c.name === name.replace('臺', '台'))?.slug;
 
 // 去除重複縣市（詳細版金門縣出現兩次，取第一筆）
@@ -45,7 +58,7 @@ const DENTURE_DL: Record<string, Dl[]> = {
   'chiayi-city': [{ text: '115 年度計畫期至 12/31；診治計畫書最後收件日 2026-12-18', date: '2026-12-18' }],
   tainan: [{ text: '2026-01-01 至 2026-12-10（經費用罄可能提前停止）', date: '2026-12-10' }],
   kaohsiung: [{ text: '一般方案已於 2026-03-07 額滿；弱勢專案期限依公告', date: null }],
-  pingtung: [null, { text: '2026-04-20 起受理', date: null }],
+  pingtung: [{ text: '於名額截止日前申請', date: null }, { text: '2026-04-20 起受理', date: null }],
 };
 
 const SUMMARY_DENTURE: Record<string, string> = {
@@ -59,7 +72,7 @@ const SUMMARY_DENTURE: Record<string, string> = {
   hualien: '花蓮縣 115 年度有 65 歲以上長者假牙補助：一般長者 5 年累計最高 5 萬元、福利身分者最高 5 萬 5,000 元，2026-06-01 起受理至經費用罄。',
   taitung: '臺東縣 115 年度有中低收入老人假牙補助，裝置最高 4 萬 4,000 元，須具指定弱勢身分並向特約診所申請，至經費用罄。',
   lienchiang: '連江縣有老人裝置假牙補助：上下顎全口最高 4 萬元，須設籍連續 10 年或累計 20 年等條件，向戶籍地鄉公所申請。',
-  kinmen: '金門縣有老人裝置假牙補助：65 歲以上、設籍連續 10 年或累計 20 年（領低收／中低收入老人津貼者免設籍年限），向戶籍地公所申請。',
+  kinmen: '金門縣有老人裝置假牙補助：低收入戶、中低收入戶上下顎全口最高 4 萬元，一般戶 2 萬元；65 歲以上、設籍連續 10 年或累計 20 年（領低收／中低收入老人津貼者免設籍年限），向戶籍地公所申請。',
   taichung: '台中市 115 年度一般戶銀髮族假牙：雙顎全口 4 萬 4,000 元；中低收入另有方案（最高 4 萬 4,000 元，115 年度申請已於 2026-10-31 截止）。',
   changhua: '彰化縣 65 歲以上一般戶全口活動假牙：雙顎 4 萬元、單顎 2 萬元；115 年度申請期已於 2026-09-30 結束。',
   nantou: '南投縣 115 年有老人裝置假牙補助：福利身分者全口最高 4 萬 4,000 元；一般戶終身合計最高 4 萬元，至經費用罄。',
@@ -68,7 +81,7 @@ const SUMMARY_DENTURE: Record<string, string> = {
   'chiayi-county': '嘉義縣有樂齡活動假牙計畫：全口 4 萬元、半口 2 萬元，須至縣內合約牙科院所評估送審。',
   tainan: '台南市 115 年度長者全口活動假牙：每顎最高 2 萬 2,000 元、雙顎 4 萬 4,000 元，申請至 2026-12-10。',
   kaohsiung: '高雄市 115 年老人免費裝假牙：一般方案已於 2026-03-07 額滿；弱勢專案最高 4 萬 4,000 元。',
-  pingtung: '屏東縣有一般與中低收入兩種長者假牙補助：中低收入活動假牙約 4,400 至 4 萬 4,000 元；一般方案為 65 歲以上、連續設籍屏東滿 3 年。',
+  pingtung: '屏東縣有一般與中低收入兩種長者假牙補助：一般方案上下顎全口活動假牙最高 3 萬元；中低收入活動假牙約 4,400 至 4 萬 4,000 元。',
   penghu: '澎湖縣有老人補助假牙：全口 5 萬元、半口 2 萬 5,000 元，由縣內合約診所申請。',
 };
 
@@ -136,7 +149,7 @@ for (const r of rows) {
   const dItems = pols.map((p, i) => ({
     name: p.政策,
     eligibility: nul(p.資格),
-    amount: nul(p.額度),
+    amount: DENTURE_AMOUNT[slug]?.[i] ?? nul(p.額度),
     how_to_apply: nul(p.申請),
     deadline: dl[i]?.text ?? null,
     deadline_date: dl[i]?.date ?? null,
@@ -151,7 +164,7 @@ for (const r of rows) {
   ];
   if (nul(f.限制)) dFaq.push({ q: `${name}老人假牙補助有什麼限制？`, a: ensure(nul(f.限制)!) });
   if (pols.length > 1) dFaq.push({ q: `${name}有幾種老人假牙補助方案？`, a: `共 ${pols.length} 種：${pols.map((p) => p.政策).join('、')}。方案的資格與額度不同，不能混用，請看上方各項說明。` });
-  build('denture-subsidy', slug, name, dItems, pols.flatMap((p) => p.來源), SUMMARY_DENTURE[slug]!, dFaq, pols.map((p) => `${p.限制 ?? ''}${p.額度 ?? ''}`).join(' ') + (pols.some((p) => p.額度 === null) ? '未確認' : ''));
+  build('denture-subsidy', slug, name, dItems, [...pols.flatMap((p) => p.來源), ...(DENTURE_EXTRA_SOURCES[slug] ?? []).map((u) => ({ 名稱: '補充來源', 網址: u }))], SUMMARY_DENTURE[slug]!, dFaq, pols.map((p) => `${p.限制 ?? ''}${p.額度 ?? ''}`).join(' ') + (pols.some((p) => p.額度 === null) ? '未確認' : ''));
 
   // ---- 敬老卡 ----
   const c = r.敬老卡;

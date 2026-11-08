@@ -9,24 +9,28 @@ import { countyName } from '../src/lib/counties';
 import { topicOf } from '../src/lib/topics';
 
 const MANUAL = [
-  { n: '臺灣地區平均每人每月消費支出 26,640 元（×1.5 = 39,960 元）', where: '津貼檢核頁；data-national/low-income-elderly-allowance.json › income', now: '臺北市、新北市、嘉義市、彰化縣、桃園市蘆竹區公所等地方政府 115 年公告一致引用（二次引用）', need: '主計總處或衛福部的原始公告' },
-  { n: '臺北市津貼第一級分界：本站用 115 年最低生活費 20,744 × 1.5 = 31,116 元', where: '津貼檢核頁（選臺北市時）', now: '臺北市社會局頁面的搜尋摘要寫 29,635 元，疑為舊年度', need: '臺北市社會局 115 年中低收入老人生活津貼公告' },
-  { n: '外籍家庭看護就業安定費每月 2,000 元（每日 67 元）', where: '長照試算頁；data-national/long-term-care.json › employment_stability_fee', now: '行政院公報 2023-06-15 勞動部數額表；搜尋摘要顯示勞動部外國人勞動權益網（2026-08-10 更新）同為 2,000 元，未直接讀取', need: '勞動部／外國人勞動權益網現行頁面' },
-  { n: '津貼調增 5,142–10,286 元（預定 2026-07 實施）', where: '津貼檢核頁（標為規劃）', now: '衛福部／行政院 115-03-12 簡報；查不到已正式施行', need: '施行公告（施行後改 tier1_twd／tier2_twd）' },
-  { n: '連江縣重陽敬老禮金 1,500／2,000／3,000／10,000 元與設籍日期', where: '/chongyang-bonus/lienchiang/', now: '2026-09-25 媒體報導，與現行要點（109/6/1）分級一致；官方 115 年公告與要點本文沒讀到', need: '連江縣政府 115 年公告或《連江縣發放重陽禮金實施要點》本文' },
+  { n: '臺北市津貼第一級分界 29,635 元（以下）', where: '津貼檢核頁（選臺北市時）；data-national/low-income-elderly-allowance.json › min_living_cost', now: '臺北市社會局 115 年度發給標準與市府公報（2025-11-05）。與最低生活費 20,744 × 1.5 = 31,116 元差 1,481 元，官方未解釋；本站臺北市採市府公告值，其餘縣市採法定公式', need: '向臺北市社會局確認是否沿用舊基數或誤植' },
+  { n: '津貼調增 5,142–10,286 元（預定 2026-07-01）', where: '津貼檢核頁（標為規劃）', now: '衛福部／行政院規劃與追加預算簡報；立法院議案進度為交付審查，未找到生效公告；不登記為已實施、不改寫現行金額', need: '修法完成與施行公告（施行後改 tier1_twd／tier2_twd）' },
+  { n: '連江縣重陽敬老禮金 1,500／2,000／3,000／10,000 元與設籍日期', where: '/chongyang-bonus/lienchiang/', now: '媒體轉載（來源列標「新聞報導」）；縣府 115 年公告與要點全文、設籍基準未取得', need: '連江縣政府 115 年公告或《連江縣發放重陽禮金實施要點》全文' },
+  { n: '新竹縣百歲人瑞重陽祝賀禮金 10,000 元', where: '/chongyang-bonus/hsinchu-county/', now: '縣府高齡長照處報導（2026-09-28）的官方搜尋索引摘要；頁面全文讀取逾時', need: '取得該報導頁全文' },
+  { n: '金門縣老人假牙補助金額表（低收／中低收 4 萬、一般戶 2 萬等）', where: '/denture-subsidy/kinmen/', now: '我的E政府「金門縣老人假牙補助服務」現行服務頁；頁面未標更新日。金門法規庫僅有民國 100 年度計畫，其受理期（1/1–9/30）不可當 115 年期限', need: '金門縣社會處現行公告與版本日期' },
+  { n: '苗栗縣中低收入老人假牙額度（5 萬等）與「每年 10/30 前受理」', where: '/denture-subsidy/miaoli/', now: '縣府《辦理中低收入老人補助裝置假牙實施計畫》114-10-30 修正本（已核對 PDF）；申辦頁仍連該 PDF，未找到 115 年新版；115 年合約院所名單只證明有院所', need: '115 年新版計畫或縣府確認沿用' },
+  { n: '屏東縣一般長者假牙額度（雙顎 3 萬、單顎 1.5 萬）', where: '/denture-subsidy/pingtung/', now: '官方法規索引列出額度表（頁面抓取逾時）；115-01-02 衛生所公告確認健康牙門檻放寬，未調額度；未列日曆截止日', need: '法規全文與 115 年名額公告' },
+  { n: '臺東縣一般重陽禮金補申請至 12/31', where: '/chongyang-bonus/taitung/', now: '縣級發放要點索引（節前 10 日至節後 15 日發放、未領可於當年 12/31 前補申請；頁面讀取逾時）；臺東市公告 115 年補發至 12/31。一般縣級規則，未證明適用百歲專案', need: '要點全文' },
+  { n: '新竹市一般重陽禮金「於該年度最後一個上班日前領取」', where: '/chongyang-bonus/hsinchu-city/', now: '市府社會處常見問答（更新 2023-08-07），非 115 年專頁；百歲專案未另列期限', need: '115 年領取期限公告' },
 ];
 
 const all = loadAll({ skipFreshness: true });
 const nullAmounts: string[] = [];
 const nullRules: string[] = [];
-let nullDeadlines = 0;
+const nullDeadlineItems: string[] = [];
 for (const e of all) {
   if (e.status !== 'verified') continue;
   for (const it of e.items) {
     const where = `${topicOf(e.topic).title}／${countyName(e.county)}／${it.name}`;
     if (it.amount === null) nullAmounts.push(where);
     if (it.rules && it.rules.amount_twd === null) nullRules.push(where);
-    if (it.deadline === null && e.topic !== 'senior-card') nullDeadlines++;
+    if (it.deadline === null && e.topic !== 'senior-card') nullDeadlineItems.push(where);
   }
 }
 
@@ -35,13 +39,13 @@ const out = [
   '',
   `產生日期：${new Date().toISOString().slice(0, 10)}（\`npx tsx scripts/evidence-todo.ts\` 重新產生；手動清單在腳本的 MANUAL）`,
   '',
-  '## 一、已上線、但證據層級不足的數字',
+  '## 一、已上線、但證據層級仍可再補強的數字（9）',
   '',
   '| 數字 | 出現位置 | 目前的證據 | 要補什麼 |',
   '|---|---|---|---|',
   ...MANUAL.map((m) => `| ${m.n} | ${m.where} | ${m.now} | ${m.need} |`),
   '',
-  `## 二、金額為「待查證」的項目（${nullAmounts.length}）`,
+  `## 二、金額空白的項目（${nullAmounts.length}）`,
   '',
   ...nullAmounts.map((x) => `- ${x}`),
   '',
@@ -49,11 +53,16 @@ const out = [
   '',
   ...nullRules.map((x) => `- ${x}`),
   '',
-  '## 四、其他',
+  `## 四、領取／申請期限空白的項目（${nullDeadlineItems.length}）`,
   '',
-  `- 領取／申請期限為「待查證」的重陽敬老金與假牙項目共 ${nullDeadlines} 項（多數縣市官方頁面沒寫明確截止日）。`,
+  '官方頁面沒寫明確截止日的項目；逐項名單如下（頁面顯示「依公告為準」）。',
+  '',
+  ...nullDeadlineItems.map((x) => `- ${x}`),
+  '',
+  '## 五、其他',
+  '',
   '- 全站 FAQ 是依各縣市資料欄位生成，不是官方 Q&A；日後有官方常見問答可替換。',
   '',
 ].join('\n');
 fs.writeFileSync('EVIDENCE-TODO.md', out);
-console.log(`EVIDENCE-TODO.md：手動 ${MANUAL.length} 項、金額待查證 ${nullAmounts.length} 項、級距有但金額未知 ${nullRules.length} 項、期限待查證 ${nullDeadlines} 項`);
+console.log(`EVIDENCE-TODO.md：手動 ${MANUAL.length} 項、金額空白 ${nullAmounts.length} 項、級距有但金額未知 ${nullRules.length} 項、期限空白 ${nullDeadlineItems.length} 項`);

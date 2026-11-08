@@ -138,6 +138,13 @@ tests/
 - logo 原檔在 `brand-src/`；網站用的 SVG 在 `public/brand/`，favicon／apple-touch-icon 在 `public/`，社群分享圖 `public/og.png` 由 `scripts/make-og.ts` 產生。
 - Cloudflare：`bamaling.tw` 的 Zone 在帳號內；Pages 專案 `parents-care`（`parents-care.pages.dev`）已建立，**尚未綁定網域、尚無部署**。綁定網域會改動 DNS（目前指向 Porkbun 停放頁），請在確定上線時再做。
 
+- 2026-11-08 證據補充與更正（`scripts/import/evidence-supplement-2026-11-08.json`，由各匯入腳本讀取）：
+  - 消費支出 26,640 元（113 年）取得主計總處與衛福部一手來源；就業安定費 2,000 元取得勞動部現行頁與 115-04-13 生效公告。
+  - 臺北市津貼第一級分界改採市府公告 29,635 元（含），其餘縣市採法定公式（未達最低生活費 1.5 倍）。
+  - 新竹市、新竹縣百歲重陽禮金 10,000 元；臺東縣一般禮金補申請至 12/31（不再標為 11/2 已截止）。
+  - 金門假牙補助金額表、屏東一般方案額度、苗栗中低收入方案額度（縣府 114-10-30 修正計畫，PDF 已逐項核對）。
+  - 仍待補強的證據見 `EVIDENCE-TODO.md`。
+
 ## 插圖素材（いらすとや）
 
 溫馨風插圖取自 [いらすとや](https://www.irasutoya.com/)（作者：みふねたかし）。
