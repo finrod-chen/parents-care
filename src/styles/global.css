@@ -3,8 +3,8 @@
 @theme {
   --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   /* 清爽青綠＋柔粉：對比皆 ≥ 4.5:1 */
-  --color-brand: #0f766e;
-  --color-brand-dark: #115e59;
+  --color-brand: #1F6F5C;
+  --color-brand-dark: #165244;
   --color-cream: #f6fbfa;
   --color-warm: #fff1f2;
 }

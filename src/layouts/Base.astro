@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE_NAME } from '../lib/site';
+import { SITE_NAME, SITE_DOMAIN } from '../lib/site';
 import { absUrl, ldString } from '../lib/seo';
 import { CREDIT } from '../lib/illustrations';
 import { BADGE_CLASS } from '../lib/deadline';
@@ -25,24 +25,31 @@ const canonical = absUrl(path);
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex,follow" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1F6F5C" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="zh_TW" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absUrl("/og.png")} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     {jsonLd.map((o) => <script type="application/ld+json" set:html={ldString(o)} />)}
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="border-b border-teal-200 bg-white">
       <div class="mx-auto max-w-4xl px-4 py-3 flex flex-wrap items-center justify-between gap-2">
-        <a href="/" class="text-lg font-bold text-brand-dark">🏡 {SITE_NAME}</a>
-        <nav aria-label="主要導覽" class="flex gap-4 text-sm">
-          <a class="underline-offset-4 hover:underline" href="/chongyang-bonus/">重陽敬老金</a>
-          <a class="underline-offset-4 hover:underline" href="/denture-subsidy/">假牙補助</a>
-          <a class="underline-offset-4 hover:underline" href="/senior-card/">敬老卡</a>
-          <a class="underline-offset-4 hover:underline" href="/long-term-care/">長照試算</a>
-          <a class="underline-offset-4 hover:underline" href="/low-income-elderly-allowance/">津貼檢核</a>
+        <a href="/" class="flex items-center" aria-label={`${SITE_NAME}（${SITE_DOMAIN}）首頁`}><img src="/brand/logo-horizontal.svg" alt={`${SITE_NAME} ${SITE_DOMAIN}`} width="114" height="40" class="h-10 w-auto" /></a>
+        <nav aria-label="主要導覽" class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/chongyang-bonus/">重陽敬老金</a>
+          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/denture-subsidy/">假牙補助</a>
+          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/senior-card/">敬老卡</a>
+          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/long-term-care/">長照試算</a>
+          <a class="whitespace-nowrap underline-offset-4 hover:underline" href="/low-income-elderly-allowance/">津貼檢核</a>
         </nav>
       </div>
     </header>

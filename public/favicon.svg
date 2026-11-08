@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M16 24s-8-4.8-8-10.5C8 10.5 10.2 9 12.3 9c1.6 0 2.8.8 3.7 2 .9-1.2 2.1-2 3.7-2C21.8 9 24 10.5 24 13.5 24 19.200 16 24 16 24z" fill="#fff"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="22" fill="#1F6F5C"/><g transform="translate(10,14) scale(0.8)"><defs><mask id="md" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+<rect width="100" height="100" fill="#fff"/>
+<path d="M48 56 C48 44 54 38 61 38 C68 38 74 44 74 56 Z" fill="none" stroke="#000" stroke-width="5"/>
+<circle cx="61" cy="24" r="8" fill="none" stroke="#000" stroke-width="4"/></mask></defs>
+<g fill="#FFFFFF"><g mask="url(#md)"><circle cx="40" cy="22" r="9"/>
+<path d="M25 56 C25 42 32 35 40 35 C48 35 55 42 55 56 Z"/></g>
+<circle cx="61" cy="24" r="8"/><path d="M48 56 C48 44 54 38 61 38 C68 38 74 44 74 56 Z"/></g>
+<g fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 44 C10 60 22 72 44 74"/><path d="M90 44 C90 60 78 72 56 74"/>
+<path d="M10 44 L15 38"/><path d="M90 44 L85 38"/></g></g></svg>

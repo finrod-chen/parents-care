@@ -4,7 +4,7 @@
 # 預設「關閉」：必須在 GitHub 的 Settings → Secrets and variables → Actions 設定
 #   - Variables：DEPLOY_ENABLED = true
 #   - Secrets：CLOUDFLARE_API_TOKEN（權限：Account → Cloudflare Pages → Edit）、CLOUDFLARE_ACCOUNT_ID
-# 才會真的部署。網域確定（SITE_URL 不再是 example.tw）且真實資料就緒前，請不要開啟。
+# 才會真的部署。網域（bamaling.tw）已綁定到 Cloudflare Pages 專案且確認要上線後，再開啟。
 name: weekly-deploy
 
 on:

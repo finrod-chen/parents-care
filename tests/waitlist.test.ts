@@ -5,7 +5,7 @@ import { noindexUrls } from '../src/lib/data';
 const page = fs.readFileSync('src/pages/waitlist/index.astro', 'utf8');
 
 describe('名單收集頁骨架', () => {
-  it('不進 sitemap（列在 noindex 清單）', () => expect(noindexUrls().has('https://example.tw/waitlist/')).toBe(true));
+  it('不進 sitemap（列在 noindex 清單）', () => expect(noindexUrls().has('https://bamaling.tw/waitlist/')).toBe(true));
   it('頁面是 noindex', () => expect(page).toMatch(/<Base[^>]*\bnoindex\b/));
   it('沒有送出資料的機制：無 action、無 fetch、無外部腳本或嵌入', () => {
     expect(page).not.toMatch(/\baction\s*=/);
