@@ -49,6 +49,7 @@ export const AllowanceSchema = z
         consumption_multiple: z.number().positive(),
         consumption_per_capita_monthly_twd: Money,
         consumption_source_status: z.enum(['primary', 'secondary']),
+        consumption_year: z.string().optional(),
       })
       .strict(),
     assets: z.object({ deposits_single_twd: Money, deposits_per_extra_person_twd: Money }).strict(),
@@ -63,7 +64,20 @@ export const AllowanceSchema = z
         planned_status: z.string(),
       })
       .strict(),
-    min_living_cost: z.array(z.object({ area: z.string(), twd: Money, counties: z.array(z.enum(COUNTY_SLUGS)).min(1) }).strict()).min(1),
+    min_living_cost: z
+      .array(
+        z
+          .object({
+            area: z.string(),
+            twd: Money,
+            counties: z.array(z.enum(COUNTY_SLUGS)).min(1),
+            /** 地方政府公告的第一級分界（與 最低生活費×1.5 不同時使用）；inclusive = 公告寫「以下」 */
+            tier1_cut_twd: Money.optional(),
+            tier1_cut_inclusive: z.boolean().optional(),
+          })
+          .strict(),
+      )
+      .min(1),
     notes: z.string(),
     public_notes: z.array(z.string()).optional(),
     faq: z.array(FaqSchema).min(3).max(5),

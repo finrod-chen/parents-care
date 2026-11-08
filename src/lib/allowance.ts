@@ -43,7 +43,8 @@ export function checkAllowance(d: AllowanceData, i: CheckInput): CheckResult {
   const cap25 = minLiving * d.income.max_multiple_of_min_living;
   const capConsumption = d.income.consumption_per_capita_monthly_twd * d.income.consumption_multiple;
   const effectiveCap = Math.min(cap25, capConsumption);
-  const tier1Cut = minLiving * d.income.tier1_below_multiple;
+  const tier1Cut = area.tier1_cut_twd ?? minLiving * d.income.tier1_below_multiple;
+  const tier1Inclusive = area.tier1_cut_inclusive ?? false;
   const n = Math.max(1, Math.floor(i.household || 1));
   const depositsLimit = d.assets.deposits_single_twd + d.assets.deposits_per_extra_person_twd * (n - 1);
 
@@ -71,7 +72,7 @@ export function checkAllowance(d: AllowanceData, i: CheckInput): CheckResult {
       perCapita = i.totalIncome / n;
       const ok = i.totalIncome <= effectiveCap * n;
       add('income', '家庭每人每月平均收入', ok ? 'pass' : 'fail', `平均 ${fmt(perCapita)}；上限 ${fmt(effectiveCap)}（${area.area}最低生活費 ${fmt(minLiving)} 的 ${d.income.max_multiple_of_min_living} 倍為 ${fmt(cap25)}，與消費支出 ${d.income.consumption_multiple} 倍 ${fmt(capConsumption)} 取低者）`);
-      if (ok) tier = i.totalIncome < tier1Cut * n ? 1 : 2;
+      if (ok) tier = (tier1Inclusive ? i.totalIncome <= tier1Cut * n : i.totalIncome < tier1Cut * n) ? 1 : 2;
     }
     add('deposits', `全家存款、投資與有價證券（${n} 人，上限 ${fmt(depositsLimit)}）`, i.deposits === null ? 'unknown' : i.deposits <= depositsLimit ? 'pass' : 'fail', i.deposits === null ? '請輸入合計金額' : fmt(i.deposits));
     add('realestate', '土地與房屋價值未超過縣市標準', i.realEstate === 'ok' ? 'pass' : i.realEstate === 'over' ? 'fail' : 'unknown', i.realEstate === 'unknown' ? '各縣市標準不同，本工具不判斷，請向戶籍地公所確認' : i.realEstate === 'ok' ? '你已自行確認' : '超過標準');

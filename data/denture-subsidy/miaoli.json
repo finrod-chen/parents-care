@@ -2,17 +2,17 @@
   "status": "verified",
   "county": "miaoli",
   "year": 2026,
-  "summary": "苗栗縣有中低收入老人補助裝置假牙（設籍苗栗縣、年滿 65 歲且符合指定弱勢身分，向戶籍地公所申請），55 歲以上原住民另有專案，5 年內最高 4 萬元，115 年度申請已於 2026-10-31 截止。",
+  "summary": "苗栗縣有中低收入老人補助裝置假牙：上下顎全口活動假牙最高 5 萬元（5 年內累計上限 5 萬元），每年 10 月 30 日前向戶籍地公所申請；55 歲以上原住民另有專案，5 年內最高 4 萬元，115 年度申請已於 2026-10-31 截止。",
   "items": [
     {
       "name": "中低收入老人補助裝置假牙",
-      "eligibility": "設籍本縣年滿 65 歲，經醫師評估缺牙、需裝置假牙，並符合下列條件之一：列冊低收入戶或中低收入戶；領有中低收入老人生活津貼；經各級政府全額補助收容安置；領有身心障礙者生活補助；經各級政府補助身心障礙者托育費或養護費達 50% 以上。",
-      "amount": null,
-      "how_to_apply": "承辦單位為戶籍所在地鄉鎮市公所。應備文件：申請書、身分證正反面影本、福利身分別證明文件、印章。縣府公告有合約牙科醫療診（院）所名單（合約期間 113 年至 115 年）。",
-      "deadline": null,
+      "eligibility": "設籍本縣年滿 65 歲（原住民 55 歲）以上，經醫師評估缺牙、需裝置活動假牙，並符合下列條件之一：列冊低收入戶或中低收入戶；領有中低收入老人生活津貼；領有身心障礙者生活補助費；經各級政府全額補助收容安置；經各級政府補助身心障礙者托育費或養護費達 50% 以上。",
+      "amount": "上、下顎全口活動假牙最高 5 萬元；單顎全口活動假牙 2 萬 5,000 元；全口併另一顎部分活動假牙 4 萬 5,000 元；上、下顎部分活動假牙 4 萬元；單顎部分活動假牙 2 萬元；固定式假牙（牙冠或牙橋）每顆 4,400 元，每年最多 10 顆；活動假牙維修費最高 6,600 元。5 年內累計最高 5 萬元（維修除外）。",
+      "how_to_apply": "向戶籍所在地鄉鎮市公所申請，應備文件：申請書、身分證正反面影本、福利身分別證明文件、印章。縣府公告有合約牙科醫療診（院）所名單（合約期間 113 年至 115 年）。",
+      "deadline": "每年 10 月 30 日前受理申請",
       "deadline_date": null,
-      "restrictions": "補助額度與申請期間請洽戶籍地公所。",
-      "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
+      "restrictions": "5 年內最高補助 5 萬元（假牙維修不在此限）；同一顎或同一牙位已於其他縣市或本縣各鄉鎮市公所取得相同補助者，5 年內不予重複補助（維修除外）。固定式假牙的差額，服務提供單位可在徵得同意後向民眾收取。",
+      "source_url": "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTQ2OC80MDY0My9jZjUzZWViYy00ZTU1LTQ5NTUtYmYwZC1iZjU3NGYwYzUwNTgucGRm&n=MTE05bm05Lit5L2O5pS25YWl6ICB5Lq66KOc5Yqp6KOd572u5YGH54mZ5a%2Bm5pa96KiI55Wr5L%2Bu5q2jLTExNDEwMzAucGRm&icon=..pdf"
     },
     {
       "name": "115 年度原住民族長者裝置假牙",
@@ -27,33 +27,35 @@
   ],
   "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797",
   "additional_sources": [
+    "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTQ2OC80MDY0My9jZjUzZWViYy00ZTU1LTQ5NTUtYmYwZC1iZjU3NGYwYzUwNTgucGRm&n=MTE05bm05Lit5L2O5pS25YWl6ICB5Lq66KOc5Yqp6KOd572u5YGH54mZ5a%2Bm5pa96KiI55Wr5L%2Bu5q2jLTExNDEwMzAucGRm&icon=..pdf",
+    "https://www.miaoli.gov.tw/News_Content2.aspx?Create=1&n=295&state=59D3F75B9EEAAE20&s=40643&ccms_cs=1&sms=9468",
     "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTYyNy8zOTQzNjQvNjY1MDA5ZTAtYzQxOC00ODYwLTgyMDktNDc0ZThmMDc4ZTM0LnBkZg%3D%3D&n=5ZCI57SE54mZ56eR6Yar55mC6Ki6KOmZoinmiYDlkI3llq4tKDExMy0xMTXlubQpLnBkZg%3D%3D",
     "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDQ3L3JlbGZpbGUvMTM4MzEvOTI2MjA5L2M1ZDNlMjUxLTM5MDMtNDhkYS05MDFhLWU1NmYyMDViNjViYi5wZGY%3D&n=MTE15bm05bqm5YGH54mZ6KiI55WrLnBkZg%3D%3D"
   ],
   "verified_at": "2026-11-08",
-  "notes": "來源：苗栗縣政府 1999 熱線常見問題「中低收入老人補助裝置假牙」（社會處，114-05-27 更新）；衛生局合約診所名單 PDF（合約期間 113–115 年）；苗栗縣政府 115 年度原住民族長者裝置假牙實施計畫申請表（114-11-25 送原民會）。 查證 2026-11-08：官方頁未找到中低收入老人假牙的補助額度。新聞整理文章（TVBS 等）寫苗栗全口最高 5 萬元、其他整理文章寫 4.4 萬元，兩者互相矛盾且無官方公告出處，故額度留 null，不採用。",
+  "notes": "來源：苗栗縣政府 1999 熱線常見問題「中低收入老人補助裝置假牙」（社會處，114-05-27 更新）；衛生局合約診所名單 PDF（合約期間 113–115 年）；苗栗縣政府 115 年度原住民族長者裝置假牙實施計畫申請表（114-11-25 送原民會）。 2026-11-08 補充：額度取自縣府《辦理中低收入老人補助裝置假牙實施計畫》114-10-30 修正本（PDF 已逐項核對：全口 5 萬、單顎 2.5 萬、全口併部分 4.5 萬、上下顎部分 4 萬、單顎部分 2 萬、固定式 4,400／顆、維修 6,600、5 年上限 5 萬、每年 10/30 前受理）；縣府申辦頁仍連該 PDF，未見 115 年新版。",
   "public_notes": [
     "原住民族長者專案 115 年度申請已於 2026-10-31 截止，11 月 1 日起的案件依 116 年度計畫辦理。"
   ],
   "faq": [
     {
       "q": "苗栗縣老人假牙補助可以補助多少？",
-      "a": "苗栗縣有中低收入老人補助裝置假牙（設籍苗栗縣、年滿 65 歲且符合指定弱勢身分，向戶籍地公所申請），55 歲以上原住民另有專案，5 年內最高 4 萬元，115 年度申請已於 2026-10-31 截止。",
+      "a": "苗栗縣有中低收入老人補助裝置假牙：上下顎全口活動假牙最高 5 萬元（5 年內累計上限 5 萬元），每年 10 月 30 日前向戶籍地公所申請；55 歲以上原住民另有專案，5 年內最高 4 萬元，115 年度申請已於 2026-10-31 截止。",
       "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
     },
     {
       "q": "誰可以申請苗栗縣的老人假牙補助？",
-      "a": "設籍本縣年滿 65 歲，經醫師評估缺牙、需裝置假牙，並符合下列條件之一：列冊低收入戶或中低收入戶；領有中低收入老人生活津貼；經各級政府全額補助收容安置；領有身心障礙者生活補助；經各級政府補助身心障礙者托育費或養護費達 50% 以上。",
+      "a": "設籍本縣年滿 65 歲（原住民 55 歲）以上，經醫師評估缺牙、需裝置活動假牙，並符合下列條件之一：列冊低收入戶或中低收入戶；領有中低收入老人生活津貼；領有身心障礙者生活補助費；經各級政府全額補助收容安置；經各級政府補助身心障礙者托育費或養護費達 50% 以上。",
       "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
     },
     {
       "q": "苗栗縣老人假牙補助怎麼申請？",
-      "a": "承辦單位為戶籍所在地鄉鎮市公所。應備文件：申請書、身分證正反面影本、福利身分別證明文件、印章。縣府公告有合約牙科醫療診（院）所名單（合約期間 113 年至 115 年）。",
+      "a": "向戶籍所在地鄉鎮市公所申請，應備文件：申請書、身分證正反面影本、福利身分別證明文件、印章。縣府公告有合約牙科醫療診（院）所名單（合約期間 113 年至 115 年）。",
       "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
     },
     {
       "q": "苗栗縣老人假牙補助有什麼限制？",
-      "a": "補助額度與申請期間請洽戶籍地公所。",
+      "a": "5 年內最高補助 5 萬元（假牙維修不在此限）；同一顎或同一牙位已於其他縣市或本縣各鄉鎮市公所取得相同補助者，5 年內不予重複補助（維修除外）。固定式假牙的差額，服務提供單位可在徵得同意後向民眾收取。",
       "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
     },
     {

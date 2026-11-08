@@ -46,7 +46,7 @@ const counties = COUNTIES.map((c) => ({ slug: c.slug, name: c.name }));
         </tbody>
       </table>
     </div>
-    <p class="mt-2 text-sm text-slate-600">加發期間：{d.amounts.bonus_period}。衛福部規劃調增到 {t(d.amounts.planned_tier2_twd)}–{t(d.amounts.planned_tier1_twd)}：{d.amounts.planned_status}。兩個收入級距都還要「未超過臺灣地區平均每人每月消費支出的 {d.income.consumption_multiple} 倍」（{t(d.income.consumption_per_capita_monthly_twd * d.income.consumption_multiple)}）。</p>
+    <p class="mt-2 text-sm text-slate-600">加發期間：{d.amounts.bonus_period}。衛福部規劃調增到 {t(d.amounts.planned_tier2_twd)}–{t(d.amounts.planned_tier1_twd)}：{d.amounts.planned_status}。兩個收入級距都還要「未超過臺灣地區平均每人每月消費支出{d.income.consumption_year ? `（${d.income.consumption_year}，${t(d.income.consumption_per_capita_monthly_twd)}）` : ''}的 {d.income.consumption_multiple} 倍」（{t(d.income.consumption_per_capita_monthly_twd * d.income.consumption_multiple)}）。</p>
   </section>
 
   <section aria-labelledby="mlc-h" class="mt-8">
@@ -59,7 +59,7 @@ const counties = COUNTIES.map((c) => ({ slug: c.slug, name: c.name }));
           {d.min_living_cost.map((m) => (
             <tr class="border-b border-teal-100">
               <th scope="row" class="p-2 font-medium">{m.area}{m.area === '臺灣省' ? '（其餘縣市）' : m.area === '福建省' ? '（金門、連江）' : ''}</th>
-              <td class="p-2">{t(m.twd)}</td><td class="p-2">{t(m.twd * d.income.tier1_below_multiple)}</td><td class="p-2">{t(m.twd * d.income.max_multiple_of_min_living)}</td>
+              <td class="p-2">{t(m.twd)}</td><td class="p-2">{t(m.tier1_cut_twd ?? m.twd * d.income.tier1_below_multiple)}{m.tier1_cut_twd ? '（市府公告）' : ''}</td><td class="p-2">{t(m.twd * d.income.max_multiple_of_min_living)}</td>
             </tr>
           ))}
         </tbody>

@@ -38,7 +38,7 @@ const data = {
     rules: { min_age: i.a[0], max_age: i.a[1], amount_twd: i.amount },
   })),
   source_url: MEDIA,
-  additional_sources: [RULES_PDF],
+  additional_sources: [RULES_PDF, 'https://www.nankan.gov.tw/chhtml/Detail/2221?mcid=113732'],
   verified_at: '2026-11-08',
   notes:
     '【非官方 115 年公告】連江縣政府 115 年重陽禮金公告查不到（主站 www.matsu.gov.tw 對本環境拒絕連線；法規系統 law.matsu.gov.tw 掃描 GL000001–700 未找到要點本文，僅在 GL000616 相關法規清單提到名稱）。' +

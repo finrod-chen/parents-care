@@ -17,7 +17,7 @@ describe('資料', () => {
     const m = Object.fromEntries(d.min_living_cost.map((x) => [x.area, x.twd]));
     expect(m).toMatchObject({ 臺北市: 20744, 新北市: 17750, 桃園市: 17186, 臺中市: 16431, 臺南市: 15515, 高雄市: 16970, 臺灣省: 15515, 福建省: 15173 });
   });
-  it('消費支出數字標為 secondary（尚未取得原始公告）', () => expect(d.income.consumption_source_status).toBe('secondary'));
+  it('消費支出 26,640（113 年）', () => expect(d.income.consumption_per_capita_monthly_twd).toBe(26640));
 });
 
 describe('checkAllowance', () => {
@@ -63,4 +63,17 @@ describe('checkAllowance', () => {
     expect(r.verdict).toBe('likely');
     expect(r.items.find((x) => x.id === 'realestate')?.status).toBe('unknown');
   });
+});
+
+describe('臺北市第一級分界採市府公告 29,635（含）', () => {
+  it('29,635 以下 → 第一級；超過 → 第二級', () => {
+    expect(checkAllowance(d, { ...base, totalIncome: 29635 }).tier).toBe(1);
+    expect(checkAllowance(d, { ...base, totalIncome: 29636 }).tier).toBe(2);
+  });
+  it('其他縣市仍用法定公式（未達 1.5 倍）', () => {
+    const cut = 17750 * 1.5;
+    expect(checkAllowance(d, { ...base, county: 'new-taipei', totalIncome: cut - 1 }).tier).toBe(1);
+    expect(checkAllowance(d, { ...base, county: 'new-taipei', totalIncome: cut }).tier).toBe(2);
+  });
+  it('消費支出已有一手來源', () => expect(d.income.consumption_source_status).toBe('primary'));
 });
