@@ -75,9 +75,13 @@ export function overviewIndexable(topic: TopicSlug): boolean {
   return byTopic(topic).some(isVerified);
 }
 
+/** 固定不索引、不進 sitemap 的頁面（骨架頁等） */
+export const STATIC_NOINDEX_PATHS = ['/waitlist/'] as const;
+
 /** 所有 noindex 頁面的完整網址（供 sitemap 排除） */
 export function noindexUrls(): Set<string> {
   const s = new Set<string>();
+  for (const p of STATIC_NOINDEX_PATHS) s.add(`${SITE_URL}${p}`);
   for (const e of all()) if (e.status === 'todo') s.add(`${SITE_URL}/${e.topic}/${e.county}/`);
   for (const t of TOPIC_SLUGS) if (!overviewIndexable(t)) s.add(`${SITE_URL}/${t}/`);
   return s;

@@ -41,7 +41,11 @@ for (const e of loadAll({ skipFreshness: true /* 過期正是要靠本腳本重�
 }
 
 // 全國性資料（data-national/）的來源
-for (const s of loadNational({ skipFreshness: true }).ltc.sources) (usage.get(s.url) ?? usage.set(s.url, new Set()).get(s.url)!).add('national/long-term-care');
+{
+  const n = loadNational({ skipFreshness: true });
+  for (const [k, list] of [['national/long-term-care', n.ltc.sources], ['national/low-income-elderly-allowance', n.allowance.sources]] as const)
+    for (const s of list) (usage.get(s.url) ?? usage.set(s.url, new Set()).get(s.url)!).add(k);
+}
 
 type Row = { url: string; files: string[]; status: 'ok' | 'changed' | 'new' | 'broken'; detail: string; hash?: string };
 const rows: Row[] = [];
