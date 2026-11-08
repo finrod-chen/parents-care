@@ -1,9 +1,54 @@
 {
-  "status": "todo",
+  "status": "verified",
   "county": "miaoli",
   "year": 2026,
-  "items": [],
-  "source_url": null,
-  "verified_at": null,
-  "notes": "來源資料未涵蓋苗栗縣，待補。"
+  "summary": "苗栗縣 65 歲以上長者（原住民 55 歲）每月 700 點，限當月使用，用於縣內簽約客運、臺鐵、計程車與指定農會小舖。",
+  "items": [
+    {
+      "name": "苗栗縣敬老愛心卡（敬老卡、愛心卡）",
+      "eligibility": "設籍本縣且符合下列條件之一（每人限申請一張）：年滿 65 歲老人；年滿 55 歲原住民（可提前 1 個月申辦，生日當天領卡）；領有身心障礙證明者；符合條件的就讀國中、高中（職）學生（列冊低收入戶或中低收入戶，或符合兒童及少年生活扶助規定者）。",
+      "amount": "每月補助社福點數 700 點（1 點 1 元），限當月使用，未用完的餘點不累計到次月。可用於：縣內簽約客運路線（國道路線除外，共 8 家客運）；臺鐵（起站或迄站任一在苗栗縣，單趟補助上限 100 點）；計程車（2026-06-01 起，每趟補助 100 點、每月 200 點，適用苗栗縣、新竹縣、新竹市、台中市的指定車隊）；指定農會小舖（2026-07-01 起，除酒類產品；2026-11-01 起每月最高補助由 100 點提高至 300 點、每週使用上限 100 點，並新增 6 家小舖）。",
+      "how_to_apply": "攜國民身分證、印章、最近 1 年內 2 吋半身照片 2 張，到本縣任一鄉鎮市公所申請；原住民附可判別身分及族別的證明文件，身心障礙者附身心障礙證明，弱勢學生附學生證正反面影本；委託他人代辦需附受託人身分證與印章。",
+      "deadline": null,
+      "restrictions": "每月第一次乘車時由系統自動儲值 700 點；點數用完或不足時不會自動補，須自行到便利商店儲值現金錢包。限本人使用，轉讓或轉借他人者，第一次查獲停止補助半年、第二次收回票證。死亡、戶籍遷出本縣、喪失身心障礙資格、未在學（含休學）等情況會停止使用。",
+      "source_url": "https://www.miaoli.gov.tw/social_affairs/News_Content.aspx?n=682&s=404900"
+    }
+  ],
+  "source_url": "https://www.miaoli.gov.tw/social_affairs/News_Content.aspx?n=682&s=404900",
+  "additional_sources": [
+    "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTQ2OC80MDQ5MDAvNmQ2ODlkZDEtMjBkNi00Y2U3LTg4MDQtNjkyOGFjYzU5MjY5LnBkZg%3d%3d&n=6IuX5qCX57ij5pS%2f5bqc5pWs6ICB5oSb5b%2bD5Y2h5a%2bm5pa96KaB6bueKDExNS4wMy4xNuS%2fruatoykucGRm",
+    "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTQ2OC80MDQ5MDAvMjg3MWQyMzYtMzk2ZS00MDE3LWI1NzUtZDViMGJiMDgwZjVlLnBkZg%3d%3d&n=MTE15bm06IuX5qCX57ij5pWs6ICB5oSb5b%2bD5Y2h55Sz6KuL6KGoLnBkZg%3d%3d"
+  ],
+  "verified_at": "2026-11-08",
+  "notes": "來源：苗栗縣政府社會處「申辦須知—苗栗縣敬老愛心卡」（老人及身障福利科；頁面標示上版日期 110-04-15，內文已含 115 年新增的計程車、農會規定與 2026-11-01 起農會額度）；敬老愛心卡實施要點（115.03.16 修正）；115 年敬老愛心卡申請表。 部分公所頁面（如苗栗市公所）仍寫舊的臺鐵單趟上限 50 點，已以縣府社會處為準。新聞提到「計程車 200 點與農會 100 點整合為 300 點通用」為規劃中，官方頁未列，未採用。",
+  "public_notes": [
+    "部分鄉鎮市公所頁面仍寫較舊的規定（例如臺鐵單趟補助上限 50 點），本頁以縣府社會處公告為準。"
+  ],
+  "faq": [
+    {
+      "q": "苗栗縣敬老卡有什麼優惠？",
+      "a": "苗栗縣 65 歲以上長者（原住民 55 歲）每月 700 點，限當月使用，用於縣內簽約客運、臺鐵、計程車與指定農會小舖。",
+      "source_url": "https://www.miaoli.gov.tw/social_affairs/News_Content.aspx?n=682&s=404900"
+    },
+    {
+      "q": "誰可以辦苗栗縣的敬老卡？",
+      "a": "設籍本縣且符合下列條件之一（每人限申請一張）：年滿 65 歲老人；年滿 55 歲原住民（可提前 1 個月申辦，生日當天領卡）；領有身心障礙證明者；符合條件的就讀國中、高中（職）學生（列冊低收入戶或中低收入戶，或符合兒童及少年生活扶助規定者）。",
+      "source_url": "https://www.miaoli.gov.tw/social_affairs/News_Content.aspx?n=682&s=404900"
+    },
+    {
+      "q": "苗栗縣敬老卡怎麼申請？",
+      "a": "攜國民身分證、印章、最近 1 年內 2 吋半身照片 2 張，到本縣任一鄉鎮市公所申請；原住民附可判別身分及族別的證明文件，身心障礙者附身心障礙證明，弱勢學生附學生證正反面影本；委託他人代辦需附受託人身分證與印章。",
+      "source_url": "https://www.miaoli.gov.tw/social_affairs/News_Content.aspx?n=682&s=404900"
+    },
+    {
+      "q": "苗栗縣敬老卡有什麼限制？",
+      "a": "每月第一次乘車時由系統自動儲值 700 點；點數用完或不足時不會自動補，須自行到便利商店儲值現金錢包。限本人使用，轉讓或轉借他人者，第一次查獲停止補助半年、第二次收回票證。死亡、戶籍遷出本縣、喪失身心障礙資格、未在學（含休學）等情況會停止使用。",
+      "source_url": "https://www.miaoli.gov.tw/social_affairs/News_Content.aspx?n=682&s=404900"
+    },
+    {
+      "q": "苗栗縣敬老卡的點數可以換現金嗎？",
+      "a": "不能。點數限用於指定範圍（客運、臺鐵、計程車、指定農會小舖），當月沒用完的餘點不累計到次月；用完或不足時需自行儲值現金錢包。",
+      "source_url": "https://www.miaoli.gov.tw/social_affairs/News_Content.aspx?n=682&s=404900"
+    }
+  ]
 }
