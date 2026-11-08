@@ -158,7 +158,7 @@ tests/
 
 ## 每週重建
 
-Pages 已連接本 repo，push 到 `main` 會自動建置部署。`.github/workflows/weekly-rebuild.yml`每週一（台灣 08:00）請 Pages 重跑一次 `main`，讓靜態 HTML 裡的「已截止」標示與 365 天查證檢查保持最新。資料過期或欄位缺漏時 build 會失敗，Cloudflare 不會替換線上版本。
+Pages 已連接本 repo，push 到 `main` 會自動建置部署。`.github/workflows/weekly-rebuild.yml` 每週一（台灣 08:00）請 Pages 重跑一次 `main`，讓靜態 HTML 裡的「已截止」標示與 365 天查證檢查保持最新。資料過期或欄位缺漏時 build 會失敗，Cloudflare 不會替換線上版本。
 
 啟用方式（只需一次；沒設定時排程會略過、不會失敗）：GitHub repo → Settings → Secrets and variables → Actions → 新增 `CLOUDFLARE_API_TOKEN`（Cloudflare → My Profile → API Tokens，權限 `Account · Cloudflare Pages · Edit`）與 `CLOUDFLARE_ACCOUNT_ID`。
 
