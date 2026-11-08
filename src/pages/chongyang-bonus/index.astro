@@ -11,7 +11,7 @@ const rows = byTopic('chongyang-bonus').map((e) => ({
   name: countyName(e.county),
   verifiedAt: e.verified_at,
   verified: e.status === 'verified',
-  items: e.items.map((i) => ({ name: i.name, rules: i.rules ?? null })),
+  items: e.items.map((i) => ({ name: i.name, rules: i.rules ?? null, deadline_date: i.deadline_date ?? null })),
 }));
 ---
 <TopicOverviewPage topic="chongyang-bonus" calculator>

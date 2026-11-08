@@ -1,6 +1,7 @@
 ---
 import type { Entry } from '../lib/data';
 import { countyName } from '../lib/counties';
+import DeadlineBadge from './DeadlineBadge.astro';
 const { entries } = Astro.props as { entries: Entry[] };
 ---
 <div class="overflow-x-auto">
@@ -21,7 +22,7 @@ const { entries } = Astro.props as { entries: Entry[] };
           </th>
           <td class="p-2">
             {e.status === 'verified'
-              ? e.items.map((i) => <div>{i.name}：<strong>{i.amount ?? <span class="text-rose-700">待查證</span>}</strong></div>)
+              ? e.items.map((i) => <div>{i.name}：<strong>{i.amount ?? <span class="text-rose-700">待查證</span>}</strong> <DeadlineBadge date={i.deadline_date} /></div>)
               : <span class="text-rose-700">待查證</span>}
           </td>
           <td class="p-2 whitespace-nowrap">{e.verified_at ?? '待查證'}</td>

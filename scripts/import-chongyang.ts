@@ -36,6 +36,34 @@ const AGE: Record<string, ([number, number | null] | null)[]> = {
   kinmen: [null, null, null],
 };
 
+/**
+ * 各項目「最後可領／可申請日」（含補發）。只填官方文字寫得出明確日期的；null = 待查證，不推算。
+ * 例：台北取自「依自治條例第6條得於115/12/31前申請補發」；彰化福利身分戶取自「福利身分差額補領截止116/2/26」。
+ */
+const DEADLINE: Record<string, (string | null)[]> = {
+  keelung: [null, null],
+  taipei: ['2026-12-31', '2026-12-31', '2026-12-31'],
+  'new-taipei': ['2026-12-31', '2026-12-31', '2026-12-31', '2026-12-31'],
+  taoyuan: [null, null],
+  'hsinchu-city': [null, null],
+  'hsinchu-county': ['2026-09-30', null],
+  miaoli: ['2027-01-07'],
+  taichung: ['2026-11-30', '2026-11-30', '2026-11-30', '2026-11-30'],
+  changhua: ['2026-12-18', '2027-02-26', '2027-02-26', '2027-02-26', null],
+  nantou: [null, null, null],
+  yunlin: ['2026-11-02', '2026-11-02', '2026-11-02', '2026-11-02', '2026-11-02'],
+  'chiayi-city': [null, null, null, null],
+  'chiayi-county': [null, null, null],
+  tainan: ['2026-12-11', '2026-12-11'],
+  kaohsiung: ['2026-12-31', '2026-12-31', null],
+  pingtung: [null, null],
+  yilan: ['2026-10-18', '2026-10-18'],
+  hualien: ['2026-11-27', '2026-11-27', '2026-11-27', null],
+  taitung: ['2026-11-02', null],
+  penghu: ['2026-11-12', '2026-11-12', '2026-11-12', '2026-11-12'],
+  kinmen: [null, null, null],
+};
+
 const SUMMARY: Record<string, string> = {
   'hsinchu-county': '新竹縣沒有全縣普發的重陽敬老禮金；115 年有申請制、需通過排富審查的敬老禮金 10,000 元（65 歲以上、設籍滿 10 年），百歲人瑞另有重陽祝賀禮金，金額待查證。',
   changhua: '彰化縣 115 年重陽敬老禮金：一般戶 65–99 歲 1,000 元；符合福利身分者 65–79 歲 3,000 元、80–89 歲 6,000 元、90–99 歲 9,000 元；百歲人瑞 10,000 元。',
@@ -96,6 +124,7 @@ for (const c of src.counties) {
       amount,
       how_to_apply: method,
       deadline,
+      deadline_date: DEADLINE[c.county]?.[idx] ?? null,
     };
     if (a) item.rules = { min_age: a[0], max_age: a[1], amount_twd: it.amount_twd };
     return item;
@@ -108,13 +137,37 @@ for (const c of src.counties) {
   });
   const summary = SUMMARY[c.county] ?? `${name} 115 年重陽敬老禮金：${parts.join('、')}。`;
 
+  // ---- 簡單 FAQ：最多 5 則，答案全部取自本縣市資料欄位 ----
   const first = c.items[0]!;
-  const amounts = items.map((i) => `${i.name}：${(i.amount as string | null) ?? '待查證'}`).join('；');
-  const faq = [
-    { q: `${name}重陽敬老禮金可以領多少？`, a: `${amounts}。`, source_url: c.source_url },
-    { q: `${name}重陽敬老禮金誰可以領？`, a: `${nul(first.eligibility) ?? '官方頁面未載明，待查證'}${items.length > 1 ? '（其他級距的條件請見上方各項說明）' : ''}。`.replace('。。', '。'), source_url: c.source_url },
-    { q: `${name}重陽敬老禮金怎麼領？有期限嗎？`, a: `領取方式：${nul(first.method) ?? '待查證'}。期限：${nul(first.deadline) ?? '官方頁面未載明，待查證'}。`.replace('。。', '。'), source_url: c.source_url },
+  const mins = c.items.flatMap((_, i) => (age?.[i] ? [age[i]![0]] : []));
+  const dates = (DEADLINE[c.county] ?? []).filter((d): d is string => !!d).sort();
+  const lastItem = c.items[c.items.length - 1]!;
+  const lastAge = age?.[c.items.length - 1];
+  const elig = nul(first.eligibility);
+  const faq: { q: string; a: string; source_url: string }[] = [
+    { q: `${name}重陽敬老禮金領多少？`, a: summary, source_url: c.source_url },
+    {
+      q: `誰可以領${name}的重陽敬老禮金？`,
+      a: `${mins.length ? `一般長者 ${Math.min(...mins)} 歲起可領。` : ''}設籍等詳細條件：${elig ?? '官方頁面未載明，待查證'}`,
+      source_url: c.source_url,
+    },
+    { q: `${name}重陽敬老禮金怎麼領？`, a: nul(first.method) ?? '官方頁面未載明，待查證。', source_url: c.source_url },
+    {
+      q: `${name}重陽敬老禮金最晚什麼時候可以領？`,
+      a: dates.length
+        ? `最晚可領到 ${dates[dates.length - 1]}（含補發；各項目期限略有不同，請看各項目的「申請期限」）。`
+        : `官方頁面沒有寫明確的截止日，待查證。${nul(first.deadline) ? `官方原文：${nul(first.deadline)}` : ''}`,
+      source_url: c.source_url,
+    },
   ];
+  if (lastAge && lastAge[0] >= 99) {
+    faq.push({
+      q: `${name} ${lastAge[0]} 歲以上的長者怎麼領重陽敬老禮金？`,
+      a: `${lastItem.amount_twd === null ? '金額待查證' : twd(lastItem.amount_twd)}。${nul(lastItem.method) ?? '領取方式待查證。'}`,
+      source_url: c.source_url,
+    });
+  }
+  for (const f of faq) f.a = f.a.replace(/。。/g, '。').replace(/([^。！？])$/, '$1。');
 
   const data: Record<string, unknown> = {
     status: 'verified',

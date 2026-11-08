@@ -1,13 +1,14 @@
 import { useState } from 'preact/hooks';
 import { calcItem, formatTwd } from '../lib/calc';
 import type { Rules } from '../lib/schema';
+import { deadlineState } from '../lib/deadline';
 
 interface Row {
   slug: string;
   name: string;
   verifiedAt: string | null;
   verified: boolean;
-  items: { name: string; rules: Rules | null }[];
+  items: { name: string; rules: Rules | null; deadline_date: string | null }[];
 }
 
 export default function ChongyangCalculator({ rows }: { rows: Row[] }) {
@@ -44,6 +45,7 @@ export default function ChongyangCalculator({ rows }: { rows: Row[] }) {
                 <li class="rounded border border-teal-200 p-3">
                   <span class="font-medium">{it.name}：</span>
                   {r.status === 'amount' && <strong class="text-brand-dark">{formatTwd(r.amount)}</strong>}
+                  {r.status === 'amount' && deadlineState(it.deadline_date) === 'closed' && <span class="ml-2 inline-block rounded-full bg-rose-100 px-2 py-0.5 text-xs font-medium text-rose-800">已截止</span>}
                   {r.status === 'not_eligible' && <span>{n} 歲不符此項年齡條件</span>}
                   {r.status === 'unknown' && <strong class="text-rose-700">待查證，或需另符合其他條件，請見說明頁</strong>}
                 </li>

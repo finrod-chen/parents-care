@@ -1,5 +1,6 @@
 ---
 import type { Item } from '../lib/schema';
+import DeadlineBadge from './DeadlineBadge.astro';
 const { item } = Astro.props as { item: Item };
 const rows: [string, string | null][] = [
   ['資格', item.eligibility],
@@ -14,7 +15,10 @@ const rows: [string, string | null][] = [
     {rows.map(([k, v]) => (
       <>
         <dt class="text-slate-600">{k}</dt>
-        <dd>{v ?? <span class="text-rose-700">待查證</span>}</dd>
+        <dd>
+          {k === '申請期限' && <div class="mb-1"><DeadlineBadge date={item.deadline_date} /></div>}
+          {v ?? <span class="text-rose-700">待查證</span>}
+        </dd>
       </>
     ))}
   </dl>

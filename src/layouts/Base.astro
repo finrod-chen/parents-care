@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { SITE_NAME } from '../lib/site';
 import { absUrl, ldString } from '../lib/seo';
 import { CREDIT } from '../lib/illustrations';
+import { BADGE_CLASS } from '../lib/deadline';
 
 interface Props {
   title: string; // 完整 <title>
@@ -46,6 +47,22 @@ const canonical = absUrl(path);
     <main class="mx-auto w-full max-w-4xl flex-1 px-4 py-6">
       <slot />
     </main>
+    <script is:inline define:vars={{ CLASSES: BADGE_CLASS }}>
+      // 依台灣時間重算「已截止」標示，避免靜態頁面因太久沒重新 build 而過期
+      (function () {
+        var t = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+        document.querySelectorAll('[data-deadline]').forEach(function (el) {
+          var d = el.getAttribute('data-deadline');
+          var closed = d < t;
+          el.textContent = closed ? '已截止' : '領取中・至 ' + d + ' 止';
+          el.className = closed ? CLASSES.closed : CLASSES.open;
+        });
+        document.querySelectorAll('[data-closed-banner]').forEach(function (el) {
+          var ds = (el.getAttribute('data-closed-banner') || '').split(',').filter(Boolean);
+          el.hidden = !(ds.length && ds.every(function (d) { return d < t; }));
+        });
+      })();
+    </script>
     <footer class="border-t border-teal-200 bg-teal-50 text-sm text-slate-600">
       <div class="mx-auto max-w-4xl px-4 py-6 space-y-1">
         <p>本站整理自各主管機關公開資訊，僅供參考；實際資格與金額以主管機關最新公告為準。</p>
