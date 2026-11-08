@@ -1,0 +1,36 @@
+---
+import type { Entry } from '../lib/data';
+import { countyName } from '../lib/counties';
+const { entries } = Astro.props as { entries: Entry[] };
+const first = (e: Entry) => (e.status === 'verified' ? e.items : []);
+---
+<div class="overflow-x-auto">
+  <table class="w-full min-w-[34rem] border-collapse text-left text-sm">
+    <caption class="sr-only">各縣市比較表</caption>
+    <thead>
+      <tr class="bg-slate-100">
+        <th scope="col" class="p-2">縣市</th>
+        <th scope="col" class="p-2">項目</th>
+        <th scope="col" class="p-2">金額</th>
+        <th scope="col" class="p-2">資格</th>
+        <th scope="col" class="p-2">查證日</th>
+      </tr>
+    </thead>
+    <tbody>
+      {entries.map((e) => {
+        const items = first(e);
+        return (
+          <tr class="border-b border-slate-200 align-top">
+            <th scope="row" class="p-2 font-medium">
+              {e.status === 'verified' ? <a class="text-brand-dark underline" href={`/${e.topic}/${e.county}/`}>{countyName(e.county)}</a> : countyName(e.county)}
+            </th>
+            <td class="p-2">{items.length ? items.map((i) => <div>{i.name}</div>) : <span class="text-amber-700">待查證</span>}</td>
+            <td class="p-2">{items.length ? items.map((i) => <div>{i.amount ?? <span class="text-amber-700">待查證</span>}</div>) : <span class="text-amber-700">待查證</span>}</td>
+            <td class="p-2">{items.length ? items.map((i) => <div>{i.eligibility ?? <span class="text-amber-700">待查證</span>}</div>) : <span class="text-amber-700">待查證</span>}</td>
+            <td class="p-2 whitespace-nowrap">{e.verified_at ?? '待查證'}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>

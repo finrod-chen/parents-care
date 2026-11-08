@@ -1,0 +1,17 @@
+---
+import type { Faq } from '../lib/schema';
+const { faq } = Astro.props as { faq: Faq[] };
+---
+{faq.length > 0 && (
+  <section aria-labelledby="faq-h" class="mt-8">
+    <h2 id="faq-h" class="text-xl font-bold mb-3">常見問題</h2>
+    <div class="space-y-3">
+      {faq.map((f) => (
+        <div class="rounded-lg border border-slate-200 p-4">
+          <h3 class="font-bold">{f.q}</h3>
+          <p class="mt-1">{f.a}{f.source_url && <> <a class="text-brand-dark underline" href={f.source_url} rel="noopener">出處</a></>}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

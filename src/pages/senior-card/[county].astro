@@ -1,0 +1,10 @@
+---
+import TopicCountyPage from '../../components/TopicCountyPage.astro';
+import { byTopic } from '../../lib/data';
+
+export function getStaticPaths() {
+  return byTopic('senior-card').map((entry) => ({ params: { county: entry.county }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<TopicCountyPage entry={entry} />

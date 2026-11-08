@@ -1,0 +1,14 @@
+---
+import type { Crumb } from '../lib/seo';
+const { crumbs } = Astro.props as { crumbs: Crumb[] };
+---
+<nav aria-label="麵包屑" class="mb-3 text-sm text-slate-600">
+  <ol class="flex flex-wrap gap-1">
+    {crumbs.map((c, i) => (
+      <li class="flex gap-1">
+        {i < crumbs.length - 1 ? <a class="underline underline-offset-2" href={c.path}>{c.name}</a> : <span aria-current="page">{c.name}</span>}
+        {i < crumbs.length - 1 && <span aria-hidden="true">›</span>}
+      </li>
+    ))}
+  </ol>
+</nav>

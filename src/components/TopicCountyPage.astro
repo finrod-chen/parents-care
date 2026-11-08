@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from './Breadcrumb.astro';
+import Faq from './Faq.astro';
+import ItemCard from './ItemCard.astro';
+import VerifiedBadge from './VerifiedBadge.astro';
+import type { Entry } from '../lib/data';
+import { countyName } from '../lib/counties';
+import { topicOf } from '../lib/topics';
+import { breadcrumbLd, faqLd, withSite, type Crumb } from '../lib/seo';
+
+const { entry } = Astro.props as { entry: Entry };
+const topic = topicOf(entry.topic);
+const name = countyName(entry.county);
+const path = `/${entry.topic}/${entry.county}/`;
+const verified = entry.status === 'verified';
+
+const h1 = `${name}${topic.title}`;
+const title = verified ? withSite(`${h1}${entry.year}：金額、資格與申請方式`) : withSite(`${h1}（資料整理中）`);
+const description = verified
+  ? `${entry.summary}（資料最後查證：${entry.verified_at}）`
+  : `${h1}資料整理中，尚未完成官方來源查證。`;
+
+const crumbs: Crumb[] = [
+  { name: '首頁', path: '/' },
+  { name: topic.title, path: `/${entry.topic}/` },
+  { name: name, path },
+];
+const jsonLd = [breadcrumbLd(crumbs), ...(verified ? [faqLd(entry.faq)] : [])];
+const sources = verified ? [{ label: `${name}官方公告`, url: entry.source_url }] : [];
+---
+<Base title={title} description={description} path={path} noindex={!verified} jsonLd={jsonLd}>
+  <Breadcrumb crumbs={crumbs} />
+  <h1 class="text-2xl font-bold">{h1}</h1>
+
+  {verified ? (
+    <>
+      <p class="mt-3 text-lg">{entry.summary}</p>
+      <section aria-labelledby="items-h" class="mt-6">
+        <h2 id="items-h" class="text-xl font-bold mb-3">資格、金額與申請方式</h2>
+        <div class="space-y-3">{entry.items.map((it) => <ItemCard item={it} />)}</div>
+      </section>
+      {entry.notes && <p class="mt-4 text-sm text-slate-600">備註：{entry.notes}</p>}
+      <Faq faq={entry.faq} />
+    </>
+  ) : (
+    <p class="mt-3 text-lg">{name}的{topic.title}資料整理中，尚未完成官方來源查證，目前不提供金額。<span class="text-amber-700">待查證</span></p>
+  )}
+
+  <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} />
+  <p class="mt-6 text-sm"><a class="text-brand-dark underline" href={`/${entry.topic}/`}>查看全部縣市比較</a></p>
+</Base>

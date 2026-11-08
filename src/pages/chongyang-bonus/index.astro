@@ -1,0 +1,22 @@
+---
+import TopicOverviewPage from '../../components/TopicOverviewPage.astro';
+import ChongyangCalculator from '../../islands/ChongyangCalculator';
+import { byTopic } from '../../lib/data';
+import { countyName } from '../../lib/counties';
+
+// 只把試算需要的最小資料送到瀏覽器
+const rows = byTopic('chongyang-bonus').map((e) => ({
+  slug: e.county,
+  name: countyName(e.county),
+  verifiedAt: e.verified_at,
+  verified: e.status === 'verified',
+  items: e.items.map((i) => ({ name: i.name, rules: i.rules ?? null })),
+}));
+---
+<TopicOverviewPage topic="chongyang-bonus" calculator>
+  <section aria-labelledby="calc-h" class="mt-6 rounded-lg border border-brand p-4">
+    <h2 id="calc-h" class="text-xl font-bold">輸入縣市與年齡，試算可領金額</h2>
+    <ChongyangCalculator client:visible rows={rows} />
+    <noscript><p class="mt-2 text-sm">試算需要啟用 JavaScript；也可直接查看下方比較表。</p></noscript>
+  </section>
+</TopicOverviewPage>

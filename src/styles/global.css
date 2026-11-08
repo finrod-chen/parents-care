@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --color-brand: #0f766e;
+  --color-brand-dark: #115e59;
+}
+
+html { font-size: 17px; }
+body { @apply bg-white text-slate-900 antialiased; }
