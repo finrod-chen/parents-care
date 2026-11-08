@@ -1,7 +1,9 @@
 import { loadAll } from '../src/lib/data';
+import { loadNational } from '../src/lib/national';
 
 try {
   const entries = loadAll();
+  loadNational();
   const v = entries.filter((e) => e.status === 'verified').length;
   console.log(`✔ 資料驗證通過：${entries.length} 檔（已查證 ${v}、待補 ${entries.length - v}）`);
 } catch (e) {

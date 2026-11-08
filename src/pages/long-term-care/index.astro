@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Faq from '../../components/Faq.astro';
+import VerifiedBadge from '../../components/VerifiedBadge.astro';
+import Illust from '../../components/Illust.astro';
+import LtcCalculator from '../../islands/LtcCalculator';
+import { national } from '../../lib/national';
+import { breadcrumbLd, faqLd, webAppLd, withSite, type Crumb } from '../../lib/seo';
+import { twd } from '../../lib/ltc';
+
+const d = national().ltc;
+const path = '/long-term-care/';
+const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: '長照給付與外籍看護試算', path }];
+const lv = d.care_levels;
+const first = lv[0]!, last = lv[lv.length - 1]!;
+const answer = `長照服務照顧及專業服務每月額度依失能等級為 ${twd(first.monthly_quota_twd)}（第 ${first.level} 級）到 ${twd(last.monthly_quota_twd)}（第 ${last.level} 級）；聘僱外籍看護者只給付其中的 ${d.foreign_caregiver.quota_ratio_pct}%，家庭看護工的就業安定費一般每月 ${twd(d.employment_stability_fee.home_caregiver_monthly_twd)}。`;
+const title = withSite('長照給付額度與外籍看護費用試算');
+const description = `${answer}輸入失能等級與身分別即可試算，資料附官方來源，最後查證 ${d.verified_at}。`;
+const faq = d.faq;
+const sources = d.sources;
+---
+<Base title={title} description={description} path={path} jsonLd={[breadcrumbLd(crumbs), faqLd(faq), webAppLd({ name: '長照給付與外籍看護費用試算', path, description: '輸入長照需要等級與身分別，試算長照額度、部分負擔，並與聘僱外籍看護的費用比較。' })]}>
+  <Breadcrumb crumbs={crumbs} />
+  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-warm p-6 sm:flex-row sm:justify-between">
+    <div>
+      <h1 class="text-2xl font-bold">長照給付額度與外籍看護費用試算</h1>
+      <p class="mt-3 text-lg">{answer}</p>
+    </div>
+    <Illust id="worried-daughter" width={130} priority />
+  </section>
+
+  <section aria-labelledby="calc-h" class="mt-6 rounded-2xl border-2 border-brand bg-white p-4">
+    <h2 id="calc-h" class="text-xl font-bold">試算</h2>
+    <LtcCalculator client:visible data={{ care_levels: d.care_levels, copay_classes: d.copay_classes, foreign_caregiver: d.foreign_caregiver, employment_stability_fee: d.employment_stability_fee }} />
+    <noscript><p class="mt-2 text-sm">試算需要啟用 JavaScript；也可直接查看下方的額度表與部分負擔比率。</p></noscript>
+  </section>
+
+  <section aria-labelledby="quota-h" class="mt-8">
+    <h2 id="quota-h" class="text-xl font-bold mb-3">各等級每月長照額度（照顧及專業服務）</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse text-left text-sm">
+        <caption class="sr-only">長照需要等級與每月額度</caption>
+        <thead><tr class="bg-teal-100"><th scope="col" class="p-2">長照需要等級</th><th scope="col" class="p-2">每月額度</th><th scope="col" class="p-2">聘外籍看護者（{d.foreign_caregiver.quota_ratio_pct}%）</th></tr></thead>
+        <tbody>
+          {lv.map((l) => (
+            <tr class="border-b border-teal-100"><th scope="row" class="p-2 font-medium">第 {l.level} 級</th><td class="p-2">{twd(l.monthly_quota_twd)}</td><td class="p-2">{twd(Math.floor((l.monthly_quota_twd * d.foreign_caregiver.quota_ratio_pct) / 100))}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-2 text-sm text-slate-600">{d.foreign_caregiver.rule}</p>
+  </section>
+
+  <section aria-labelledby="copay-h" class="mt-8">
+    <h2 id="copay-h" class="text-xl font-bold mb-3">部分負擔比率</h2>
+    <ul class="space-y-2">
+      {d.copay_classes.map((c) => (
+        <li class="rounded-2xl border border-teal-200 bg-white p-3"><strong>{c.name}：{c.pct}%</strong><br /><span class="text-sm">{c.description}</span></li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="fee-h" class="mt-8">
+    <h2 id="fee-h" class="text-xl font-bold mb-3">外籍家庭看護的就業安定費</h2>
+    <p>一般每月 {twd(d.employment_stability_fee.home_caregiver_monthly_twd)}（每日 {d.employment_stability_fee.home_caregiver_daily_twd} 元）。符合下列身分者免繳：</p>
+    <ul class="mt-2 list-disc space-y-1 pl-5">{d.employment_stability_fee.exempt_rules.map((r) => <li>{r}</li>)}</ul>
+  </section>
+
+  {d.public_notes && (
+    <section aria-labelledby="notes-h" class="mt-8 rounded-2xl border border-teal-200 bg-teal-50 p-4">
+      <h2 id="notes-h" class="text-lg font-bold">先看這幾點</h2>
+      <ul class="mt-2 list-disc space-y-1 pl-5">{d.public_notes.map((n) => <li>{n}</li>)}</ul>
+    </section>
+  )}
+
+  <Faq faq={faq} />
+  <VerifiedBadge verifiedAt={d.verified_at} sources={sources.map((s) => ({ label: s.label, url: s.url }))} />
+</Base>
