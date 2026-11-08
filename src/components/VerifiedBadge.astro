@@ -2,7 +2,7 @@
 interface Props { verifiedAt: string | null; sources: { label: string; url: string }[] }
 const { verifiedAt, sources } = Astro.props;
 ---
-<section aria-label="資料來源與查證日期" class="mt-8 rounded-lg bg-slate-50 p-4 text-sm">
+<section aria-label="資料來源與查證日期" class="mt-8 rounded-2xl bg-orange-50 p-4 text-sm">
   <p><strong>資料最後查證：{verifiedAt ?? '待查證'}</strong></p>
   <p class="mt-1">
     官方來源：

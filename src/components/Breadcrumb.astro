@@ -2,7 +2,7 @@
 import type { Crumb } from '../lib/seo';
 const { crumbs } = Astro.props as { crumbs: Crumb[] };
 ---
-<nav aria-label="麵包屑" class="mb-3 text-sm text-slate-600">
+<nav aria-label="麵包屑" class="mb-3 text-sm text-stone-600">
   <ol class="flex flex-wrap gap-1">
     {crumbs.map((c, i) => (
       <li class="flex gap-1">

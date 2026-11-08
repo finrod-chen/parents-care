@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import { ILLUSTRATIONS, type IllustId } from '../lib/illustrations';
+
+interface Props { id: IllustId; width?: number; priority?: boolean; class?: string }
+const { id, width = 200, priority = false, class: cls = '' } = Astro.props;
+const { img, alt } = ILLUSTRATIONS[id];
+---
+<Image
+  src={img}
+  alt={alt}
+  width={width}
+  format="webp"
+  quality={85}
+  loading={priority ? 'eager' : 'lazy'}
+  fetchpriority={priority ? 'high' : 'auto'}
+  decoding="async"
+  class={`h-auto max-w-full ${cls}`}
+/>

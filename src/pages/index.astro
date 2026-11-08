@@ -6,6 +6,7 @@ import { COUNTIES } from '../lib/counties';
 import { all } from '../lib/data';
 import { SITE_NAME } from '../lib/site';
 import { breadcrumbLd } from '../lib/seo';
+import Illust from '../components/Illust.astro';
 
 const availability: Record<string, Record<string, 'verified' | 'todo'>> = {};
 for (const e of all()) (availability[e.topic] ??= {})[e.county] = e.status;
@@ -16,11 +17,19 @@ for (const e of all()) (availability[e.topic] ??= {})[e.county] = e.status;
   path="/"
   jsonLd={[breadcrumbLd([{ name: '首頁', path: '/' }])]}
 >
-  <h1 class="text-2xl font-bold">爸媽可以領什麼福利？照顧要花多少？</h1>
-  <p class="mt-3 text-lg">輸入爸媽幾歲、住哪個縣市，就能找到對應的補助項目；每筆都附官方來源與查證日期。</p>
+  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-warm p-6 sm:flex-row sm:justify-between">
+    <div>
+      <h1 class="text-2xl font-bold sm:text-3xl">爸媽可以領什麼福利？照顧要花多少？</h1>
+      <p class="mt-3 text-lg">輸入爸媽幾歲、住哪個縣市，就能找到對應的補助項目；每筆都附官方來源與查證日期。</p>
+    </div>
+    <Illust id="grandparents-smile" width={240} priority />
+  </section>
 
-  <section aria-labelledby="find-h" class="mt-6 rounded-lg border border-brand p-4">
-    <h2 id="find-h" class="text-xl font-bold">依年齡與縣市查詢</h2>
+  <section aria-labelledby="find-h" class="mt-6 rounded-2xl border-2 border-brand bg-white p-4">
+    <div class="flex items-center gap-3">
+      <Illust id="worried-daughter" width={88} />
+      <h2 id="find-h" class="text-xl font-bold">依年齡與縣市查詢</h2>
+    </div>
     <div class="mt-3"><HomeFinder client:load topics={TOPICS.map((t) => ({ slug: t.slug, title: t.title }))} counties={COUNTIES.map((c) => ({ slug: c.slug, name: c.name }))} availability={availability} /></div>
   </section>
 
@@ -28,7 +37,7 @@ for (const e of all()) (availability[e.topic] ??= {})[e.county] = e.status;
     <h2 id="topics-h" class="text-xl font-bold mb-3">福利項目</h2>
     <ul class="grid gap-3 sm:grid-cols-3">
       {TOPICS.map((t) => (
-        <li class="rounded-lg border border-slate-200 p-4">
+        <li class="rounded-2xl border border-orange-200 p-4">
           <a class="font-bold text-brand-dark underline" href={`/${t.slug}/`}>{t.title}</a>
           <p class="mt-1 text-sm">{t.intro}</p>
         </li>

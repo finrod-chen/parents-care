@@ -8,7 +8,7 @@ const first = (e: Entry) => (e.status === 'verified' ? e.items : []);
   <table class="w-full min-w-[34rem] border-collapse text-left text-sm">
     <caption class="sr-only">各縣市比較表</caption>
     <thead>
-      <tr class="bg-slate-100">
+      <tr class="bg-orange-100">
         <th scope="col" class="p-2">縣市</th>
         <th scope="col" class="p-2">項目</th>
         <th scope="col" class="p-2">金額</th>
@@ -20,7 +20,7 @@ const first = (e: Entry) => (e.status === 'verified' ? e.items : []);
       {entries.map((e) => {
         const items = first(e);
         return (
-          <tr class="border-b border-slate-200 align-top">
+          <tr class="border-b border-orange-200 align-top">
             <th scope="row" class="p-2 font-medium">
               {e.status === 'verified' ? <a class="text-brand-dark underline" href={`/${e.topic}/${e.county}/`}>{countyName(e.county)}</a> : countyName(e.county)}
             </th>

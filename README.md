@@ -84,6 +84,16 @@ tests/
 
 注意：`verified_at` 超過 365 天，任何一次 build 都會失敗（包含只改文案）。這是刻意的，避免上線過期資料；請在到期前完成年度更新。
 
+## 插圖素材（いらすとや）
+
+溫馨風插圖取自 [いらすとや](https://www.irasutoya.com/)（作者：みふねたかし）。
+規約（https://www.irasutoya.com/p/terms.html）：個人、法人、商用皆可免費使用，**但商用設計使用 21 點以上素材（重複算 1 點）需有償授權**；著作權未放棄；不得把素材當主體再散布或販售。
+
+- 本站有廣告屬商用，所以全站不重複插圖上限 **20 張**，目前用 8 張。`tests/illustrations.test.ts` 會在超過時讓測試失敗。
+- 原圖放 `src/assets/illust/`，登記在 `src/lib/illustrations.ts`，用 `<Illust id="…" />` 呈現（Astro 自動轉 webp、帶寬高避免版面跳動）。
+- 每頁頁尾標示「插圖：いらすとや」並連回原站。
+- 新增插圖：下載到 `src/assets/illust/` → 登記 alt → `npm test`。
+
 ## SEO 檢查清單（已內建）
 
 - 每頁獨立 `<title>`、meta description、canonical、唯一 `<h1>`。

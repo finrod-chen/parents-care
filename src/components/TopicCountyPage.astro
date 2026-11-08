@@ -8,6 +8,8 @@ import type { Entry } from '../lib/data';
 import { countyName } from '../lib/counties';
 import { topicOf } from '../lib/topics';
 import { breadcrumbLd, faqLd, withSite, type Crumb } from '../lib/seo';
+import Illust from './Illust.astro';
+import { TOPIC_ILLUST } from '../lib/illustrations';
 
 const { entry } = Astro.props as { entry: Entry };
 const topic = topicOf(entry.topic);
@@ -31,16 +33,21 @@ const sources = verified ? [{ label: `${name}官方公告`, url: entry.source_ur
 ---
 <Base title={title} description={description} path={path} noindex={!verified} jsonLd={jsonLd}>
   <Breadcrumb crumbs={crumbs} />
-  <h1 class="text-2xl font-bold">{h1}</h1>
+  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-warm p-6 sm:flex-row sm:justify-between">
+    <div>
+      <h1 class="text-2xl font-bold">{h1}</h1>
+      {verified && <p class="mt-3 text-lg">{entry.summary}</p>}
+    </div>
+    <Illust id={verified ? TOPIC_ILLUST[entry.topic]! : 'grandma-smile'} width={150} priority />
+  </section>
 
   {verified ? (
     <>
-      <p class="mt-3 text-lg">{entry.summary}</p>
       <section aria-labelledby="items-h" class="mt-6">
         <h2 id="items-h" class="text-xl font-bold mb-3">資格、金額與申請方式</h2>
         <div class="space-y-3">{entry.items.map((it) => <ItemCard item={it} />)}</div>
       </section>
-      {entry.notes && <p class="mt-4 text-sm text-slate-600">備註：{entry.notes}</p>}
+      {entry.notes && <p class="mt-4 text-sm text-stone-600">備註：{entry.notes}</p>}
       <Faq faq={entry.faq} />
     </>
   ) : (
