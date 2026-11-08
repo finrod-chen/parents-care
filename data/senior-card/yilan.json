@@ -1,0 +1,45 @@
+{
+  "status": "verified",
+  "county": "yilan",
+  "year": 2026,
+  "summary": "宜蘭縣 65 歲以上長者（原住民 55 歲）的敬老卡非點數制：縣內指定客運免費，捷運與國道客運半價（須先儲值）。",
+  "items": [
+    {
+      "name": "宜蘭縣社會福利智慧卡－敬老卡",
+      "eligibility": "設籍宜蘭縣65歲以上，或55歲以上原住民。",
+      "amount": "非點數制；宜蘭縣內指定客運免費、不限次；捷運及國道客運半價，須先儲值。",
+      "how_to_apply": "縣府社會處老人及身障福利科或戶籍地公所；亦有線上申請。",
+      "deadline": null,
+      "restrictions": "免費搭乘限公告縣內客運；縣外捷運／國道客運半價且須儲值。",
+      "source_url": "https://www.gov.tw/News_Content_2_504071"
+    }
+  ],
+  "source_url": "https://www.gov.tw/News_Content_2_504071",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：我的E政府：宜蘭縣社福智慧卡申辦（未標示）；宜蘭縣政府社會處：智慧卡（未辨識）",
+  "faq": [
+    {
+      "q": "宜蘭縣敬老卡有什麼優惠？",
+      "a": "宜蘭縣 65 歲以上長者（原住民 55 歲）的敬老卡非點數制：縣內指定客運免費，捷運與國道客運半價（須先儲值）。",
+      "source_url": "https://www.gov.tw/News_Content_2_504071"
+    },
+    {
+      "q": "誰可以辦宜蘭縣的敬老卡？",
+      "a": "設籍宜蘭縣65歲以上，或55歲以上原住民。",
+      "source_url": "https://www.gov.tw/News_Content_2_504071"
+    },
+    {
+      "q": "宜蘭縣敬老卡怎麼申請？",
+      "a": "縣府社會處老人及身障福利科或戶籍地公所；亦有線上申請。",
+      "source_url": "https://www.gov.tw/News_Content_2_504071"
+    },
+    {
+      "q": "宜蘭縣敬老卡有什麼限制？",
+      "a": "免費搭乘限公告縣內客運；縣外捷運／國道客運半價且須儲值。",
+      "source_url": "https://www.gov.tw/News_Content_2_504071"
+    }
+  ],
+  "additional_sources": [
+    "https://sntroot.e-land.gov.tw/News_Content.aspx?n=11277&s=133425"
+  ]
+}

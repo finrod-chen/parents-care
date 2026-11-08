@@ -1,12 +1,15 @@
 ---
 import type { Item } from '../lib/schema';
 import DeadlineBadge from './DeadlineBadge.astro';
-const { item } = Astro.props as { item: Item };
+import { topicOf, type TopicSlug } from '../lib/topics';
+const { item, topic } = Astro.props as { item: Item; topic: TopicSlug };
+const t = topicOf(topic);
 const rows: [string, string | null][] = [
   ['資格', item.eligibility],
-  ['金額', item.amount],
+  [t.amountLabel, item.amount],
   ['申請方式', item.how_to_apply],
-  ['申請期限', item.deadline],
+  ...(t.showDeadline ? ([['申請期限', item.deadline]] as [string, string | null][]) : []),
+  ...(item.restrictions ? ([['限制與注意', item.restrictions]] as [string, string | null][]) : []),
 ];
 ---
 <article class="rounded-2xl border border-teal-200 p-4">

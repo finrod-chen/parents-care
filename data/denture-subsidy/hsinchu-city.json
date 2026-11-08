@@ -1,9 +1,46 @@
 {
-  "status": "todo",
+  "status": "verified",
   "county": "hsinchu-city",
   "year": 2026,
-  "items": [],
-  "source_url": null,
-  "verified_at": null,
-  "notes": "資料整理中，尚未查證。"
+  "summary": "新竹市 115 年度有長者免費裝置全口活動假牙計畫：裝置費 4 萬元（依核定項目最高約 6 萬元），名額有限，須事前向衛生局申請。",
+  "items": [
+    {
+      "name": "115年度長者免費裝置全口活動假牙（高齡友善固齒整合照護計畫）",
+      "eligibility": "2026-01-01前設籍新竹市；65歲以上且符合市府安老津貼／資產居住條件，或55至未滿65歲原住民符合國民年金給付標準；上下顎自然牙合計6顆以下，牙醫評估並經衛生局核准。",
+      "amount": "全口活動假牙裝置費40,000元；評估費每案1,000元；金屬骨架每床5,000元；柱台齒配件每顎最高5,000元；依核定項目，市府宣傳最高6萬元。",
+      "how_to_apply": "裝置前向衛生局申請，資格審查後至特約牙科檢查；診所送術前計畫，核准後才製作，已先裝置不補助。",
+      "deadline": null,
+      "deadline_date": null,
+      "restrictions": "每人終身一次；曾領本市中低收入老人假牙補助者排除；115年度名額有限。",
+      "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
+    }
+  ],
+  "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：新竹市衛生局：115年度計畫QA（2026-02-24）；新竹市政府：全口假牙最高補助6萬元（2026-02-24）",
+  "faq": [
+    {
+      "q": "新竹市老人假牙補助可以補助多少？",
+      "a": "新竹市 115 年度有長者免費裝置全口活動假牙計畫：裝置費 4 萬元（依核定項目最高約 6 萬元），名額有限，須事前向衛生局申請。",
+      "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
+    },
+    {
+      "q": "誰可以申請新竹市的老人假牙補助？",
+      "a": "2026-01-01前設籍新竹市；65歲以上且符合市府安老津貼／資產居住條件，或55至未滿65歲原住民符合國民年金給付標準；上下顎自然牙合計6顆以下，牙醫評估並經衛生局核准。",
+      "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
+    },
+    {
+      "q": "新竹市老人假牙補助怎麼申請？",
+      "a": "裝置前向衛生局申請，資格審查後至特約牙科檢查；診所送術前計畫，核准後才製作，已先裝置不補助。",
+      "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
+    },
+    {
+      "q": "新竹市老人假牙補助有什麼限制？",
+      "a": "每人終身一次；曾領本市中低收入老人假牙補助者排除；115年度名額有限。",
+      "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
+    }
+  ],
+  "additional_sources": [
+    "https://www.hccg.gov.tw/hccg/app/data/view?module=news&id=30122&serno=23769108-c030-4bbf-b302-764818ab420b"
+  ]
 }

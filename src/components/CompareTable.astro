@@ -10,7 +10,7 @@ const { entries } = Astro.props as { entries: Entry[] };
     <thead>
       <tr class="bg-teal-100">
         <th scope="col" class="p-2">縣市</th>
-        <th scope="col" class="p-2">項目與金額</th>
+        <th scope="col" class="p-2">{entries[0]?.topic === 'chongyang-bonus' ? '項目與金額' : '重點'}</th>
         <th scope="col" class="p-2">查證日</th>
       </tr>
     </thead>
@@ -21,7 +21,9 @@ const { entries } = Astro.props as { entries: Entry[] };
             {e.status === 'verified' ? <a class="text-brand-dark underline" href={`/${e.topic}/${e.county}/`}>{countyName(e.county)}</a> : countyName(e.county)}
           </th>
           <td class="p-2">
-            {e.status === 'verified'
+            {e.status === 'verified' && e.topic !== 'chongyang-bonus'
+              ? e.summary
+              : e.status === 'verified'
               ? e.items.map((i) => <div>{i.name}：<strong>{i.amount ?? <span class="text-rose-700">待查證</span>}</strong> <DeadlineBadge date={i.deadline_date} /></div>)
               : <span class="text-rose-700">待查證</span>}
           </td>

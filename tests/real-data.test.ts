@@ -30,3 +30,25 @@ describe('真實資料一致性', () => {
     }
   });
 });
+
+describe('假牙與敬老卡資料', () => {
+  const others = verified.filter((e) => e.topic !== 'chongyang-bonus');
+  it('已查證頁都有摘要與官方來源', () => {
+    expect(others.length).toBeGreaterThan(0);
+    for (const e of others) {
+      if (e.status !== 'verified') continue;
+      expect(e.summary.length, `${e.topic}/${e.county}`).toBeGreaterThan(10);
+      expect(e.source_url).toMatch(/^https:\/\//);
+    }
+  });
+  it('有 deadline_date 的項目一定附期限說明', () => {
+    for (const e of others) {
+      if (e.status !== 'verified') continue;
+      for (const it of e.items) if (it.deadline_date) expect(it.deadline, `${e.county} ${it.name}`).not.toBeNull();
+    }
+  });
+  it('連江縣假牙不含誤植的臺東縣方案', () => {
+    const l = others.find((e) => e.topic === 'denture-subsidy' && e.county === 'lienchiang');
+    expect(l && l.status === 'verified' && l.items.length).toBe(1);
+  });
+});

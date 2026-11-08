@@ -1,0 +1,47 @@
+{
+  "status": "verified",
+  "county": "hsinchu-city",
+  "year": 2026,
+  "summary": "新竹市 65 歲以上長者（原住民 55 歲）2026 年 10 月起每月 1,200 點，月底歸零，用於指定公車、計程車、臺鐵等。",
+  "items": [
+    {
+      "name": "新竹市敬老卡／敬老優待",
+      "eligibility": "設籍且實際居住新竹市65歲以上；55歲以上原住民；另含居留地址在本市之外籍永久居留長者。",
+      "amount": "2026年10月起每月1,200點，月底未用不累積；指定市區公車、計程車（每趟100點）、臺鐵（起訖站在新竹市或縣）、部分客運、運動設施、YouBike 2.0E及指定農會／藥局等；部分商家每月有個別上限。",
+      "how_to_apply": "生日當月任一工作日至戶籍區公所；身分證／永久居留證、近一年2吋照片、印章；原住民附證明。",
+      "deadline": null,
+      "restrictions": "限公告指定服務、路線、店家及扣點方式；月點數歸零。",
+      "source_url": "https://society.hccg.gov.tw/ch/home.jsp?id=123&parentpath=0,3,25&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201603290054&t=SocietyOnes&mserno=201603090029"
+    }
+  ],
+  "source_url": "https://society.hccg.gov.tw/ch/home.jsp?id=123&parentpath=0,3,25&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201603290054&t=SocietyOnes&mserno=201603090029",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：新竹市社會處：敬老優待（2026-10-14）",
+  "faq": [
+    {
+      "q": "新竹市敬老卡有什麼優惠？",
+      "a": "新竹市 65 歲以上長者（原住民 55 歲）2026 年 10 月起每月 1,200 點，月底歸零，用於指定公車、計程車、臺鐵等。",
+      "source_url": "https://society.hccg.gov.tw/ch/home.jsp?id=123&parentpath=0,3,25&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201603290054&t=SocietyOnes&mserno=201603090029"
+    },
+    {
+      "q": "誰可以辦新竹市的敬老卡？",
+      "a": "設籍且實際居住新竹市65歲以上；55歲以上原住民；另含居留地址在本市之外籍永久居留長者。",
+      "source_url": "https://society.hccg.gov.tw/ch/home.jsp?id=123&parentpath=0,3,25&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201603290054&t=SocietyOnes&mserno=201603090029"
+    },
+    {
+      "q": "新竹市敬老卡怎麼申請？",
+      "a": "生日當月任一工作日至戶籍區公所；身分證／永久居留證、近一年2吋照片、印章；原住民附證明。",
+      "source_url": "https://society.hccg.gov.tw/ch/home.jsp?id=123&parentpath=0,3,25&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201603290054&t=SocietyOnes&mserno=201603090029"
+    },
+    {
+      "q": "新竹市敬老卡有什麼限制？",
+      "a": "限公告指定服務、路線、店家及扣點方式；月點數歸零。",
+      "source_url": "https://society.hccg.gov.tw/ch/home.jsp?id=123&parentpath=0,3,25&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201603290054&t=SocietyOnes&mserno=201603090029"
+    },
+    {
+      "q": "新竹市敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://society.hccg.gov.tw/ch/home.jsp?id=123&parentpath=0,3,25&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201603290054&t=SocietyOnes&mserno=201603090029"
+    }
+  ]
+}

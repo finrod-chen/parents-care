@@ -27,6 +27,8 @@ export const ItemSchema = z
     amount: nullableText,
     how_to_apply: nullableText,
     deadline: nullableText,
+    /** 限制與注意事項（重複申請限制、名額、資料較舊等）；沒有就省略 */
+    restrictions: nullableText.optional(),
     /** 最後可領／可申請日（含補發，ISO 日期）。官方文字沒有明確日期就填 null，不推算 */
     deadline_date: isoDate.nullable().optional(),
     rules: RulesSchema.optional(),

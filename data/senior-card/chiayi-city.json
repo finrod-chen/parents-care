@@ -1,0 +1,51 @@
+{
+  "status": "verified",
+  "county": "chiayi-city",
+  "year": 2026,
+  "summary": "嘉義市 65 歲以上長者每月 1,200 點，月底歸零，用於公車、客運、臺鐵、合作計程車等。",
+  "items": [
+    {
+      "name": "嘉義市敬老愛心乘車卡／敬老、愛心悠遊卡",
+      "eligibility": "設籍嘉義市65歲以上；愛心卡另適用持身心障礙證明者。",
+      "amount": "每月1,200點，月底未用歸零；嘉義市／縣公車及公告客運；臺鐵每趟最高50點（2026-05-15起）；運動中心指定時段扣點；合作計程車單趟最高50點。",
+      "how_to_apply": "市府或戶籍區公所申辦。",
+      "deadline": null,
+      "restrictions": "計程車限特約車隊／營業區；點數僅限指定服務。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402"
+    }
+  ],
+  "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：嘉義市社會處：敬老愛心卡（未標示）；嘉義市政府：115年政策公告PDF（未標示）；嘉義市政府：計程車點數公告（2026-08-17）",
+  "faq": [
+    {
+      "q": "嘉義市敬老卡有什麼優惠？",
+      "a": "嘉義市 65 歲以上長者每月 1,200 點，月底歸零，用於公車、客運、臺鐵、合作計程車等。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402"
+    },
+    {
+      "q": "誰可以辦嘉義市的敬老卡？",
+      "a": "設籍嘉義市65歲以上；愛心卡另適用持身心障礙證明者。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402"
+    },
+    {
+      "q": "嘉義市敬老卡怎麼申請？",
+      "a": "市府或戶籍區公所申辦。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402"
+    },
+    {
+      "q": "嘉義市敬老卡有什麼限制？",
+      "a": "計程車限特約車隊／營業區；點數僅限指定服務。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402"
+    },
+    {
+      "q": "嘉義市敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402"
+    }
+  ],
+  "additional_sources": [
+    "https://icmp-ws.chiayi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDA4L3JlbGZpbGUvOTI3MC85Mzc2OTYvZTZiY2RjNTUtN2QyZS00ZDc5LThkMWQtNTUyNWY4MGZhM2M1LnBkZg%3D%3D&n=5paw6IGe56i%2FLeWYie%2BqeW4guaVrOiAgeS5mOi7iuWNoTExNeW5tDXmnIgxNeaXpei1t%2BWKoOWFpeWci%2BawkemBi%2BWLleS4reW%2FgyjmoLjlrprniYgucGRm",
+    "https://www.chiayi.gov.tw/News_Content.aspx?n=455&s=949104"
+  ]
+}

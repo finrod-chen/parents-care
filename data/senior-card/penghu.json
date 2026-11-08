@@ -1,0 +1,45 @@
+{
+  "status": "verified",
+  "county": "penghu",
+  "year": 2026,
+  "summary": "澎湖縣 65 歲以上長者的 iPASS 社福卡需自行儲值，捷運、臺鐵、公車、公共自行車半價，非每月縣府點數。",
+  "items": [
+    {
+      "name": "澎湖縣iPASS社福卡（敬老／愛心／陪伴卡）",
+      "eligibility": "設籍澎湖65歲以上；55歲以上原住民。",
+      "amount": "需自行儲值，非每月縣府補助點數；捷運、臺鐵、公車／客運及公共自行車半價。",
+      "how_to_apply": "戶籍地鄉市公所；身分證影本及半年內2吋照片。",
+      "deadline": null,
+      "restrictions": "其他小額消費、景點或規費依各收費單位規定；社會處來源最後更新2025-07-15，未找到2026新公告。",
+      "source_url": "https://www.penghu.gov.tw/society/home.jsp?id=247&act=view&dataserno=201606080001"
+    }
+  ],
+  "source_url": "https://www.penghu.gov.tw/society/home.jsp?id=247&act=view&dataserno=201606080001",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：澎湖縣政府社會處：iPASS社福卡（2025-07-15）",
+  "faq": [
+    {
+      "q": "澎湖縣敬老卡有什麼優惠？",
+      "a": "澎湖縣 65 歲以上長者的 iPASS 社福卡需自行儲值，捷運、臺鐵、公車、公共自行車半價，非每月縣府點數。",
+      "source_url": "https://www.penghu.gov.tw/society/home.jsp?id=247&act=view&dataserno=201606080001"
+    },
+    {
+      "q": "誰可以辦澎湖縣的敬老卡？",
+      "a": "設籍澎湖65歲以上；55歲以上原住民。",
+      "source_url": "https://www.penghu.gov.tw/society/home.jsp?id=247&act=view&dataserno=201606080001"
+    },
+    {
+      "q": "澎湖縣敬老卡怎麼申請？",
+      "a": "戶籍地鄉市公所；身分證影本及半年內2吋照片。",
+      "source_url": "https://www.penghu.gov.tw/society/home.jsp?id=247&act=view&dataserno=201606080001"
+    },
+    {
+      "q": "澎湖縣敬老卡有什麼限制？",
+      "a": "其他小額消費、景點或規費依各收費單位規定；社會處來源最後更新2025-07-15，未找到2026新公告。",
+      "source_url": "https://www.penghu.gov.tw/society/home.jsp?id=247&act=view&dataserno=201606080001"
+    }
+  ],
+  "public_notes": [
+    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
+  ]
+}

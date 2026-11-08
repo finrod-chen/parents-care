@@ -39,6 +39,13 @@ const jsonLd = [
 
   <slot />
 
+  {topic.notice.length > 0 && (
+    <section aria-labelledby="notice-h" class="mt-6 rounded-2xl border border-teal-200 bg-teal-50 p-4">
+      <h2 id="notice-h" class="text-lg font-bold">先看這幾點</h2>
+      <ul class="mt-2 list-disc space-y-1 pl-5">{topic.notice.map((n) => <li>{n}</li>)}</ul>
+    </section>
+  )}
+
   <section aria-labelledby="table-h" class="mt-8">
     <h2 id="table-h" class="text-xl font-bold mb-3">各縣市比較表</h2>
     <CompareTable entries={entries} />

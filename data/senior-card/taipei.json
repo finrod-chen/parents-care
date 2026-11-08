@@ -1,9 +1,50 @@
 {
-  "status": "todo",
+  "status": "verified",
   "county": "taipei",
   "year": 2026,
-  "items": [],
-  "source_url": null,
-  "verified_at": null,
-  "notes": "資料整理中，尚未查證。"
+  "summary": "台北市 65 歲以上長者可辦敬老悠遊卡，2026 年 7 月起每月 600 點（1 點 1 元），用於公告指定的公車、捷運等。",
+  "items": [
+    {
+      "name": "敬老悠遊卡／敬老愛心卡優惠",
+      "eligibility": "依卡別為設籍臺北市65歲以上長者、55歲以上原住民及符合條件身障者；部分類別另要求實際居住臺北市。",
+      "amount": "敬老悠遊卡每月600點（1點1元；2026年7月起）；可用於公告指定的大臺北公車、捷運、客運、臺鐵指定區間、貓空纜車、敬老愛心計程車、YouBike及合作場館／醫療等，依各項規則扣點。",
+      "how_to_apply": "至任一區公所，依卡別備身分證、照片等文件；原住民及代理申請另附證明。",
+      "deadline": null,
+      "restrictions": "記名限本人；每6個月展期；部分用途有單趟扣點上限，未用點數依公告規定；遷出或不符居住條件可能停用。",
+      "source_url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1"
+    }
+  ],
+  "source_url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：臺北市社會局：敬老卡申辦（2026-05-11）；臺北市社會局：敬老悠遊卡優惠及使用範圍（2026-07-03）",
+  "faq": [
+    {
+      "q": "台北市敬老卡有什麼優惠？",
+      "a": "台北市 65 歲以上長者可辦敬老悠遊卡，2026 年 7 月起每月 600 點（1 點 1 元），用於公告指定的公車、捷運等。",
+      "source_url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1"
+    },
+    {
+      "q": "誰可以辦台北市的敬老卡？",
+      "a": "依卡別為設籍臺北市65歲以上長者、55歲以上原住民及符合條件身障者；部分類別另要求實際居住臺北市。",
+      "source_url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1"
+    },
+    {
+      "q": "台北市敬老卡怎麼申請？",
+      "a": "至任一區公所，依卡別備身分證、照片等文件；原住民及代理申請另附證明。",
+      "source_url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1"
+    },
+    {
+      "q": "台北市敬老卡有什麼限制？",
+      "a": "記名限本人；每6個月展期；部分用途有單趟扣點上限，未用點數依公告規定；遷出或不符居住條件可能停用。",
+      "source_url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1"
+    },
+    {
+      "q": "台北市敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://dosw.gov.taipei/cp.aspx?n=4683CD9EE2EB68B1"
+    }
+  ],
+  "additional_sources": [
+    "https://dosw.gov.taipei/cp.aspx?n=59C18B4C973AED21"
+  ]
 }

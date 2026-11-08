@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "county": "hsinchu-county",
+  "year": 2026,
+  "summary": "新竹縣 65 歲以上長者（原住民 55 歲）2026 年 10 月起每月 1,000 點，限指定交通與長照交通用途，月末歸零。",
+  "items": [
+    {
+      "name": "新竹縣敬老卡",
+      "eligibility": "設籍新竹縣；非原住民65歲以上、原住民55歲以上。",
+      "amount": "2026年10月起每月1,000點；指定交通、客運、臺鐵及長照交通用途，月末歸零；公告於2026-12-01起再開放部分農會／藥局與診所掛號費扣點，故不列為2026-11-08已生效福利。",
+      "how_to_apply": "縣府聯合服務中心隨辦隨取，或戶籍地公所約7個工作日；身分證、近半年照片及印章等。",
+      "deadline": null,
+      "restrictions": "只限公告路線／用途；月點數不累積。",
+      "source_url": "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3650&s=311698"
+    }
+  ],
+  "source_url": "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3650&s=311698",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：新竹縣高齡長照處：敬老卡（2026-06-18）；新竹縣政府：10月起提升福利公告（2026-08-18）",
+  "faq": [
+    {
+      "q": "新竹縣敬老卡有什麼優惠？",
+      "a": "新竹縣 65 歲以上長者（原住民 55 歲）2026 年 10 月起每月 1,000 點，限指定交通與長照交通用途，月末歸零。",
+      "source_url": "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3650&s=311698"
+    },
+    {
+      "q": "誰可以辦新竹縣的敬老卡？",
+      "a": "設籍新竹縣；非原住民65歲以上、原住民55歲以上。",
+      "source_url": "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3650&s=311698"
+    },
+    {
+      "q": "新竹縣敬老卡怎麼申請？",
+      "a": "縣府聯合服務中心隨辦隨取，或戶籍地公所約7個工作日；身分證、近半年照片及印章等。",
+      "source_url": "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3650&s=311698"
+    },
+    {
+      "q": "新竹縣敬老卡有什麼限制？",
+      "a": "只限公告路線／用途；月點數不累積。",
+      "source_url": "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3650&s=311698"
+    },
+    {
+      "q": "新竹縣敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3650&s=311698"
+    }
+  ],
+  "additional_sources": [
+    "https://longcare.hsinchu.gov.tw/News_Content.aspx?n=3673&s=337054"
+  ]
+}

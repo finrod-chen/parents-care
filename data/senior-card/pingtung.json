@@ -1,0 +1,53 @@
+{
+  "status": "verified",
+  "county": "pingtung",
+  "year": 2026,
+  "summary": "屏東縣 65 歲以上長者每月 1,000 點，用於指定客運、臺鐵、小黃公車等；月點是否歸零待查證。",
+  "items": [
+    {
+      "name": "屏東縣敬老卡",
+      "eligibility": "設籍屏東65歲以上；55歲以上原住民資格為116年度（2027）公告，非115年度已生效條件；官方亦列符合居留條件之外籍永久居留者。",
+      "amount": "自2024-11起每月1,000點，適用公告縣內／指定客運、臺鐵（起訖至少一站縣內）、小黃公車／幸福巴士、屏東YouBike等；另有一般交通半價優惠，與點數補助分開。",
+      "how_to_apply": "任一鄉鎮市公所臨櫃或縣府線上申請；初辦免費，可委託。",
+      "deadline": null,
+      "restrictions": "月點數是否月底歸零在本次可讀官方資料未確認；點數用途限公告路線。",
+      "source_url": "https://www.pthg.gov.tw/planjdp/cp.aspx?n=6002b120e13be406&s=743B9B3F82B98EB7"
+    }
+  ],
+  "source_url": "https://www.pthg.gov.tw/planjdp/cp.aspx?n=6002b120e13be406&s=743B9B3F82B98EB7",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：屏東縣政府社會處：敬老卡申請（未標示）；政府E服務：初辦流程（未標示）",
+  "faq": [
+    {
+      "q": "屏東縣敬老卡有什麼優惠？",
+      "a": "屏東縣 65 歲以上長者每月 1,000 點，用於指定客運、臺鐵、小黃公車等；月點是否歸零待查證。",
+      "source_url": "https://www.pthg.gov.tw/planjdp/cp.aspx?n=6002b120e13be406&s=743B9B3F82B98EB7"
+    },
+    {
+      "q": "誰可以辦屏東縣的敬老卡？",
+      "a": "設籍屏東65歲以上；55歲以上原住民資格為116年度（2027）公告，非115年度已生效條件；官方亦列符合居留條件之外籍永久居留者。",
+      "source_url": "https://www.pthg.gov.tw/planjdp/cp.aspx?n=6002b120e13be406&s=743B9B3F82B98EB7"
+    },
+    {
+      "q": "屏東縣敬老卡怎麼申請？",
+      "a": "任一鄉鎮市公所臨櫃或縣府線上申請；初辦免費，可委託。",
+      "source_url": "https://www.pthg.gov.tw/planjdp/cp.aspx?n=6002b120e13be406&s=743B9B3F82B98EB7"
+    },
+    {
+      "q": "屏東縣敬老卡有什麼限制？",
+      "a": "月點數是否月底歸零在本次可讀官方資料未確認；點數用途限公告路線。",
+      "source_url": "https://www.pthg.gov.tw/planjdp/cp.aspx?n=6002b120e13be406&s=743B9B3F82B98EB7"
+    },
+    {
+      "q": "屏東縣敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://www.pthg.gov.tw/planjdp/cp.aspx?n=6002b120e13be406&s=743B9B3F82B98EB7"
+    }
+  ],
+  "additional_sources": [
+    "https://www.gov.tw/News_Content_2_702698"
+  ],
+  "public_notes": [
+    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
+  ]
+}

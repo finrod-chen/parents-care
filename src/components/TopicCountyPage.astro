@@ -19,7 +19,7 @@ const path = `/${entry.topic}/${entry.county}/`;
 const verified = entry.status === 'verified';
 
 const h1 = `${name}${topic.title}`;
-const title = verified ? withSite(`${h1}${entry.year}：金額、資格與申請方式`) : withSite(`${h1}（資料整理中）`);
+const title = verified ? withSite(`${h1}${entry.year}：${topic.amountLabel}、資格與申請方式`) : withSite(`${h1}（資料整理中）`);
 const description = verified
   ? `${entry.summary}（資料最後查證：${entry.verified_at}）`
   : `${h1}資料整理中，尚未完成官方來源查證。`;
@@ -56,8 +56,8 @@ const sources = verified
         <strong>今年度的領取期限已過。</strong>以下為 {entry.year} 年的公告內容，供您了解制度；明年公告後我們會更新。
       </p>
       <section aria-labelledby="items-h" class="mt-6">
-        <h2 id="items-h" class="text-xl font-bold mb-3">資格、金額與申請方式</h2>
-        <div class="space-y-3">{entry.items.map((it) => <ItemCard item={it} />)}</div>
+        <h2 id="items-h" class="text-xl font-bold mb-3">資格、{topic.amountLabel}與申請方式</h2>
+        <div class="space-y-3">{entry.items.map((it) => <ItemCard item={it} topic={entry.topic} />)}</div>
       </section>
       {entry.public_notes && entry.public_notes.length > 0 && (
         <section aria-labelledby="notes-h" class="mt-6 rounded-2xl border border-teal-200 bg-teal-50 p-4">

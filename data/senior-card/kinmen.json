@@ -1,0 +1,48 @@
+{
+  "status": "verified",
+  "county": "kinmen",
+  "year": 2026,
+  "summary": "金門縣 65 歲以上長者可辦縣民卡（實體敬老卡），縣內公車適用縣民優惠；官方頁未列每月點數，待查證。",
+  "items": [
+    {
+      "name": "金門縣民卡－實體敬老卡／數位縣民卡",
+      "eligibility": "設籍金門縣65歲以上。",
+      "amount": "縣內公車適用縣民優惠；數位縣民卡在外縣市市區公車依65歲敬老身分優惠；目前未找到官方頁明列每月點數或縣內船票敬老卡優惠額。捷運數位乘車碼目前按全票，實體卡可依規定享敬老待遇。",
+      "how_to_apply": "任一戶政事務所，身分證正本及一年內2吋彩色照片；代理需委託文件。",
+      "deadline": null,
+      "restrictions": "遷出金門戶籍縣民卡註銷；區分實體卡與數位卡使用範圍。",
+      "source_url": "https://www.kinmen.gov.tw/kmcard/cp.aspx?n=461C44FEA65C6DC8"
+    }
+  ],
+  "source_url": "https://www.kinmen.gov.tw/kmcard/cp.aspx?n=461C44FEA65C6DC8",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：金門縣民卡：實體縣民卡（2026-08-24）；金門縣民卡：常見問題（2026-08-24）",
+  "faq": [
+    {
+      "q": "金門縣敬老卡有什麼優惠？",
+      "a": "金門縣 65 歲以上長者可辦縣民卡（實體敬老卡），縣內公車適用縣民優惠；官方頁未列每月點數，待查證。",
+      "source_url": "https://www.kinmen.gov.tw/kmcard/cp.aspx?n=461C44FEA65C6DC8"
+    },
+    {
+      "q": "誰可以辦金門縣的敬老卡？",
+      "a": "設籍金門縣65歲以上。",
+      "source_url": "https://www.kinmen.gov.tw/kmcard/cp.aspx?n=461C44FEA65C6DC8"
+    },
+    {
+      "q": "金門縣敬老卡怎麼申請？",
+      "a": "任一戶政事務所，身分證正本及一年內2吋彩色照片；代理需委託文件。",
+      "source_url": "https://www.kinmen.gov.tw/kmcard/cp.aspx?n=461C44FEA65C6DC8"
+    },
+    {
+      "q": "金門縣敬老卡有什麼限制？",
+      "a": "遷出金門戶籍縣民卡註銷；區分實體卡與數位卡使用範圍。",
+      "source_url": "https://www.kinmen.gov.tw/kmcard/cp.aspx?n=461C44FEA65C6DC8"
+    }
+  ],
+  "additional_sources": [
+    "https://www.kinmen.gov.tw/kmcard/cp.aspx?n=9302AD93AAD536B4"
+  ],
+  "public_notes": [
+    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
+  ]
+}
