@@ -90,7 +90,7 @@ tests/
 - 有 `deadline_date` 的項目，會在項目卡片、比較表、試算結果顯示「已截止」或「領取中・至 YYYY-MM-DD 止」；當天仍算可領，隔天起為已截止（以台灣時間計）。
 - 所有項目都已截止時，縣市頁頂端顯示「今年度的領取期限已過」。
 - 標示在 build 時寫入 HTML，瀏覽器載入後再用台灣時間重算一次，所以即使網站很久沒重新 build 也不會顯示過期的資訊。
-- 建議在 Cloudflare Pages 設定每日 deploy hook 重新 build，讓搜尋引擎看到的 HTML 也保持最新。
+- 為了讓搜尋引擎看到的 HTML 也保持最新，每週一會由 GitHub Actions 重新 build 並部署（見下方「每週部署」）。
 
 ## 資料匯入紀錄
 
@@ -117,7 +117,18 @@ tests/
 - 每頁顯示「資料最後查證：YYYY-MM-DD」與官方來源連結（未查證顯示「待查證」）。
 - 網址統一結尾斜線（`trailingSlash: 'always'`）。
 
-## 部署到 Cloudflare（尚未部署）
+## 每週部署（預設關閉）
+
+`.github/workflows/weekly-deploy.yml` 每週一（台灣 08:00）自動 `npm test`、`npm run build`，再用 wrangler 部署到 Cloudflare Pages 專案 `parents-care`（已建立，目前尚無任何部署）。
+資料過期（`verified_at` 超過 365 天）或欄位缺漏時 build 會失敗，不會部署，線上維持舊版。
+
+啟用前提：網域已確定並更新 `SITE_URL`、真實資料就緒。啟用步驟（GitHub repo → Settings → Secrets and variables → Actions）：
+
+1. Secrets 新增 `CLOUDFLARE_API_TOKEN`（Cloudflare → My Profile → API Tokens，權限 `Account · Cloudflare Pages · Edit`）與 `CLOUDFLARE_ACCOUNT_ID`。
+2. Variables 新增 `DEPLOY_ENABLED` = `true`。
+3. Actions 頁籤手動執行一次 `weekly-deploy`（workflow_dispatch）確認成功。
+
+## 部署到 Cloudflare
 
 純靜態輸出，不需 adapter。Pages 或 Workers Static Assets 皆可：
 
