@@ -156,24 +156,18 @@ tests/
 - 每頁顯示「資料最後查證：YYYY-MM-DD」與官方來源連結（未查證顯示「待查證」）。
 - 網址統一結尾斜線（`trailingSlash: 'always'`）。
 
-## 每週部署（預設關閉）
+## 每週重建
 
-`.github/workflows/weekly-deploy.yml` 每週一（台灣 08:00）自動 `npm test`、`npm run build`，再用 wrangler 部署到 Cloudflare Pages 專案 `parents-care`（已建立，目前尚無任何部署）。
-資料過期（`verified_at` 超過 365 天）或欄位缺漏時 build 會失敗，不會部署，線上維持舊版。
+Pages 已連接本 repo，push 到 `main` 會自動建置部署。`.github/workflows/weekly-rebuild.yml`每週一（台灣 08:00）請 Pages 重跑一次 `main`，讓靜態 HTML 裡的「已截止」標示與 365 天查證檢查保持最新。資料過期或欄位缺漏時 build 會失敗，Cloudflare 不會替換線上版本。
 
-啟用前提：網域已確定並更新 `SITE_URL`、真實資料就緒。啟用步驟（GitHub repo → Settings → Secrets and variables → Actions）：
+啟用方式（只需一次；沒設定時排程會略過、不會失敗）：GitHub repo → Settings → Secrets and variables → Actions → 新增 `CLOUDFLARE_API_TOKEN`（Cloudflare → My Profile → API Tokens，權限 `Account · Cloudflare Pages · Edit`）與 `CLOUDFLARE_ACCOUNT_ID`。
 
-1. Secrets 新增 `CLOUDFLARE_API_TOKEN`（Cloudflare → My Profile → API Tokens，權限 `Account · Cloudflare Pages · Edit`）與 `CLOUDFLARE_ACCOUNT_ID`。
-2. Variables 新增 `DEPLOY_ENABLED` = `true`。
-3. Actions 頁籤手動執行一次 `weekly-deploy`（workflow_dispatch）確認成功。
+## Cloudflare
 
-## 部署到 Cloudflare
-
-純靜態輸出，不需 adapter。Pages 或 Workers Static Assets 皆可：
-
-- Build command：`npm run build`
-- Output directory：`dist`
-- Node：`.node-version`（22）
-- 標頭與快取：`public/_headers`；轉址：`public/_redirects`（目前為空）
-
-上線前：改 `SITE_URL`、確認真實資料皆已查證、跑 Lighthouse。
+- Pages 專案 `parents-care`，連接 GitHub `finrod-chen/parents-care`；正式部署只來自 `main`（不建預覽部署）。Build：`npm run build`，輸出 `dist`，`NODE_VERSION=22`。
+- 自訂網域：`bamaling.tw`、`www.bamaling.tw`（DNS 為指向 `parents-care.pages.dev` 的 CNAME）。
+- 標頭與快取：`public/_headers`；轉址：`public/_redirects`（目前為空）。
+- zone 設定（已調整，勿重新開啟）：
+  - **Web Analytics 自動注入已關閉**（否則 Cloudflare 會在 HTML 注入 `beacon.min.js`，違反「不加追蹤碼」）。
+  - **Bot Preference Sync／Managed robots.txt 已關閉**（否則會在 robots.txt 最前面插入 Lighthouse 不認得的 `Content-Signal` 指令，SEO 稽核扣分）。AI 爬蟲封鎖清單改在 `src/pages/robots.txt.ts` 維護。
+- 上線後請用 Lighthouse 對 `https://bamaling.tw` 實測（本機預覽與 Cloudflare 邊緣的結果可能不同）。

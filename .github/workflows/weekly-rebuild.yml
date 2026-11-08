@@ -1,0 +1,32 @@
+# 每週一請 Cloudflare Pages 重新建置 main 分支並部署，讓靜態 HTML 裡的「已截止」標示保持最新。
+# Pages 已連接本 repo：push 到 main 會自動部署；這個排程只是「定期重跑一次」。
+#
+# 需要在 GitHub 的 Settings → Secrets and variables → Actions 設定（沒設定就會略過，不會失敗）：
+#   - Secrets：CLOUDFLARE_API_TOKEN（權限：Account → Cloudflare Pages → Edit）、CLOUDFLARE_ACCOUNT_ID
+# build 失敗（例如資料 verified_at 超過 365 天）時，Cloudflare 不會替換線上版本。
+name: weekly-rebuild
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # 每週一 00:00 UTC（台灣時間週一 08:00）
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger Cloudflare Pages deployment (main)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "尚未設定 Cloudflare secrets，略過。"; exit 0
+          fi
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -F branch=main \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/parents-care/deployments"
