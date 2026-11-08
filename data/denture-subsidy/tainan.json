@@ -1,0 +1,46 @@
+{
+  "status": "verified",
+  "county": "tainan",
+  "year": 2026,
+  "summary": "台南市 115 年度長者全口活動假牙：每顎最高 2 萬 2,000 元、雙顎 4 萬 4,000 元，申請至 2026-12-10。",
+  "items": [
+    {
+      "name": "115年度長者免費裝置全口活動假牙計畫",
+      "eligibility": "設籍臺南且於2022-12-25前已設籍並持續在籍；一般長者於1961-12-31前出生，原住民放寬至1971-12-31前出生；牙醫評估合格；綜所稅率低於20%。",
+      "amount": "每顎最高22,000元，雙顎最高44,000元；115年度預計3,500人，其中1,000名低／中低收入優先名額。",
+      "how_to_apply": "2026-01-01至12-10至合約牙科院所，帶身分證、健保卡；診所送衛生局術前審核，核准後裝置。",
+      "deadline": "2026-01-01 至 2026-12-10（經費用罄可能提前停止）",
+      "deadline_date": "2026-12-10",
+      "restrictions": "每人每顎一次；5年內已由其他指定方案補助者不得重複；經費用罄可能提前停止。",
+      "source_url": "https://health.tainan.gov.tw/page.asp?mainid=%7B910A3D9A-893A-4F32-A1B1-720FDCFDAEF0%7D"
+    }
+  ],
+  "source_url": "https://health.tainan.gov.tw/page.asp?mainid=%7B910A3D9A-893A-4F32-A1B1-720FDCFDAEF0%7D",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：臺南市衛生局：115年計畫公告（2025-12-01）；臺南市計畫PDF（未標示）",
+  "faq": [
+    {
+      "q": "台南市老人假牙補助可以補助多少？",
+      "a": "台南市 115 年度長者全口活動假牙：每顎最高 2 萬 2,000 元、雙顎 4 萬 4,000 元，申請至 2026-12-10。",
+      "source_url": "https://health.tainan.gov.tw/page.asp?mainid=%7B910A3D9A-893A-4F32-A1B1-720FDCFDAEF0%7D"
+    },
+    {
+      "q": "誰可以申請台南市的老人假牙補助？",
+      "a": "設籍臺南且於2022-12-25前已設籍並持續在籍；一般長者於1961-12-31前出生，原住民放寬至1971-12-31前出生；牙醫評估合格；綜所稅率低於20%。",
+      "source_url": "https://health.tainan.gov.tw/page.asp?mainid=%7B910A3D9A-893A-4F32-A1B1-720FDCFDAEF0%7D"
+    },
+    {
+      "q": "台南市老人假牙補助怎麼申請？",
+      "a": "2026-01-01至12-10至合約牙科院所，帶身分證、健保卡；診所送衛生局術前審核，核准後裝置。",
+      "source_url": "https://health.tainan.gov.tw/page.asp?mainid=%7B910A3D9A-893A-4F32-A1B1-720FDCFDAEF0%7D"
+    },
+    {
+      "q": "台南市老人假牙補助有什麼限制？",
+      "a": "每人每顎一次；5年內已由其他指定方案補助者不得重複；經費用罄可能提前停止。",
+      "source_url": "https://health.tainan.gov.tw/page.asp?mainid=%7B910A3D9A-893A-4F32-A1B1-720FDCFDAEF0%7D"
+    }
+  ],
+  "additional_sources": [
+    "https://health.tainan.gov.tw/warehouse/53F30C1D-D30D-44C5-AF4E-A20F0065718D/F_1764574581923e.pdf"
+  ]
+}

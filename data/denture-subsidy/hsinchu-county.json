@@ -1,0 +1,46 @@
+{
+  "status": "verified",
+  "county": "hsinchu-county",
+  "year": 2026,
+  "summary": "新竹縣 115 年度有高齡友善活動假牙補助：全口活動假牙 4 萬元（加計項目最高 6 萬元），名額約 30 名。",
+  "items": [
+    {
+      "name": "115年度高齡友善長者裝置活動假牙補助",
+      "eligibility": "2025-01-01前設籍新竹縣；65歲以上；自然牙合計6顆以下；並符合縣敬老津貼、敬老禮金資產居住條件或老年農民福利津貼等指定資格之一。",
+      "amount": "全口活動假牙40,000元；金屬骨架每床5,000元；柱台齒每顆最高5,000元，上下顎合計最高60,000元；另有口腔篩檢／評估補助。",
+      "how_to_apply": "先向縣衛生局資格審查，再至特約院所檢查及送術前計畫；核准後製作。",
+      "deadline": null,
+      "deadline_date": null,
+      "restrictions": "年度名額有限（約30名）；中低收入老人假牙另案；依核定項目及特約院所辦理。",
+      "source_url": "https://www.hcshb.gov.tw/News_Content.aspx?n=1522&s=108528"
+    }
+  ],
+  "source_url": "https://www.hcshb.gov.tw/News_Content.aspx?n=1522&s=108528",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：新竹縣衛生局：115年度高齡友善活動假牙計畫（2026-01-26）；新竹縣政府：最高補助6萬元公告（2026-02-01）",
+  "faq": [
+    {
+      "q": "新竹縣老人假牙補助可以補助多少？",
+      "a": "新竹縣 115 年度有高齡友善活動假牙補助：全口活動假牙 4 萬元（加計項目最高 6 萬元），名額約 30 名。",
+      "source_url": "https://www.hcshb.gov.tw/News_Content.aspx?n=1522&s=108528"
+    },
+    {
+      "q": "誰可以申請新竹縣的老人假牙補助？",
+      "a": "2025-01-01前設籍新竹縣；65歲以上；自然牙合計6顆以下；並符合縣敬老津貼、敬老禮金資產居住條件或老年農民福利津貼等指定資格之一。",
+      "source_url": "https://www.hcshb.gov.tw/News_Content.aspx?n=1522&s=108528"
+    },
+    {
+      "q": "新竹縣老人假牙補助怎麼申請？",
+      "a": "先向縣衛生局資格審查，再至特約院所檢查及送術前計畫；核准後製作。",
+      "source_url": "https://www.hcshb.gov.tw/News_Content.aspx?n=1522&s=108528"
+    },
+    {
+      "q": "新竹縣老人假牙補助有什麼限制？",
+      "a": "年度名額有限（約30名）；中低收入老人假牙另案；依核定項目及特約院所辦理。",
+      "source_url": "https://www.hcshb.gov.tw/News_Content.aspx?n=1522&s=108528"
+    }
+  ],
+  "additional_sources": [
+    "https://www.hsinchu.gov.tw/News_Content.aspx?n=153&s=279537"
+  ]
+}

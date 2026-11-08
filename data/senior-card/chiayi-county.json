@@ -1,0 +1,51 @@
+{
+  "status": "verified",
+  "county": "chiayi-county",
+  "year": 2026,
+  "summary": "嘉義縣 65 歲以上長者每月 1,000 點（阿里山、大埔 1,200 點），月末歸零，用於縣內公車、客運、臺鐵等。",
+  "items": [
+    {
+      "name": "嘉義縣敬老卡／愛心卡",
+      "eligibility": "設籍嘉義縣65歲以上；愛心卡適用符合身障資格者。",
+      "amount": "每月1,000點；阿里山鄉、大埔鄉偏遠鄉1,200點；首次乘車自動儲值，月末未用不累積；縣內合作公車／客運、臺鐵及公告路線。",
+      "how_to_apply": "鄉鎮市公所；身分證正本及影本、半年內2吋照片2張或現場拍照。",
+      "deadline": null,
+      "restrictions": "點數不足可自費儲值；只限公告路線及用途。",
+      "source_url": "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=7788&s=72873"
+    }
+  ],
+  "source_url": "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=7788&s=72873",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：嘉義縣社會局：敬老卡（未標示）；衛福部1957：嘉義縣敬老／愛心卡（未標示）；嘉義縣：臺鐵使用公告（未標示）",
+  "faq": [
+    {
+      "q": "嘉義縣敬老卡有什麼優惠？",
+      "a": "嘉義縣 65 歲以上長者每月 1,000 點（阿里山、大埔 1,200 點），月末歸零，用於縣內公車、客運、臺鐵等。",
+      "source_url": "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=7788&s=72873"
+    },
+    {
+      "q": "誰可以辦嘉義縣的敬老卡？",
+      "a": "設籍嘉義縣65歲以上；愛心卡適用符合身障資格者。",
+      "source_url": "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=7788&s=72873"
+    },
+    {
+      "q": "嘉義縣敬老卡怎麼申請？",
+      "a": "鄉鎮市公所；身分證正本及影本、半年內2吋照片2張或現場拍照。",
+      "source_url": "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=7788&s=72873"
+    },
+    {
+      "q": "嘉義縣敬老卡有什麼限制？",
+      "a": "點數不足可自費儲值；只限公告路線及用途。",
+      "source_url": "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=7788&s=72873"
+    },
+    {
+      "q": "嘉義縣敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=7788&s=72873"
+    }
+  ],
+  "additional_sources": [
+    "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=44142&pFlag=Y",
+    "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=4876&s=1132409"
+  ]
+}

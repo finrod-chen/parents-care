@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+import { SITE_NAME, SITE_DOMAIN } from '../lib/site';
+import { absUrl, ldString } from '../lib/seo';
+import { CREDIT } from '../lib/illustrations';
+import { BADGE_CLASS } from '../lib/deadline';
+
+interface Props {
+  title: string; // 完整 <title>
+  description: string;
+  path: string; // canonical 路徑，須以 / 開頭與結尾
+  noindex?: boolean;
+  jsonLd?: unknown[];
+}
+const { title, description, path, noindex = false, jsonLd = [] } = Astro.props;
+const canonical = absUrl(path);
+const current = Astro.url.pathname;
+const NAV = [
+  { href: '/chongyang-bonus/', label: '重陽敬老金' },
+  { href: '/denture-subsidy/', label: '假牙補助' },
+  { href: '/senior-card/', label: '敬老卡' },
+  { href: '/long-term-care/', label: '長照試算' },
+  { href: '/low-income-elderly-allowance/', label: '津貼檢核' },
+];
+---
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex,follow" />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1F6F5C" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absUrl("/og.png")} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonLd.map((o) => <script type="application/ld+json" set:html={ldString(o)} />)}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b border-teal-200 bg-white">
+      <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between px-4 py-2">
+        <a href="/" class="flex items-center" aria-label={`${SITE_NAME}（${SITE_DOMAIN}）首頁`}><img src="/brand/logo-horizontal.svg" alt={`${SITE_NAME} ${SITE_DOMAIN}`} width="114" height="40" class="h-10 w-auto" /></a>
+        <button id="nav-toggle" type="button" class="-mr-2 flex h-11 w-11 items-center justify-center rounded-lg text-brand-dark hover:bg-teal-50 md:hidden" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單">
+          <svg id="nav-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          <svg id="nav-icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" class="hidden"><path d="M6 6l12 12M18 6L6 18" /></svg>
+        </button>
+        <nav id="site-nav" aria-label="主要導覽" class="hidden basis-full flex-col border-t border-teal-100 pt-1 text-base md:flex md:basis-auto md:flex-row md:gap-x-5 md:border-0 md:pt-0 md:text-sm">
+          {NAV.map((n) => (
+            <a href={n.href} aria-current={current.startsWith(n.href) ? 'page' : undefined} class={`block whitespace-nowrap py-3 underline-offset-4 hover:underline md:py-0 ${current.startsWith(n.href) ? 'font-bold text-brand-dark' : ''}`}>{n.label}</a>
+          ))}
+        </nav>
+        <noscript><style is:inline>#site-nav{display:flex!important;flex-direction:column}#nav-toggle{display:none!important}@media(min-width:768px){#site-nav{flex-direction:row}}</style></noscript>
+      </div>
+    </header>
+    <main class="mx-auto w-full max-w-4xl flex-1 px-4 py-6">
+      <slot />
+    </main>
+    <script is:inline>
+      // 手機漢堡選單：連結本來就在 HTML 裡，JS 只負責展開／收合
+      (function () {
+        var btn = document.getElementById('nav-toggle'), nav = document.getElementById('site-nav');
+        if (!btn || !nav) return;
+        var open = document.getElementById('nav-icon-open'), close = document.getElementById('nav-icon-close');
+        function set(on) {
+          nav.classList.toggle('hidden', !on);
+          btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+          btn.setAttribute('aria-label', on ? '關閉選單' : '開啟選單');
+          open.classList.toggle('hidden', on);
+          close.classList.toggle('hidden', !on);
+        }
+        btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); } });
+        window.matchMedia('(min-width: 768px)').addEventListener('change', function (m) { if (m.matches) set(false); });
+      })();
+    </script>
+    <script is:inline define:vars={{ CLASSES: BADGE_CLASS }}>
+      // 依台灣時間重算「已截止」標示，避免靜態頁面因太久沒重新 build 而過期
+      (function () {
+        var t = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+        document.querySelectorAll('[data-deadline]').forEach(function (el) {
+          var d = el.getAttribute('data-deadline');
+          var closed = d < t;
+          el.textContent = closed ? '已截止' : '領取中・至 ' + d + ' 止';
+          el.className = closed ? CLASSES.closed : CLASSES.open;
+        });
+        document.querySelectorAll('[data-closed-banner]').forEach(function (el) {
+          var ds = (el.getAttribute('data-closed-banner') || '').split(',').filter(Boolean);
+          el.hidden = !(ds.length && ds.every(function (d) { return d < t; }));
+        });
+      })();
+    </script>
+    <footer class="border-t border-teal-200 bg-teal-50 text-sm text-slate-600">
+      <div class="mx-auto max-w-4xl px-4 py-6 space-y-1">
+        <p>本站整理自各主管機關公開資訊，僅供參考；實際資格與金額以主管機關最新公告為準。</p>
+        <p>本站不收集個人資料，試算皆在您的瀏覽器本機完成。</p>
+        <p>插圖：<a class="underline" href={CREDIT.url} rel="noopener">{CREDIT.name}</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

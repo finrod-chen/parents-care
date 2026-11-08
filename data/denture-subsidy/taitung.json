@@ -1,0 +1,46 @@
+{
+  "status": "verified",
+  "county": "taitung",
+  "year": 2026,
+  "summary": "臺東縣 115 年度有中低收入老人假牙補助，裝置最高 4 萬 4,000 元，須具指定弱勢身分並向特約診所申請，至經費用罄。",
+  "items": [
+    {
+      "name": "115年度中低收入老人補助裝置假牙",
+      "eligibility": "設籍臺東且經醫師評估需裝置；65歲以上老人、55歲以上原住民或中度以上身障者，並具列冊低／中低收入、老人津貼、身障生活補助、公費安置或照顧補助達50%等指定資格之一。",
+      "amount": "假牙裝置最高44,000元；維修當年度最高6,600元，細目依計畫附件。",
+      "how_to_apply": "向計畫特約牙科診所申請；115年1月起至經費用罄，需特約院所與資格文件。",
+      "deadline": "2026 年 1 月起受理，至經費用罄為止",
+      "deadline_date": null,
+      "restrictions": "同部位5年內不重複；經費用罄停收。",
+      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+    }
+  ],
+  "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：臺東縣社會處：中低收入老人假牙補助（2026-05-12）；臺東縣衛生局：口腔照護／115特約診所（2026-10-30）",
+  "faq": [
+    {
+      "q": "台東縣老人假牙補助可以補助多少？",
+      "a": "臺東縣 115 年度有中低收入老人假牙補助，裝置最高 4 萬 4,000 元，須具指定弱勢身分並向特約診所申請，至經費用罄。",
+      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+    },
+    {
+      "q": "誰可以申請台東縣的老人假牙補助？",
+      "a": "設籍臺東且經醫師評估需裝置；65歲以上老人、55歲以上原住民或中度以上身障者，並具列冊低／中低收入、老人津貼、身障生活補助、公費安置或照顧補助達50%等指定資格之一。",
+      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+    },
+    {
+      "q": "台東縣老人假牙補助怎麼申請？",
+      "a": "向計畫特約牙科診所申請；115年1月起至經費用罄，需特約院所與資格文件。",
+      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+    },
+    {
+      "q": "台東縣老人假牙補助有什麼限制？",
+      "a": "同部位5年內不重複；經費用罄停收。",
+      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+    }
+  ],
+  "additional_sources": [
+    "https://www.ttshb.gov.tw/FileList/C000042?SubCategoryID=7755c99e-fdeb-4b4b-9b2a-60d0d8345afd"
+  ]
+}

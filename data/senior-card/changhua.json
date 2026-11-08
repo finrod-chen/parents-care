@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "county": "changhua",
+  "year": 2026,
+  "summary": "彰化縣 65 歲以上長者的長青幸福卡每月 1,000 點，不累積，用於指定客運、臺鐵、診所、計程車等。",
+  "items": [
+    {
+      "name": "長青幸福卡／長青國民旅遊卡",
+      "eligibility": "設籍彰化65歲以上；55歲以上原住民；持身心障礙證明者。",
+      "amount": "每月1,000點，不累積；指定客運、臺鐵（起訖至少一站彰化，單趟最高45點）、診所門診基本部分負擔、計程車、運動中心及合作店家等。",
+      "how_to_apply": "戶籍地公所、線上申辦後臨櫃領卡或縣府社會處；需身分證／戶口名簿、照片及資格證明。",
+      "deadline": null,
+      "restrictions": "限公告合作路線、機構、店家；不是所有交通工具免費。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/06service/service01_con.aspx?topsn=2434&data_id=25532"
+    }
+  ],
+  "source_url": "https://www.chcg.gov.tw/DTO/social/06service/service01_con.aspx?topsn=2434&data_id=25532",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：彰化縣社會處：長青幸福卡申辦及補助（含115年度資訊）；彰化縣線上申辦（未標示）",
+  "faq": [
+    {
+      "q": "彰化縣敬老卡有什麼優惠？",
+      "a": "彰化縣 65 歲以上長者的長青幸福卡每月 1,000 點，不累積，用於指定客運、臺鐵、診所、計程車等。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/06service/service01_con.aspx?topsn=2434&data_id=25532"
+    },
+    {
+      "q": "誰可以辦彰化縣的敬老卡？",
+      "a": "設籍彰化65歲以上；55歲以上原住民；持身心障礙證明者。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/06service/service01_con.aspx?topsn=2434&data_id=25532"
+    },
+    {
+      "q": "彰化縣敬老卡怎麼申請？",
+      "a": "戶籍地公所、線上申辦後臨櫃領卡或縣府社會處；需身分證／戶口名簿、照片及資格證明。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/06service/service01_con.aspx?topsn=2434&data_id=25532"
+    },
+    {
+      "q": "彰化縣敬老卡有什麼限制？",
+      "a": "限公告合作路線、機構、店家；不是所有交通工具免費。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/06service/service01_con.aspx?topsn=2434&data_id=25532"
+    },
+    {
+      "q": "彰化縣敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/06service/service01_con.aspx?topsn=2434&data_id=25532"
+    }
+  ],
+  "additional_sources": [
+    "https://edesk.chcg.gov.tw/eservice/apply_mode_directions2?itemId=8"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "status": "verified",
+  "county": "taitung",
+  "year": 2026,
+  "summary": "臺東縣 65 歲以上長者的臺東卡每月 1,500 點，當月未用不累計，用於縣內公車、愛心計程車、臺鐵等。",
+  "items": [
+    {
+      "name": "臺東卡（敬老卡）",
+      "eligibility": "設籍臺東縣65歲以上；向戶籍地鄉鎮市公所申辦。",
+      "amount": "每月1,500社福點，當月未用不累計；縣內公車、縣內愛心計程車、TTGO及臺鐵區間車／自由座等公告用途。",
+      "how_to_apply": "戶籍地公所；身分證、近期照片、印章；可依縣府公告線上申請。",
+      "deadline": null,
+      "restrictions": "點數不足需自付／儲值；臺鐵單趟扣點上限，計程車依車資扣點；本資料僅列敬老卡。",
+      "source_url": "https://www.taitungcity.gov.tw/article/%E3%80%90%E8%80%81%E4%BA%BA%E3%80%81%E8%BA%AB%E9%9A%9C%E7%A6%8F%E5%88%A9%E3%80%91%E5%8F%B0%E6%9D%B1%E5%8D%A1(%E6%95%AC%E8%80%81%E5%8D%A1%E3%80%81%E5%8D%9A%E6%84%9B%E5%8D%A1%E5%8F%8A%E9%99%AA%E4%BC%B4%E5%8D%A1)"
+    }
+  ],
+  "source_url": "https://www.taitungcity.gov.tw/article/%E3%80%90%E8%80%81%E4%BA%BA%E3%80%81%E8%BA%AB%E9%9A%9C%E7%A6%8F%E5%88%A9%E3%80%91%E5%8F%B0%E6%9D%B1%E5%8D%A1(%E6%95%AC%E8%80%81%E5%8D%A1%E3%80%81%E5%8D%9A%E6%84%9B%E5%8D%A1%E5%8F%8A%E9%99%AA%E4%BC%B4%E5%8D%A1)",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：臺東市公所：臺東卡（未標示）；臺東縣政府：臺東卡每月乘車福利（未標示）；臺東縣社會處：臺東卡申請辦法（未標示）",
+  "faq": [
+    {
+      "q": "台東縣敬老卡有什麼優惠？",
+      "a": "臺東縣 65 歲以上長者的臺東卡每月 1,500 點，當月未用不累計，用於縣內公車、愛心計程車、臺鐵等。",
+      "source_url": "https://www.taitungcity.gov.tw/article/%E3%80%90%E8%80%81%E4%BA%BA%E3%80%81%E8%BA%AB%E9%9A%9C%E7%A6%8F%E5%88%A9%E3%80%91%E5%8F%B0%E6%9D%B1%E5%8D%A1(%E6%95%AC%E8%80%81%E5%8D%A1%E3%80%81%E5%8D%9A%E6%84%9B%E5%8D%A1%E5%8F%8A%E9%99%AA%E4%BC%B4%E5%8D%A1)"
+    },
+    {
+      "q": "誰可以辦台東縣的敬老卡？",
+      "a": "設籍臺東縣65歲以上；向戶籍地鄉鎮市公所申辦。",
+      "source_url": "https://www.taitungcity.gov.tw/article/%E3%80%90%E8%80%81%E4%BA%BA%E3%80%81%E8%BA%AB%E9%9A%9C%E7%A6%8F%E5%88%A9%E3%80%91%E5%8F%B0%E6%9D%B1%E5%8D%A1(%E6%95%AC%E8%80%81%E5%8D%A1%E3%80%81%E5%8D%9A%E6%84%9B%E5%8D%A1%E5%8F%8A%E9%99%AA%E4%BC%B4%E5%8D%A1)"
+    },
+    {
+      "q": "台東縣敬老卡怎麼申請？",
+      "a": "戶籍地公所；身分證、近期照片、印章；可依縣府公告線上申請。",
+      "source_url": "https://www.taitungcity.gov.tw/article/%E3%80%90%E8%80%81%E4%BA%BA%E3%80%81%E8%BA%AB%E9%9A%9C%E7%A6%8F%E5%88%A9%E3%80%91%E5%8F%B0%E6%9D%B1%E5%8D%A1(%E6%95%AC%E8%80%81%E5%8D%A1%E3%80%81%E5%8D%9A%E6%84%9B%E5%8D%A1%E5%8F%8A%E9%99%AA%E4%BC%B4%E5%8D%A1)"
+    },
+    {
+      "q": "台東縣敬老卡有什麼限制？",
+      "a": "點數不足需自付／儲值；臺鐵單趟扣點上限，計程車依車資扣點；本資料僅列敬老卡。",
+      "source_url": "https://www.taitungcity.gov.tw/article/%E3%80%90%E8%80%81%E4%BA%BA%E3%80%81%E8%BA%AB%E9%9A%9C%E7%A6%8F%E5%88%A9%E3%80%91%E5%8F%B0%E6%9D%B1%E5%8D%A1(%E6%95%AC%E8%80%81%E5%8D%A1%E3%80%81%E5%8D%9A%E6%84%9B%E5%8D%A1%E5%8F%8A%E9%99%AA%E4%BC%B4%E5%8D%A1)"
+    },
+    {
+      "q": "台東縣敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://www.taitungcity.gov.tw/article/%E3%80%90%E8%80%81%E4%BA%BA%E3%80%81%E8%BA%AB%E9%9A%9C%E7%A6%8F%E5%88%A9%E3%80%91%E5%8F%B0%E6%9D%B1%E5%8D%A1(%E6%95%AC%E8%80%81%E5%8D%A1%E3%80%81%E5%8D%9A%E6%84%9B%E5%8D%A1%E5%8F%8A%E9%99%AA%E4%BC%B4%E5%8D%A1)"
+    }
+  ],
+  "additional_sources": [
+    "https://www.taitung.gov.tw/News_Content.aspx?n=13370&s=130273",
+    "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=9358%2B5!0!yna4%3D"
+  ]
+}

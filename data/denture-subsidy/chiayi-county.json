@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "county": "chiayi-county",
+  "year": 2026,
+  "summary": "嘉義縣有樂齡活動假牙計畫：全口 4 萬元、半口 2 萬元；是否為 115 年度新版公告待查證。",
+  "items": [
+    {
+      "name": "嘉義縣樂齡活動假牙計畫",
+      "eligibility": "設籍嘉義縣滿1年以上且裝置期間仍在籍；65歲以上或55歲以上原住民；縣內合約牙醫師評估。全口活動假牙另有健康牙齒數限制。",
+      "amount": "全口40,000元；半口20,000元；部分活動假牙15,000元；維修6,000元。",
+      "how_to_apply": "至縣內合約牙科院所評估送審，攜身分證、戶籍證明、健保卡及印章；核准後裝置。",
+      "deadline": null,
+      "deadline_date": null,
+      "restrictions": "官方可查到方案摘要及啟動公告，未找到清楚標為115年度的新修訂版；當年度名額／院所／經費狀態須再核對。",
+      "source_url": "https://cyshb.cyhg.gov.tw/taibao/News_Content.aspx?n=7453&s=1295125"
+    }
+  ],
+  "source_url": "https://cyshb.cyhg.gov.tw/taibao/News_Content.aspx?n=7453&s=1295125",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：嘉義縣衛生局：樂齡假牙補助（未標示）；嘉義縣社會局：計畫啟動公告（未標示）；衛福部1957：嘉義縣計畫條目（未標示）",
+  "faq": [
+    {
+      "q": "嘉義縣老人假牙補助可以補助多少？",
+      "a": "嘉義縣有樂齡活動假牙計畫：全口 4 萬元、半口 2 萬元；是否為 115 年度新版公告待查證。",
+      "source_url": "https://cyshb.cyhg.gov.tw/taibao/News_Content.aspx?n=7453&s=1295125"
+    },
+    {
+      "q": "誰可以申請嘉義縣的老人假牙補助？",
+      "a": "設籍嘉義縣滿1年以上且裝置期間仍在籍；65歲以上或55歲以上原住民；縣內合約牙醫師評估。全口活動假牙另有健康牙齒數限制。",
+      "source_url": "https://cyshb.cyhg.gov.tw/taibao/News_Content.aspx?n=7453&s=1295125"
+    },
+    {
+      "q": "嘉義縣老人假牙補助怎麼申請？",
+      "a": "至縣內合約牙科院所評估送審，攜身分證、戶籍證明、健保卡及印章；核准後裝置。",
+      "source_url": "https://cyshb.cyhg.gov.tw/taibao/News_Content.aspx?n=7453&s=1295125"
+    },
+    {
+      "q": "嘉義縣老人假牙補助有什麼限制？",
+      "a": "官方可查到方案摘要及啟動公告，未找到清楚標為115年度的新修訂版；當年度名額／院所／經費狀態須再核對。",
+      "source_url": "https://cyshb.cyhg.gov.tw/taibao/News_Content.aspx?n=7453&s=1295125"
+    }
+  ],
+  "additional_sources": [
+    "https://sabcc.cyhg.gov.tw/News_Content.aspx?n=4876&s=137884",
+    "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=116681"
+  ],
+  "public_notes": [
+    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
+  ]
+}

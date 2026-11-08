@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  /* 清爽青綠＋柔粉：對比皆 ≥ 4.5:1 */
+  --color-brand: #1F6F5C;
+  --color-brand-dark: #165244;
+  --color-cream: #f6fbfa;
+  --color-warm: #fff1f2;
+}
+
+html { font-size: 17px; }
+body { @apply bg-cream text-slate-800 antialiased; line-height: 1.75; }
+h1, h2, h3 { @apply text-teal-950; line-height: 1.35; }

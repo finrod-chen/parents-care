@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "county": "taoyuan",
+  "year": 2026,
+  "summary": "桃園市 65 歲以上長者（原住民 55 歲）每月 800 點，復興區設籍者 1,000 點，用於公告的公車、臺鐵、愛心計程車等。",
+  "items": [
+    {
+      "name": "桃園市市民卡／桃樂卡敬老愛心卡",
+      "eligibility": "設籍桃園市65歲以上長者或55歲以上原住民；生日當月起可辦。",
+      "amount": "每月800點；復興區設籍者1,000點。用於公告合作公車／客運、臺鐵、愛心計程車等用途。",
+      "how_to_apply": "區公所臨櫃，備身分證正本及6個月內2吋照片。",
+      "deadline": null,
+      "restrictions": "社福點數與自費電子錢包分開；2027年起新增用途不列為2026現行福利。",
+      "source_url": "https://sab.tycg.gov.tw/News_Content.aspx?n=7372&s=684795"
+    }
+  ],
+  "source_url": "https://sab.tycg.gov.tw/News_Content.aspx?n=7372&s=684795",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：桃園市社會局：市民卡敬老愛心卡（索引更新2026-10-22）；桃園市社會局：點數用途（用途公告）",
+  "faq": [
+    {
+      "q": "桃園市敬老卡有什麼優惠？",
+      "a": "桃園市 65 歲以上長者（原住民 55 歲）每月 800 點，復興區設籍者 1,000 點，用於公告的公車、臺鐵、愛心計程車等。",
+      "source_url": "https://sab.tycg.gov.tw/News_Content.aspx?n=7372&s=684795"
+    },
+    {
+      "q": "誰可以辦桃園市的敬老卡？",
+      "a": "設籍桃園市65歲以上長者或55歲以上原住民；生日當月起可辦。",
+      "source_url": "https://sab.tycg.gov.tw/News_Content.aspx?n=7372&s=684795"
+    },
+    {
+      "q": "桃園市敬老卡怎麼申請？",
+      "a": "區公所臨櫃，備身分證正本及6個月內2吋照片。",
+      "source_url": "https://sab.tycg.gov.tw/News_Content.aspx?n=7372&s=684795"
+    },
+    {
+      "q": "桃園市敬老卡有什麼限制？",
+      "a": "社福點數與自費電子錢包分開；2027年起新增用途不列為2026現行福利。",
+      "source_url": "https://sab.tycg.gov.tw/News_Content.aspx?n=7372&s=684795"
+    },
+    {
+      "q": "桃園市敬老卡的點數可以換現金嗎？",
+      "a": "不行。官方資料說明點數是指定用途的社福點，不是現金；可用的路線、店家與扣點方式依各縣市公告。",
+      "source_url": "https://sab.tycg.gov.tw/News_Content.aspx?n=7372&s=684795"
+    }
+  ],
+  "additional_sources": [
+    "https://sab.tycg.gov.tw/News_Content.aspx?n=7467&s=1469762"
+  ]
+}

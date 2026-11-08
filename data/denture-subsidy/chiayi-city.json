@@ -1,0 +1,47 @@
+{
+  "status": "verified",
+  "county": "chiayi-city",
+  "year": 2026,
+  "summary": "嘉義市 115 年度一般身分長者（75 歲以上、設籍滿 5 年）假牙補助：雙顎全口 4 萬 4,000 元，診治計畫書最後收件日 2026-12-18。",
+  "items": [
+    {
+      "name": "115年度一般身分長者補助裝置假牙",
+      "eligibility": "75歲以上、設籍嘉義市滿5年，未曾受本計畫補助；計畫年齡界線為民國40-12-31以前出生。",
+      "amount": "雙顎全口44,000元；單顎全口22,000元；全口一顎併另一顎部分39,000元；雙顎部分33,000元；單顎部分17,000元。",
+      "how_to_apply": "至簽約牙科院所檢查，由院所送社會處審查；核准前不得先做。",
+      "deadline": "115 年度計畫期至 12/31；診治計畫書最後收件日 2026-12-18",
+      "deadline_date": "2026-12-18",
+      "restrictions": "115年度計畫期至12/31，診治計畫書最後收件日12/18；預算或受理額度可能變動。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
+    }
+  ],
+  "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：嘉義市社會處：115年度計畫（未標示）；嘉義市115年度計畫PDF（未標示）；衛福部1957：中低收入老人假牙補助（另有福利身分方案；其完整額度未確認，勿套用一般戶額度。）",
+  "faq": [
+    {
+      "q": "嘉義市老人假牙補助可以補助多少？",
+      "a": "嘉義市 115 年度一般身分長者（75 歲以上、設籍滿 5 年）假牙補助：雙顎全口 4 萬 4,000 元，診治計畫書最後收件日 2026-12-18。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
+    },
+    {
+      "q": "誰可以申請嘉義市的老人假牙補助？",
+      "a": "75歲以上、設籍嘉義市滿5年，未曾受本計畫補助；計畫年齡界線為民國40-12-31以前出生。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
+    },
+    {
+      "q": "嘉義市老人假牙補助怎麼申請？",
+      "a": "至簽約牙科院所檢查，由院所送社會處審查；核准前不得先做。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
+    },
+    {
+      "q": "嘉義市老人假牙補助有什麼限制？",
+      "a": "115年度計畫期至12/31，診治計畫書最後收件日12/18；預算或受理額度可能變動。",
+      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
+    }
+  ],
+  "additional_sources": [
+    "https://icmp-ws.chiayi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDA4L3JlbGZpbGUvOTU1NS83ODI3MDYvOTI5NGFkYjktNDhiNy00ZTA3LWExYjMtNjVkNGI4NjNjYmI1LnBkZg%3d%3d&n=MTE15bm05bqmNzXmrbLku6XkuIrplbfogIXlgYfniZnoqIjnlasucGRm",
+    "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=11042"
+  ]
+}

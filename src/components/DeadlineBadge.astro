@@ -1,0 +1,8 @@
+---
+import { BADGE_CLASS, badgeText, deadlineState } from '../lib/deadline';
+const { date } = Astro.props as { date?: string | null };
+const state = deadlineState(date);
+---
+{date && state !== 'unknown' && (
+  <span data-deadline={date} class={BADGE_CLASS[state]}>{badgeText(state, date)}</span>
+)}

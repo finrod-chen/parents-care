@@ -1,0 +1,50 @@
+{
+  "status": "verified",
+  "county": "nantou",
+  "year": 2026,
+  "summary": "南投縣 115 年有老人裝置假牙補助：福利身分者全口最高 4 萬 4,000 元；一般戶終身合計最高 4 萬元，至經費用罄。",
+  "items": [
+    {
+      "name": "115年老人裝置假牙補助（福利身分／一般戶分案）",
+      "eligibility": "第一類：設籍南投，65歲以上或55歲以上原住民，且符合低／中低收入、老人津貼、身障補助、公費安置等指定福利身分。第二類一般戶：65歲以上且設籍滿1年並在籍；另列特定身障者。須牙醫評估。",
+      "amount": "第一類5年內單顎最高22,000元、全口44,000元；維修每年最高6,600元（不計入5年上限）。第二類終身合計最高40,000元；官方表單未列各型式細額，故不拆分推測。",
+      "how_to_apply": "第一類向戶籍地公所；第二類向戶籍地衛生所，附3個月內牙科診斷證明、裝置前缺牙照片等。",
+      "deadline": "即日起至經費用罄",
+      "deadline_date": null,
+      "restrictions": "公告即日起至經費用罄；查核日未找到公開餘額。",
+      "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688"
+    }
+  ],
+  "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：南投縣衛生局：115申請表（2026-02-02）；南投縣衛生局：115年申請公告（未標示）；衛福部1957：南投老人假牙補助（未標示）",
+  "faq": [
+    {
+      "q": "南投縣老人假牙補助可以補助多少？",
+      "a": "南投縣 115 年有老人裝置假牙補助：福利身分者全口最高 4 萬 4,000 元；一般戶終身合計最高 4 萬元，至經費用罄。",
+      "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688"
+    },
+    {
+      "q": "誰可以申請南投縣的老人假牙補助？",
+      "a": "第一類：設籍南投，65歲以上或55歲以上原住民，且符合低／中低收入、老人津貼、身障補助、公費安置等指定福利身分。第二類一般戶：65歲以上且設籍滿1年並在籍；另列特定身障者。須牙醫評估。",
+      "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688"
+    },
+    {
+      "q": "南投縣老人假牙補助怎麼申請？",
+      "a": "第一類向戶籍地公所；第二類向戶籍地衛生所，附3個月內牙科診斷證明、裝置前缺牙照片等。",
+      "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688"
+    },
+    {
+      "q": "南投縣老人假牙補助有什麼限制？",
+      "a": "公告即日起至經費用罄；查核日未找到公開餘額。",
+      "source_url": "https://www.ntshb.gov.tw/center/form/Details?Parser=2,24,525,496,,,2688"
+    }
+  ],
+  "additional_sources": [
+    "https://www.ntshb.gov.tw/center/latestevent/Details?Parser=9,31,1028,1011,,,4133",
+    "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=11914"
+  ],
+  "public_notes": [
+    "部分內容的官方頁面較舊或未能完整核實，已標示在各項目的「限制與注意」；申請前請向主管機關確認。"
+  ]
+}

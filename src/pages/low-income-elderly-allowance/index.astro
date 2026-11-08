@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Faq from '../../components/Faq.astro';
+import VerifiedBadge from '../../components/VerifiedBadge.astro';
+import Illust from '../../components/Illust.astro';
+import AllowanceChecker from '../../islands/AllowanceChecker';
+import { national } from '../../lib/national';
+import { COUNTIES } from '../../lib/counties';
+import { breadcrumbLd, faqLd, webAppLd, withSite, type Crumb } from '../../lib/seo';
+
+const d = national().allowance;
+const path = '/low-income-elderly-allowance/';
+const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: '中低收入老人生活津貼資格檢核', path }];
+const t = (n: number) => `${n.toLocaleString('en-US')} 元`;
+const answer = `中低收入老人生活津貼現行每月 ${t(d.amounts.tier1_twd)}（家庭每人每月平均收入未達最低生活費 ${d.income.tier1_below_multiple} 倍）或 ${t(d.amounts.tier2_twd)}（${d.income.tier1_below_multiple} 倍以上、不超過 ${d.income.max_multiple_of_min_living} 倍），另加發 ${t(d.amounts.bonus_twd)}（${d.amounts.bonus_period}）；須年滿 ${d.age_min} 歲，且收入、存款與不動產符合標準。`;
+const title = withSite('中低收入老人生活津貼資格檢核（2026）');
+const description = `${answer}輸入縣市、收入與存款即可初步檢核，資料附官方來源，最後查證 ${d.verified_at}。`;
+const counties = COUNTIES.map((c) => ({ slug: c.slug, name: c.name }));
+---
+<Base title={title} description={description} path={path} jsonLd={[breadcrumbLd(crumbs), faqLd(d.faq), webAppLd({ name: '中低收入老人生活津貼資格檢核', path, description: '輸入戶籍縣市、年齡、家庭收入與存款，初步檢核是否符合中低收入老人生活津貼並估算金額。' })]}>
+  <Breadcrumb crumbs={crumbs} />
+  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-warm p-6 sm:flex-row sm:justify-between">
+    <div>
+      <h1 class="text-2xl font-bold">中低收入老人生活津貼資格檢核</h1>
+      <p class="mt-3 text-lg">{answer}</p>
+    </div>
+    <Illust id="grandma-smile" width={130} priority />
+  </section>
+
+  <section aria-labelledby="calc-h" class="mt-6 rounded-2xl border-2 border-brand bg-white p-4">
+    <h2 id="calc-h" class="text-xl font-bold">資格檢核</h2>
+    <AllowanceChecker client:visible data={{ age_min: d.age_min, income: d.income, assets: d.assets, amounts: d.amounts, min_living_cost: d.min_living_cost }} counties={counties} />
+    <noscript><p class="mt-2 text-sm">檢核需要啟用 JavaScript；也可直接查看下方的條件與金額。</p></noscript>
+  </section>
+
+  <section aria-labelledby="amt-h" class="mt-8">
+    <h2 id="amt-h" class="text-xl font-bold mb-3">每月金額</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse text-left text-sm">
+        <caption class="sr-only">中低收入老人生活津貼金額</caption>
+        <thead><tr class="bg-teal-100"><th scope="col" class="p-2">條件（家庭每人每月平均收入）</th><th scope="col" class="p-2">現行</th><th scope="col" class="p-2">含加發 {t(d.amounts.bonus_twd)}</th></tr></thead>
+        <tbody>
+          <tr class="border-b border-teal-100"><th scope="row" class="p-2 font-medium">未達最低生活費 {d.income.tier1_below_multiple} 倍</th><td class="p-2">{t(d.amounts.tier1_twd)}</td><td class="p-2">{t(d.amounts.tier1_twd + d.amounts.bonus_twd)}</td></tr>
+          <tr class="border-b border-teal-100"><th scope="row" class="p-2 font-medium">{d.income.tier1_below_multiple} 倍以上、未超過 {d.income.max_multiple_of_min_living} 倍</th><td class="p-2">{t(d.amounts.tier2_twd)}</td><td class="p-2">{t(d.amounts.tier2_twd + d.amounts.bonus_twd)}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-2 text-sm text-slate-600">加發期間：{d.amounts.bonus_period}。衛福部規劃調增到 {t(d.amounts.planned_tier2_twd)}–{t(d.amounts.planned_tier1_twd)}：{d.amounts.planned_status}。兩個收入級距都還要「未超過臺灣地區平均每人每月消費支出的 {d.income.consumption_multiple} 倍」（{t(d.income.consumption_per_capita_monthly_twd * d.income.consumption_multiple)}）。</p>
+  </section>
+
+  <section aria-labelledby="mlc-h" class="mt-8">
+    <h2 id="mlc-h" class="text-xl font-bold mb-3">115 年各地區最低生活費</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse text-left text-sm">
+        <caption class="sr-only">115 年最低生活費</caption>
+        <thead><tr class="bg-teal-100"><th scope="col" class="p-2">地區</th><th scope="col" class="p-2">最低生活費</th><th scope="col" class="p-2">1.5 倍</th><th scope="col" class="p-2">2.5 倍</th></tr></thead>
+        <tbody>
+          {d.min_living_cost.map((m) => (
+            <tr class="border-b border-teal-100">
+              <th scope="row" class="p-2 font-medium">{m.area}{m.area === '臺灣省' ? '（其餘縣市）' : m.area === '福建省' ? '（金門、連江）' : ''}</th>
+              <td class="p-2">{t(m.twd)}</td><td class="p-2">{t(m.twd * d.income.tier1_below_multiple)}</td><td class="p-2">{t(m.twd * d.income.max_multiple_of_min_living)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="cond-h" class="mt-8">
+    <h2 id="cond-h" class="text-xl font-bold mb-3">申請條件</h2>
+    <ul class="list-disc space-y-1 pl-5">
+      <li>年滿 {d.age_min} 歲，實際居住在戶籍所在地的縣市，且最近一年居住國內超過 183 日。</li>
+      <li>家庭每人每月平均收入不超過當年最低生活費 {d.income.max_multiple_of_min_living} 倍，也不超過臺灣地區平均每人每月消費支出的 {d.income.consumption_multiple} 倍。</li>
+      <li>全家存款本金、投資與有價證券合計：只有申請人一人時不超過 {t(d.assets.deposits_single_twd)}，每增加一人加 {t(d.assets.deposits_per_extra_person_twd)}。</li>
+      <li>全家人口的土地、房屋未超過合理價值（各縣市自訂）。</li>
+      <li>沒有接受政府公費收容安置，也沒有入獄服刑、羈押或依法拘禁。</li>
+      <li>列冊的低收入戶、中低收入戶申請時，免審查收入與財產。</li>
+    </ul>
+  </section>
+
+  {d.public_notes && (
+    <section aria-labelledby="notes-h" class="mt-8 rounded-2xl border border-teal-200 bg-teal-50 p-4">
+      <h2 id="notes-h" class="text-lg font-bold">先看這幾點</h2>
+      <ul class="mt-2 list-disc space-y-1 pl-5">{d.public_notes.map((n) => <li>{n}</li>)}</ul>
+    </section>
+  )}
+
+  <Faq faq={d.faq} />
+  <p class="mt-6 text-sm">相關：<a class="text-brand-dark underline" href="/long-term-care/">長照給付與外籍看護費用試算</a>（領有這項津貼者，聘僱外籍家庭看護的就業安定費免繳）。</p>
+  <VerifiedBadge verifiedAt={d.verified_at} sources={d.sources.map((s) => ({ label: s.label, url: s.url }))} />
+</Base>

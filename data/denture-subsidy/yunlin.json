@@ -1,0 +1,46 @@
+{
+  "status": "verified",
+  "county": "yunlin",
+  "year": 2026,
+  "summary": "雲林縣有中低收入老人假牙補助：雙顎全口 4 萬 4,000 元，須具指定弱勢身分並經牙醫評估。",
+  "items": [
+    {
+      "name": "中低收入老人補助裝置假牙",
+      "eligibility": "設籍雲林，65歲以上或55歲以上原住民；牙醫評估需活動假牙，並具低／中低收入、老人津貼、身障補助、公費安置或照顧補助等指定身分。",
+      "amount": "雙顎全口44,000元；單顎全口22,000元；一顎全口併另一顎部分39,000元；雙顎部分34,000元；單顎部分17,000元；固定式每顆4,400元、每年最多10顆；活動假牙維修每年最高6,600元。",
+      "how_to_apply": "先至戶籍地公所審查資格，再至縣內特約牙科評估送審；核定後裝置／維修。",
+      "deadline": null,
+      "deadline_date": null,
+      "restrictions": "同一顎同項目需滿5年並重新評估；一般篩檢期通常至10/31，依當年公告及經費。",
+      "source_url": "https://social.yunlin.gov.tw/News_Content.aspx?n=22334&s=536172"
+    }
+  ],
+  "source_url": "https://social.yunlin.gov.tw/News_Content.aspx?n=22334&s=536172",
+  "verified_at": "2026-11-08",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：雲林縣政府社會處：假牙計畫（計畫PDF修訂2026-05-11）；雲林縣政府：115年度計畫PDF（2026-05-11修訂）",
+  "faq": [
+    {
+      "q": "雲林縣老人假牙補助可以補助多少？",
+      "a": "雲林縣有中低收入老人假牙補助：雙顎全口 4 萬 4,000 元，須具指定弱勢身分並經牙醫評估。",
+      "source_url": "https://social.yunlin.gov.tw/News_Content.aspx?n=22334&s=536172"
+    },
+    {
+      "q": "誰可以申請雲林縣的老人假牙補助？",
+      "a": "設籍雲林，65歲以上或55歲以上原住民；牙醫評估需活動假牙，並具低／中低收入、老人津貼、身障補助、公費安置或照顧補助等指定身分。",
+      "source_url": "https://social.yunlin.gov.tw/News_Content.aspx?n=22334&s=536172"
+    },
+    {
+      "q": "雲林縣老人假牙補助怎麼申請？",
+      "a": "先至戶籍地公所審查資格，再至縣內特約牙科評估送審；核定後裝置／維修。",
+      "source_url": "https://social.yunlin.gov.tw/News_Content.aspx?n=22334&s=536172"
+    },
+    {
+      "q": "雲林縣老人假牙補助有什麼限制？",
+      "a": "同一顎同項目需滿5年並重新評估；一般篩檢期通常至10/31，依當年公告及經費。",
+      "source_url": "https://social.yunlin.gov.tw/News_Content.aspx?n=22334&s=536172"
+    }
+  ],
+  "additional_sources": [
+    "https://ws.yunlin.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDE0L3JlbGZpbGUvMjE3ODQvNTM2MTcyLzc1Zjg5NzYwLWMxMGQtNDBmNS05MTJkLTczYTA1NDMxNzlkMi5wZGY%3D&n=6Zuy5p6X57ij5pS%2F5bqc6L6m55CG5Lit5L2O5pS25YWl6ICB5Lq66KOc5Yqp6KOd572u5YGH54mZ5a%2Bm5pa96KiI55WrMTE1MDQyNC5wZGY%3D"
+  ]
+}

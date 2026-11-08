@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import HomeFinder from '../islands/HomeFinder';
+import { TOPICS } from '../lib/topics';
+import { COUNTIES } from '../lib/counties';
+import { all } from '../lib/data';
+import { SITE_NAME } from '../lib/site';
+import { breadcrumbLd } from '../lib/seo';
+import Illust from '../components/Illust.astro';
+
+const availability: Record<string, Record<string, 'verified' | 'todo'>> = {};
+for (const e of all()) (availability[e.topic] ??= {})[e.county] = e.status;
+---
+<Base
+  title={`${SITE_NAME}：查爸媽可以領什麼補助、照顧要花多少`}
+  description="輸入爸媽的年齡與居住縣市，查重陽敬老金、老人假牙補助、敬老卡等福利。每筆資料附官方來源與查證日期。"
+  path="/"
+  jsonLd={[breadcrumbLd([{ name: '首頁', path: '/' }])]}
+>
+  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-warm p-6 sm:flex-row sm:justify-between">
+    <div>
+      <h1 class="text-2xl font-bold sm:text-3xl">爸媽可以領什麼福利？照顧要花多少？</h1>
+      <p class="mt-3 text-lg">輸入爸媽幾歲、住哪個縣市，就能找到對應的補助項目；每筆都附官方來源與查證日期。</p>
+    </div>
+    <Illust id="grandparents-smile" width={240} priority />
+  </section>
+
+  <section aria-labelledby="find-h" class="mt-6 rounded-2xl border-2 border-brand bg-white p-4">
+    <div class="flex items-center gap-3">
+      <Illust id="worried-daughter" width={88} />
+      <h2 id="find-h" class="text-xl font-bold">依年齡與縣市查詢</h2>
+    </div>
+    <div class="mt-3"><HomeFinder client:load topics={TOPICS.map((t) => ({ slug: t.slug, title: t.title }))} counties={COUNTIES.map((c) => ({ slug: c.slug, name: c.name }))} availability={availability} /></div>
+  </section>
+
+  <section aria-labelledby="topics-h" class="mt-8">
+    <h2 id="topics-h" class="text-xl font-bold mb-3">福利項目</h2>
+    <ul class="grid gap-3 sm:grid-cols-3">
+      {TOPICS.map((t) => (
+        <li class="rounded-2xl border border-teal-200 p-4">
+          <a class="font-bold text-brand-dark underline" href={`/${t.slug}/`}>{t.title}</a>
+          <p class="mt-1 text-sm">{t.intro}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="tools-h" class="mt-8">
+    <h2 id="tools-h" class="text-xl font-bold mb-3">照顧費用試算</h2>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      <li class="rounded-2xl border border-teal-200 bg-white p-4">
+        <a class="font-bold text-brand-dark underline" href="/long-term-care/">長照給付與外籍看護費用試算</a>
+        <p class="mt-1 text-sm">輸入失能等級與身分別，算出長照額度、部分負擔，並和聘僱外籍看護比較。</p>
+      </li>
+      <li class="rounded-2xl border border-teal-200 bg-white p-4">
+        <a class="font-bold text-brand-dark underline" href="/low-income-elderly-allowance/">中低收入老人生活津貼資格檢核</a>
+        <p class="mt-1 text-sm">輸入縣市、收入與存款，初步檢核能不能領、每月約多少。</p>
+      </li>
+    </ul>
+  </section>
+</Base>
