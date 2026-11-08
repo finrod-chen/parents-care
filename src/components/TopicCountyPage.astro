@@ -29,7 +29,13 @@ const crumbs: Crumb[] = [
   { name: name, path },
 ];
 const jsonLd = [breadcrumbLd(crumbs), ...(verified ? [faqLd(entry.faq)] : [])];
-const sources = verified ? [{ label: `${name}官方公告`, url: entry.source_url }] : [];
+const host = (u: string) => new URL(u).hostname.replace(/^www\./, '');
+const sources = verified
+  ? [
+      { label: `${name}官方公告`, url: entry.source_url },
+      ...(entry.additional_sources ?? []).map((u) => ({ label: host(u), url: u })),
+    ]
+  : [];
 ---
 <Base title={title} description={description} path={path} noindex={!verified} jsonLd={jsonLd}>
   <Breadcrumb crumbs={crumbs} />
@@ -47,11 +53,16 @@ const sources = verified ? [{ label: `${name}官方公告`, url: entry.source_ur
         <h2 id="items-h" class="text-xl font-bold mb-3">資格、金額與申請方式</h2>
         <div class="space-y-3">{entry.items.map((it) => <ItemCard item={it} />)}</div>
       </section>
-      {entry.notes && <p class="mt-4 text-sm text-stone-600">備註：{entry.notes}</p>}
+      {entry.public_notes && entry.public_notes.length > 0 && (
+        <section aria-labelledby="notes-h" class="mt-6 rounded-2xl border border-teal-200 bg-teal-50 p-4">
+          <h2 id="notes-h" class="text-lg font-bold">先看這幾點</h2>
+          <ul class="mt-2 list-disc space-y-1 pl-5">{entry.public_notes.map((n) => <li>{n}</li>)}</ul>
+        </section>
+      )}
       <Faq faq={entry.faq} />
     </>
   ) : (
-    <p class="mt-3 text-lg">{name}的{topic.title}資料整理中，尚未完成官方來源查證，目前不提供金額。<span class="text-amber-700">待查證</span></p>
+    <p class="mt-3 text-lg">{name}的{topic.title}資料整理中，尚未完成官方來源查證，目前不提供金額。<span class="text-rose-700">待查證</span></p>
   )}
 
   <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} />

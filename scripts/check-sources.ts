@@ -35,7 +35,7 @@ const usage = new Map<string, Set<string>>();
 for (const e of loadAll({ skipFreshness: true /* 過期正是要靠本腳本重新查證，不應在此中斷 */ })) {
   if (e.status !== 'verified') continue;
   const where = `${e.topic}/${e.county}`;
-  const urls = [e.source_url, ...e.items.map((i) => i.source_url), ...e.faq.map((f) => f.source_url)];
+  const urls = [e.source_url, ...(e.additional_sources ?? []), ...e.items.map((i) => i.source_url), ...e.faq.map((f) => f.source_url)];
   for (const u of urls) if (u) (usage.get(u) ?? usage.set(u, new Set()).get(u)!).add(where);
 }
 

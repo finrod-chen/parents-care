@@ -56,6 +56,10 @@ export const VerifiedSchema = z
     source_url: httpUrl,
     verified_at: isoDate,
     faq: z.array(FaqSchema).min(3).max(5),
+    /** 輔助的官方來源（例如各區公所、新聞稿、我的E政府） */
+    additional_sources: z.array(httpUrl).optional(),
+    /** 給讀者看的重要提醒（短句）；notes 為內部查證紀錄，不會顯示在頁面上 */
+    public_notes: z.array(z.string().trim().min(1)).optional(),
   })
   .strict();
 

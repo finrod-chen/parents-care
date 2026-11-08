@@ -33,7 +33,7 @@ const canonical = absUrl(path);
     {jsonLd.map((o) => <script type="application/ld+json" set:html={ldString(o)} />)}
   </head>
   <body class="min-h-screen flex flex-col">
-    <header class="border-b border-orange-200 bg-white">
+    <header class="border-b border-teal-200 bg-white">
       <div class="mx-auto max-w-4xl px-4 py-3 flex flex-wrap items-center justify-between gap-2">
         <a href="/" class="text-lg font-bold text-brand-dark">🏡 {SITE_NAME}</a>
         <nav aria-label="主要導覽" class="flex gap-4 text-sm">
@@ -46,7 +46,7 @@ const canonical = absUrl(path);
     <main class="mx-auto w-full max-w-4xl flex-1 px-4 py-6">
       <slot />
     </main>
-    <footer class="border-t border-orange-200 bg-orange-50 text-sm text-stone-600">
+    <footer class="border-t border-teal-200 bg-teal-50 text-sm text-slate-600">
       <div class="mx-auto max-w-4xl px-4 py-6 space-y-1">
         <p>本站整理自各主管機關公開資訊，僅供參考；實際資格與金額以主管機關最新公告為準。</p>
         <p>本站不收集個人資料，試算皆在您的瀏覽器本機完成。</p>

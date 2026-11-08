@@ -1,9 +1,96 @@
 {
-  "status": "todo",
+  "status": "verified",
   "county": "yunlin",
   "year": 2026,
-  "items": [],
-  "source_url": null,
-  "verified_at": null,
-  "notes": "資料整理中，尚未查證。"
+  "summary": "雲林縣 115 年重陽敬老禮金：65–69 歲 1,000 元、70–79 歲 2,000 元、80–89 歲 3,000 元、90–99 歲 6,000 元、100 歲以上 12,000 元。",
+  "items": [
+    {
+      "name": "重陽節敬老禮金（65–69歲）",
+      "eligibility": "設籍雲林縣，重陽節（115/10/18）當日年滿65歲；名冊以115/7/2 18:00戶役政資料為準，9/10前遷出縣外或死亡者不發；10/2–10/18過世者視同慰問金不追回；民國45/10/19–50/10/18出生",
+      "amount": "1,000 元",
+      "how_to_apply": "以鄉鎮市公所匯入長者本人帳戶為原則（郵局或農會等，專戶不可）；無帳戶者由村里幹事送現金。剛滿65歲或新遷入者須向公所提供帳戶（例：虎尾鎮受理至115/9/7）",
+      "deadline": "公所115/10/2前完成轉帳；現金10/16前發放；特殊情形至遲115/11/2前發完，經送三次未領視同放棄",
+      "rules": {
+        "min_age": 65,
+        "max_age": 69,
+        "amount_twd": 1000
+      }
+    },
+    {
+      "name": "重陽節敬老禮金（70–79歲）",
+      "eligibility": "設籍雲林縣，重陽節（115/10/18）當日年滿65歲；名冊以115/7/2 18:00戶役政資料為準，9/10前遷出縣外或死亡者不發；10/2–10/18過世者視同慰問金不追回；民國35/10/19–45/10/18出生",
+      "amount": "2,000 元",
+      "how_to_apply": "以鄉鎮市公所匯入長者本人帳戶為原則（郵局或農會等，專戶不可）；無帳戶者由村里幹事送現金。剛滿65歲或新遷入者須向公所提供帳戶（例：虎尾鎮受理至115/9/7）",
+      "deadline": "公所115/10/2前完成轉帳；現金10/16前發放；特殊情形至遲115/11/2前發完，經送三次未領視同放棄",
+      "rules": {
+        "min_age": 70,
+        "max_age": 79,
+        "amount_twd": 2000
+      }
+    },
+    {
+      "name": "重陽節敬老禮金（80–89歲）",
+      "eligibility": "設籍雲林縣，重陽節（115/10/18）當日年滿65歲；名冊以115/7/2 18:00戶役政資料為準，9/10前遷出縣外或死亡者不發；10/2–10/18過世者視同慰問金不追回；民國25/10/19–35/10/18出生",
+      "amount": "3,000 元",
+      "how_to_apply": "以鄉鎮市公所匯入長者本人帳戶為原則（郵局或農會等，專戶不可）；無帳戶者由村里幹事送現金。剛滿65歲或新遷入者須向公所提供帳戶（例：虎尾鎮受理至115/9/7）",
+      "deadline": "公所115/10/2前完成轉帳；現金10/16前發放；特殊情形至遲115/11/2前發完，經送三次未領視同放棄",
+      "rules": {
+        "min_age": 80,
+        "max_age": 89,
+        "amount_twd": 3000
+      }
+    },
+    {
+      "name": "重陽節敬老禮金（90–99歲）",
+      "eligibility": "設籍雲林縣，重陽節（115/10/18）當日年滿65歲；名冊以115/7/2 18:00戶役政資料為準，9/10前遷出縣外或死亡者不發；10/2–10/18過世者視同慰問金不追回；民國16/1/1–25/10/18出生",
+      "amount": "6,000 元",
+      "how_to_apply": "以鄉鎮市公所匯入長者本人帳戶為原則（郵局或農會等，專戶不可）；無帳戶者由村里幹事送現金。剛滿65歲或新遷入者須向公所提供帳戶（例：虎尾鎮受理至115/9/7）",
+      "deadline": "公所115/10/2前完成轉帳；現金10/16前發放；特殊情形至遲115/11/2前發完，經送三次未領視同放棄",
+      "rules": {
+        "min_age": 90,
+        "max_age": 99,
+        "amount_twd": 6000
+      }
+    },
+    {
+      "name": "重陽節敬老禮金（百歲人瑞）",
+      "eligibility": "設籍雲林縣且民國15年12月31日前出生",
+      "amount": "12,000 元；官方榮家新聞稿提及縣府同時致贈金鎖片（雲林榮家115/10/16）",
+      "how_to_apply": "由縣府社會處人員陪同一級主管親送到府",
+      "deadline": "節前2週開始，原則重陽節前發完，特殊情形至遲115/11/2",
+      "rules": {
+        "min_age": 100,
+        "max_age": null,
+        "amount_twd": 12000
+      }
+    }
+  ],
+  "source_url": "https://ws.yunlin.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNTA4L3JlbGZpbGUvMTI2NTMvNjA2MjQ2Lzc5ZmE2YzdkLWUxYWMtNDhiOC1iODc5LWNkMTcyYzM0MGY4Yy5wZGY%3D&n=6Zuy5p6X57ijMTE15bm05bqm6YeN6Zm956%2BA5pWs6ICB56au6YeR55m85pS%2B6KiI55WrLnBkZg%3D%3D",
+  "verified_at": "2026-11-08",
+  "notes": "主要來源為「雲林縣115年度重陽節敬老禮金發放計畫」PDF（縣府社會處，經我的E政府連結）。年齡以重陽節當日足齡計。媒體（天眼日報）稱60–64歲身障長者亦可領1,000元，計畫書未載，待查證。各鄉鎮市公所另有加碼（如麥寮鄉65歲以上5,000元、虎尾鎮600–2,000元等）僅見媒體，待查證。洽詢：雲林縣社會處(05)5522560。發放期限11/2已過。",
+  "faq": [
+    {
+      "q": "雲林縣重陽敬老禮金可以領多少？",
+      "a": "重陽節敬老禮金（65–69歲）：1,000 元；重陽節敬老禮金（70–79歲）：2,000 元；重陽節敬老禮金（80–89歲）：3,000 元；重陽節敬老禮金（90–99歲）：6,000 元；重陽節敬老禮金（百歲人瑞）：12,000 元；官方榮家新聞稿提及縣府同時致贈金鎖片（雲林榮家115/10/16）。",
+      "source_url": "https://ws.yunlin.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNTA4L3JlbGZpbGUvMTI2NTMvNjA2MjQ2Lzc5ZmE2YzdkLWUxYWMtNDhiOC1iODc5LWNkMTcyYzM0MGY4Yy5wZGY%3D&n=6Zuy5p6X57ijMTE15bm05bqm6YeN6Zm956%2BA5pWs6ICB56au6YeR55m85pS%2B6KiI55WrLnBkZg%3D%3D"
+    },
+    {
+      "q": "雲林縣重陽敬老禮金誰可以領？",
+      "a": "設籍雲林縣，重陽節（115/10/18）當日年滿65歲；名冊以115/7/2 18:00戶役政資料為準，9/10前遷出縣外或死亡者不發；10/2–10/18過世者視同慰問金不追回；民國45/10/19–50/10/18出生（其他級距的條件請見上方各項說明）。",
+      "source_url": "https://ws.yunlin.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNTA4L3JlbGZpbGUvMTI2NTMvNjA2MjQ2Lzc5ZmE2YzdkLWUxYWMtNDhiOC1iODc5LWNkMTcyYzM0MGY4Yy5wZGY%3D&n=6Zuy5p6X57ijMTE15bm05bqm6YeN6Zm956%2BA5pWs6ICB56au6YeR55m85pS%2B6KiI55WrLnBkZg%3D%3D"
+    },
+    {
+      "q": "雲林縣重陽敬老禮金怎麼領？有期限嗎？",
+      "a": "領取方式：以鄉鎮市公所匯入長者本人帳戶為原則（郵局或農會等，專戶不可）；無帳戶者由村里幹事送現金。剛滿65歲或新遷入者須向公所提供帳戶（例：虎尾鎮受理至115/9/7）。期限：公所115/10/2前完成轉帳；現金10/16前發放；特殊情形至遲115/11/2前發完，經送三次未領視同放棄。",
+      "source_url": "https://ws.yunlin.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNTA4L3JlbGZpbGUvMTI2NTMvNjA2MjQ2Lzc5ZmE2YzdkLWUxYWMtNDhiOC1iODc5LWNkMTcyYzM0MGY4Yy5wZGY%3D&n=6Zuy5p6X57ijMTE15bm05bqm6YeN6Zm956%2BA5pWs6ICB56au6YeR55m85pS%2B6KiI55WrLnBkZg%3D%3D"
+    }
+  ],
+  "additional_sources": [
+    "https://huwei.yunlin.gov.tw/News_Content.aspx?n=20380&s=598454",
+    "https://www.gov.tw/News_Content_37_908085",
+    "https://www.vac.gov.tw/vac_home/yunlin/fp-603-205919-208-319244.html"
+  ],
+  "public_notes": [
+    "各鄉鎮市公所另有加碼，待查證。"
+  ]
 }

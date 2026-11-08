@@ -2,13 +2,13 @@
 
 @theme {
   --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-  /* 溫馨暖色：對比皆 ≥ 4.5:1（白／奶油底） */
-  --color-brand: #c2410c;
-  --color-brand-dark: #9a3412;
-  --color-cream: #fffaf3;
-  --color-warm: #ffedd5;
+  /* 清爽青綠＋柔粉：對比皆 ≥ 4.5:1 */
+  --color-brand: #0f766e;
+  --color-brand-dark: #115e59;
+  --color-cream: #f6fbfa;
+  --color-warm: #fff1f2;
 }
 
 html { font-size: 17px; }
-body { @apply bg-cream text-stone-800 antialiased; line-height: 1.75; }
-h1, h2, h3 { @apply text-orange-950; line-height: 1.35; }
+body { @apply bg-cream text-slate-800 antialiased; line-height: 1.75; }
+h1, h2, h3 { @apply text-teal-950; line-height: 1.35; }

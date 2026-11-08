@@ -37,7 +37,7 @@ for (const e of all()) (availability[e.topic] ??= {})[e.county] = e.status;
     <h2 id="topics-h" class="text-xl font-bold mb-3">福利項目</h2>
     <ul class="grid gap-3 sm:grid-cols-3">
       {TOPICS.map((t) => (
-        <li class="rounded-2xl border border-orange-200 p-4">
+        <li class="rounded-2xl border border-teal-200 p-4">
           <a class="font-bold text-brand-dark underline" href={`/${t.slug}/`}>{t.title}</a>
           <p class="mt-1 text-sm">{t.intro}</p>
         </li>
