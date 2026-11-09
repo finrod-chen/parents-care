@@ -64,6 +64,8 @@ export const VerifiedSchema = z
     additional_sources: z.array(httpUrl).optional(),
     /** 主要來源的顯示名稱（預設「{縣市}官方公告」）；來源不是官方公告時使用，例如「新聞報導」 */
     source_label: z.string().trim().min(1).optional(),
+    /** 主要來源性質：預設官方；若是新聞報導等非官方來源，標 'media'，頁面標題會顯示「資料來源」而非「官方來源」 */
+    source_type: z.enum(['official', 'media']).optional(),
     /** 給讀者看的重要提醒（短句）；notes 為內部查證紀錄，不會顯示在頁面上 */
     public_notes: z.array(z.string().trim().min(1)).optional(),
   })

@@ -71,6 +71,6 @@ const sources = verified
     <p class="mt-3 text-lg">{name}的{topic.title}資料準備中。</p>
   )}
 
-  <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} heading={verified && entry.source_label ? '資料來源' : '官方來源'} />
+  <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} heading={verified && entry.source_type === 'media' ? '資料來源' : '官方來源'} />
   <p class="mt-6 text-sm"><a class="text-brand-dark underline" href={`/${entry.topic}/`}>查看全部縣市比較</a></p>
 </Base>

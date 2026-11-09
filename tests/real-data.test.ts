@@ -52,3 +52,11 @@ describe('假牙與敬老卡資料', () => {
     expect(l && l.status === 'verified' && l.items.length).toBe(1);
   });
 });
+
+describe('來源性質', () => {
+  it('連江縣重陽敬老金已是官方要點，不再標為新聞來源', () => {
+    const l = verified.find((e) => e.topic === 'chongyang-bonus' && e.county === 'lienchiang');
+    expect(l && l.status === 'verified' && l.source_type).toBeUndefined();
+    expect(l && l.status === 'verified' && l.source_label).toBe('連江縣發放重陽禮金實施要點');
+  });
+});

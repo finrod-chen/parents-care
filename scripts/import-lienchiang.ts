@@ -1,17 +1,17 @@
 /**
  * 連江縣重陽敬老禮金（2026／民國 115 年）。
- * 注意：這一筆「不是」官方 115 年公告——連江縣政府 115 年公告查不到。
- * 依使用者指示（2026-11-08）先採媒體報導的金額，並在頁面明確標示；
- * 現行要點（109/6/1 修訂）的分級與媒體報導一致。待取得官方公告後請替換並移除 public_notes 的警語。
+ * 依據：《連江縣發放重陽禮金實施要點》官方全文（103-03-11 訂定，113-01-11 最新修訂；使用者於 2026-11-09 提供 docx，
+ * 已存於 scripts/import/lienchiang-chongyang-rules-113.docx）。要點以「當年度」為準，每年適用，不需逐年公告金額。
  * 用法：npx tsx scripts/import-lienchiang.ts
  */
 import fs from 'node:fs';
 
-const MEDIA = 'https://n.yam.com/Article/20260925754635'; // 2026-09-25 媒體報導：縣長親送敬老禮金
-const RULES_PDF = 'https://www.matsu.gov.tw/upload/f-20231231144620.pdf'; // 連江縣發放重陽禮金實施要點（109/6/1 修訂）
-const ELIG = '重陽節（2026-10-18）當日年滿 65 歲，且於 115 年 6 月 30 日前已設籍連江縣。';
-const METHOD65 = '由各鄉公所於重陽節前派員送達，或以轉帳方式撥入帳戶。';
-const METHOD100 = '年滿 100 歲者由縣長親送住所。';
+const MEDIA = 'https://n.yam.com/Article/20260925754635'; // 2026-09-25 媒體報導：縣長親送敬老禮金（佐證 115 年已依要點發放）
+const RULES_PDF = 'https://www.matsu.gov.tw/upload/f-20231231144620.pdf'; // 連江縣發放重陽禮金實施要點（連江縣政府網站）
+const ELIG = '重陽節（含當日）年滿 65 歲以上，且於當年 6 月 30 日前設籍連江縣。';
+const ELIG100 = '當年度（12 月 31 日止）滿 100 歲以上，且於當年 6 月 30 日前設籍連江縣。';
+const METHOD65 = '由各鄉公所派員或以轉帳方式，於重陽節二日前親自送達或撥入帳戶。';
+const METHOD100 = '恭請縣長親自送達長者住所致敬祝賀。';
 
 const items = [
   { name: '重陽敬老禮金（65–79 歲）', amount: 1500, a: [65, 79], method: METHOD65 },
@@ -30,27 +30,25 @@ const data = {
   summary,
   items: items.map((i) => ({
     name: i.name,
-    eligibility: ELIG,
+    eligibility: i.a[0] === 100 ? ELIG100 : ELIG,
     amount: fmt(i.amount),
     how_to_apply: i.method,
     deadline: null,
     deadline_date: null,
     rules: { min_age: i.a[0], max_age: i.a[1], amount_twd: i.amount },
   })),
-  source_url: MEDIA,
-  additional_sources: [RULES_PDF, 'https://www.nankan.gov.tw/chhtml/Detail/2221?mcid=113732'],
-  verified_at: '2026-11-08',
+  source_url: RULES_PDF,
+  source_label: '連江縣發放重陽禮金實施要點',
+  additional_sources: [MEDIA, 'https://www.nankan.gov.tw/chhtml/Detail/2221?mcid=113732'],
+  verified_at: '2026-11-09',
   notes:
-    '【非官方 115 年公告】連江縣政府 115 年重陽禮金公告查不到（主站 www.matsu.gov.tw 對本環境拒絕連線；法規系統 law.matsu.gov.tw 掃描 GL000001–700 未找到要點本文，僅在 GL000616 相關法規清單提到名稱）。' +
-    ' 金額、年齡分級與設籍日期取自 2026-09-25 媒體報導（縣長已發放 115 年禮金），並與使用者提供資料中記載的現行要點（109/6/1 修訂；65–79 歲 1,500、80–89 歲 2,000、90–99 歲 3,000、當年度滿百歲 10,000）一致。' +
-    ' 發放時間、領取期限、補發方式未取得，留 null。依使用者 2026-11-08 指示先採用；取得官方公告後請替換。',
-  source_label: '新聞報導（2026-09-25）',
+    '依官方《連江縣發放重陽禮金實施要點》全文（113-01-11 修訂）：65–79 歲 1,500、80–89 歲 2,000、90–99 歲 3,000、當年度（12/31 止）滿百歲 10,000 元；重陽節（含當日）年滿 65 歲且當年 6/30 前設籍；65–99 歲由鄉公所於重陽節二日前送達或轉帳，百歲由縣長親送。要點以「當年度」為準；2026-09-25 媒體報導縣長已發放 115 年禮金。2026-11-09 取代先前僅有媒體報導的版本。',
   faq: [
-    { q: '連江縣重陽敬老禮金領多少？', a: summary, source_url: MEDIA },
-    { q: '誰可以領連江縣的重陽敬老禮金？', a: ELIG, source_url: MEDIA },
-    { q: '連江縣重陽敬老禮金怎麼領？', a: `${METHOD65}${METHOD100}`, source_url: MEDIA },
-    { q: '連江縣重陽敬老禮金最晚什麼時候可以領？', a: '領取時間依縣府與鄉公所通知為準，建議儘早向戶籍地鄉公所確認。', source_url: MEDIA },
-    { q: '連江縣 100 歲以上的長者怎麼領重陽敬老禮金？', a: `10,000 元。${METHOD100}`, source_url: MEDIA },
+    { q: '連江縣重陽敬老禮金領多少？', a: summary, source_url: RULES_PDF },
+    { q: '誰可以領連江縣的重陽敬老禮金？', a: ELIG, source_url: RULES_PDF },
+    { q: '連江縣重陽敬老禮金怎麼領？', a: `${METHOD65}${METHOD100}`, source_url: RULES_PDF },
+    { q: '連江縣重陽敬老禮金最晚什麼時候可以領？', a: '65–99 歲長者由各鄉公所於重陽節二日前送達或撥入帳戶；若沒有收到，建議儘早向戶籍地鄉公所確認。', source_url: RULES_PDF },
+    { q: '連江縣 100 歲以上的長者怎麼領重陽敬老禮金？', a: `10,000 元。${METHOD100}`, source_url: RULES_PDF },
   ],
 };
 fs.writeFileSync('data/chongyang-bonus/lienchiang.json', JSON.stringify(data, null, 2) + '\n');
