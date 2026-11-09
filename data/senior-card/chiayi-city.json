@@ -1,3 +1,4 @@
+
 {
   "status": "verified",
   "county": "chiayi-city",
@@ -8,15 +9,15 @@
       "name": "嘉義市敬老愛心乘車卡／敬老、愛心悠遊卡",
       "eligibility": "設籍嘉義市65歲以上；愛心卡另適用持身心障礙證明者。",
       "amount": "每月1,200點，月底未用歸零；嘉義市／縣公車及公告客運；臺鐵每趟最高50點（2026-05-15起）；運動中心指定時段扣點；合作計程車單趟最高50點。",
-      "how_to_apply": "市府或戶籍區公所申辦。",
+      "how_to_apply": "市府或戶籍區公所申辦。可向聯合里辦公處申請（收件送區公所製卡，里幹事通知領卡），或至區公所、市府社會處臨櫃申請、現場領卡。",
       "deadline": null,
       "restrictions": "計程車限特約車隊／營業區；點數僅限指定服務。",
       "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402"
     }
   ],
   "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=404402",
-  "verified_at": "2026-11-08",
-  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：嘉義市社會處：敬老愛心卡（未標示）；嘉義市政府：115年政策公告PDF（未標示）；嘉義市政府：計程車點數公告（2026-08-17）",
+  "verified_at": "2026-11-09",
+  "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：嘉義市社會處：敬老愛心卡（未標示）；嘉義市政府：115年政策公告PDF（未標示）；嘉義市政府：計程車點數公告（2026-08-17） 細節（市府社會處公告）：公車補助限嘉義客運、嘉義縣公車、國光客運市區電動公車，外縣市公車須自費；臺鐵起或迄其中一站須為嘉義、嘉北、大林、民雄、水上、南靖站，單趟上限50點；計程車單趟上限50點，限本市特約車隊（台灣大車隊55688及雲嘉車隊），營業區限雲林縣、嘉義縣市、台南市；每月自動補充1,200點、限當月使用；上下車皆須刷卡；乘車請隨身攜帶身分證或身心障礙手冊備查，冒用或轉借第一次查獲停止補助一年、第二次收回卡片；戶籍遷出或身故，卡片隔月自動失效；掛失洽悠遊卡412-8880按1再按7（3小時後失效），重新申請自付100元工本費；交易紀錄可於悠遊卡官網以卡號加生日查詢。",
   "faq": [
     {
       "q": "嘉義市敬老卡有什麼優惠？",
@@ -47,5 +48,9 @@
   "additional_sources": [
     "https://icmp-ws.chiayi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDA4L3JlbGZpbGUvOTI3MC85Mzc2OTYvZTZiY2RjNTUtN2QyZS00ZDc5LThkMWQtNTUyNWY4MGZhM2M1LnBkZg%3D%3D&n=5paw6IGe56i%2FLeWYie%2BqeW4guaVrOiAgeS5mOi7iuWNoTExNeW5tDXmnIgxNeaXpei1t%2BWKoOWFpeWci%2BawkemBi%2BWLleS4reW%2FgyjmoLjlrprniYgucGRm",
     "https://www.chiayi.gov.tw/News_Content.aspx?n=455&s=949104"
+  ],
+  "public_notes": [
+    "點數限當月使用，1,200 點用完需自行儲值。",
+    "冒用或轉借他人使用：第一次查獲停止補助一年，第二次收回卡片。"
   ]
 }
