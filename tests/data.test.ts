@@ -15,7 +15,7 @@ describe('counties', () => {
 
 describe('loadAll', () => {
   it('repo 內 data/ 目前全數通過', () => {
-    expect(() => loadAll({ now })).not.toThrow();
+    expect(() => loadAll({ now: new Date('2026-11-09') })).not.toThrow();
   });
   it('合法的 verified 資料通過', () => {
     const dir = tmpData({ 'chongyang-bonus/taipei.json': fixtureVerified() });
