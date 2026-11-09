@@ -11,8 +11,9 @@ export function deadlineState(date: string | null | undefined, now: Date = new D
 }
 
 export const BADGE_CLASS = {
-  open: 'inline-block rounded-full bg-teal-100 px-2 py-0.5 text-xs font-medium text-teal-900',
-  closed: 'inline-block rounded-full bg-rose-100 px-2 py-0.5 text-xs font-medium text-rose-800',
+  // 領取中用強調色淡底；已截止用中性灰（截止是事實，不是警告）
+  open: 'inline-block whitespace-nowrap rounded-full bg-accent-subtle px-2.5 py-0.5 text-xs font-medium text-accent-strong',
+  closed: 'inline-block whitespace-nowrap rounded-full border border-line bg-surface-muted px-2.5 py-0.5 text-xs font-medium text-text-secondary',
 } as const;
 
 export const badgeText = (state: Exclude<DeadlineState, 'unknown'>, date: string) =>

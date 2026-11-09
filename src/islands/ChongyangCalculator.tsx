@@ -21,20 +21,20 @@ export default function ChongyangCalculator({ rows }: { rows: Row[] }) {
   return (
     <div class="mt-3">
       <div class="flex flex-wrap gap-4">
-        <label class="flex flex-col text-sm">縣市
-          <select class="mt-1 rounded border border-slate-400 p-2 text-base" value={slug} onChange={(e) => setSlug((e.target as HTMLSelectElement).value)}>
+        <label class="flex flex-col text-sm text-text-secondary">縣市
+          <select class="field mt-1 text-body" value={slug} onChange={(e) => setSlug((e.target as HTMLSelectElement).value)}>
             {rows.map((r) => <option value={r.slug}>{r.name}</option>)}
           </select>
         </label>
-        <label class="flex flex-col text-sm">年齡（歲）
-          <input class="mt-1 w-28 rounded border border-slate-400 p-2 text-base" type="number" inputMode="numeric" min={0} max={120}
+        <label class="flex flex-col text-sm text-text-secondary">年齡（歲）
+          <input class="field mt-1 w-28 text-body" type="number" inputMode="numeric" min={0} max={120}
             value={age} onInput={(e) => setAge((e.target as HTMLInputElement).value)} />
         </label>
       </div>
 
       <div class="mt-4" aria-live="polite">
         {!valid ? (
-          <p class="text-slate-600">請輸入 0–120 的整數年齡。</p>
+          <p class="text-text-secondary">請輸入 0–120 的整數年齡。</p>
         ) : !row || !row.verified || row.items.length === 0 ? (
           <p>{row?.name}的重陽敬老金請見說明頁。</p>
         ) : (
@@ -42,19 +42,19 @@ export default function ChongyangCalculator({ rows }: { rows: Row[] }) {
             {row.items.map((it) => {
               const r = calcItem(it.rules ?? undefined, n);
               return (
-                <li class="rounded border border-teal-200 p-3">
+                <li class="rounded-xl border border-line bg-surface px-4 py-3">
                   <span class="font-medium">{it.name}：</span>
-                  {r.status === 'amount' && <strong class="text-brand-dark">{formatTwd(r.amount)}</strong>}
-                  {r.status === 'amount' && deadlineState(it.deadline_date) === 'closed' && <span class="ml-2 inline-block rounded-full bg-rose-100 px-2 py-0.5 text-xs font-medium text-rose-800">已截止</span>}
+                  {r.status === 'amount' && <strong class="font-medium text-accent-strong">{formatTwd(r.amount)}</strong>}
+                  {r.status === 'amount' && deadlineState(it.deadline_date) === 'closed' && <span class="ml-2 inline-block rounded-full border border-line bg-surface-muted px-2.5 py-0.5 text-xs font-medium text-text-secondary">已截止</span>}
                   {r.status === 'not_eligible' && <span>{n} 歲不符此項年齡條件</span>}
-                  {r.status === 'unknown' && <strong class="text-slate-700">依公告或需另符合其他條件，請見說明頁</strong>}
+                  {r.status === 'unknown' && <strong class="text-text-secondary">依公告或需另符合其他條件，請見說明頁</strong>}
                 </li>
               );
             })}
           </ul>
         )}
         {valid && row && row.verified && (
-          <p class="mt-2 text-sm text-slate-600">
+          <p class="mt-2 text-sm text-text-secondary">
             僅依一般長者的年齡級距試算；各縣市年齡認定日不同（重陽節當日、年底等），原住民的年齡門檻也較低，其他條件（設籍、所得等）請見<a class="underline" href={`/chongyang-bonus/${row.slug}/`}>{row.name}說明頁</a>。資料最後查證：{row.verifiedAt}
           </p>
         )}

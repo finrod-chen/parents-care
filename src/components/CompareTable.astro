@@ -3,33 +3,50 @@ import type { Entry } from '../lib/data';
 import { countyName } from '../lib/counties';
 import DeadlineBadge from './DeadlineBadge.astro';
 const { entries } = Astro.props as { entries: Entry[] };
+const isBonus = entries[0]?.topic === 'chongyang-bonus';
+
+/** 每一列只標一顆狀態：取該縣市各項目「最後可領日」中最晚的一個（有任一項還在領取就顯示領取中） */
+const lastDate = (e: Entry): string | null => {
+  if (e.status !== 'verified') return null;
+  const ds = e.items.map((i) => i.deadline_date).filter((d): d is string => !!d).sort();
+  return ds.length ? ds[ds.length - 1]! : null;
+};
+const showStatus = entries.some((e) => lastDate(e));
 ---
-<div class="overflow-x-auto">
-  <table class="w-full min-w-[30rem] border-collapse text-left text-sm">
-    <caption class="sr-only">各縣市比較表</caption>
-    <thead>
-      <tr class="bg-teal-100">
-        <th scope="col" class="p-2">縣市</th>
-        <th scope="col" class="p-2">{entries[0]?.topic === 'chongyang-bonus' ? '項目與金額' : '重點'}</th>
-        <th scope="col" class="p-2">查證日</th>
-      </tr>
-    </thead>
-    <tbody>
-      {entries.map((e) => (
-        <tr class="border-b border-teal-100 align-top">
-          <th scope="row" class="p-2 font-medium">
-            {e.status === 'verified' ? <a class="text-brand-dark underline" href={`/${e.topic}/${e.county}/`}>{countyName(e.county)}</a> : countyName(e.county)}
-          </th>
-          <td class="p-2">
-            {e.status === 'verified' && e.topic !== 'chongyang-bonus'
-              ? e.summary
-              : e.status === 'verified'
-              ? e.items.map((i) => <div>{i.name}：<strong>{i.amount ?? <span class="font-normal text-slate-600">依公告</span>}</strong> <DeadlineBadge date={i.deadline_date} /></div>)
-              : <span class="text-slate-600">依公告</span>}
-          </td>
-          <td class="p-2 whitespace-nowrap">{e.verified_at ?? '—'}</td>
+<div class="overflow-hidden rounded-xl border border-line bg-surface">
+  <div class="overflow-x-auto overscroll-x-contain">
+    <table class="tabular w-full min-w-[36rem] border-collapse text-left text-sm">
+      <caption class="sr-only">各縣市比較表</caption>
+      <thead>
+        <tr class="border-b border-line bg-surface-muted text-text-secondary">
+          <th scope="col" class="whitespace-nowrap px-4 py-3 font-medium">縣市</th>
+          <th scope="col" class="px-4 py-3 font-medium">{isBonus ? '項目與金額' : '重點'}</th>
+          {showStatus && <th scope="col" class="whitespace-nowrap px-4 py-3 font-medium">領取狀態</th>}
+          <th scope="col" class="whitespace-nowrap px-4 py-3 font-medium">查證日</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {entries.map((e) => (
+          <tr class="border-t border-line-subtle align-top first:border-t-0">
+            <th scope="row" class="whitespace-nowrap px-4 py-3 text-left font-medium">
+              {e.status === 'verified' ? <a class="text-accent-strong underline underline-offset-2" href={`/${e.topic}/${e.county}/`}>{countyName(e.county)}</a> : countyName(e.county)}
+            </th>
+            <td class="px-4 py-3">
+              {e.status === 'verified' && !isBonus
+                ? e.summary
+                : e.status === 'verified'
+                  ? e.items.map((i) => (
+                      <div class="py-0.5">
+                        <span class="text-text-secondary">{i.name}：</span><span class="font-medium">{i.amount ?? <span class="font-normal text-text-secondary">依公告</span>}</span>
+                      </div>
+                    ))
+                  : <span class="text-text-secondary">依公告</span>}
+            </td>
+            {showStatus && <td class="px-4 py-3">{lastDate(e) ? <DeadlineBadge date={lastDate(e)} /> : <span class="text-text-muted">依公告</span>}</td>}
+            <td class="whitespace-nowrap px-4 py-3 text-text-secondary">{e.verified_at ?? '無'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 </div>

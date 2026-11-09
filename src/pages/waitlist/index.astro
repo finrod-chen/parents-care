@@ -15,27 +15,27 @@ const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: '名單登記（
 ---
 <Base title={withSite('名單登記（尚未開放）')} description="名單登記頁目前尚未開放，不會收集任何資料。" path={path} noindex jsonLd={[breadcrumbLd(crumbs)]}>
   <Breadcrumb crumbs={crumbs} />
-  <h1 class="text-2xl font-bold">名單登記（尚未開放）</h1>
+  <h1 class="text-2xl font-semibold sm:text-3xl">名單登記（尚未開放）</h1>
   <p class="mt-3 text-lg">這個頁面目前只是預留位置，<strong>不會收集、儲存或傳送任何資料</strong>。</p>
 
-  <form class="mt-6 rounded-2xl border border-teal-200 bg-white p-4" aria-describedby="wl-note" onsubmit="return false" novalidate>
+  <form class="mt-6 rounded-xl border border-line bg-surface p-4" aria-describedby="wl-note" onsubmit="return false" novalidate>
     <fieldset disabled class="space-y-4 opacity-70">
-      <legend class="text-lg font-bold">預計提供的欄位（之後才會啟用）</legend>
+      <legend class="text-lg font-medium">預計提供的欄位（之後才會啟用）</legend>
       <label class="flex flex-col text-sm">電子郵件
-        <input type="email" class="mt-1 rounded border border-slate-400 p-2 text-base" placeholder="尚未開放" />
+        <input type="email" class="mt-1 rounded border border-line-strong p-2 text-base" placeholder="尚未開放" />
       </label>
       <fieldset class="text-sm">
         <legend class="font-medium">想收到哪些更新？</legend>
         <label class="mt-1 flex items-center gap-2"><input type="checkbox" class="h-5 w-5" />每年新數字（重陽敬老金等）</label>
         <label class="mt-1 flex items-center gap-2"><input type="checkbox" class="h-5 w-5" />長照與外籍看護費用調整</label>
       </fieldset>
-      <button type="button" class="rounded-full bg-slate-300 px-5 py-2 font-medium text-slate-700">尚未開放</button>
+      <button type="button" class="rounded-full border border-line bg-surface-muted px-5 py-2 font-medium text-text-secondary">尚未開放</button>
     </fieldset>
-    <p id="wl-note" class="mt-4 text-sm text-slate-700">表單已停用，沒有任何第三方服務連線。</p>
+    <p id="wl-note" class="mt-4 text-sm text-text-secondary">表單已停用，沒有任何第三方服務連線。</p>
   </form>
 
-  <section aria-labelledby="plan-h" class="mt-8 rounded-2xl border border-teal-200 bg-teal-50 p-4">
-    <h2 id="plan-h" class="text-lg font-bold">正式開放前會先說明</h2>
+  <section aria-labelledby="plan-h" class="mt-10 rounded-2xl border border-line bg-surface-muted p-4">
+    <h2 id="plan-h" class="text-lg font-medium">正式開放前會先說明</h2>
     <ul class="mt-2 list-disc space-y-1 pl-5">
       <li>收集哪些資料、用途與保存多久。</li>
       <li>資料存放在哪裡、由誰處理。</li>
