@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Breadcrumb from './Breadcrumb.astro';
 import Faq from './Faq.astro';
+import Callout from './Callout.astro';
 import ItemCard from './ItemCard.astro';
 import VerifiedBadge from './VerifiedBadge.astro';
 import type { Entry } from '../lib/data';
@@ -42,9 +43,9 @@ const sources = verified
 ---
 <Base title={title} description={description} path={path} noindex={!verified} jsonLd={jsonLd}>
   <Breadcrumb crumbs={crumbs} />
-  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-warm p-6 sm:flex-row sm:justify-between">
+  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-hero p-6 sm:flex-row sm:justify-between">
     <div>
-      <h1 class="text-2xl font-bold">{h1}</h1>
+      <h1 class="text-2xl font-semibold sm:text-3xl">{h1}</h1>
       {verified && <p class="mt-3 text-lg">{entry.summary}</p>}
     </div>
     <Illust id={verified ? TOPIC_ILLUST[entry.topic]! : 'grandma-smile'} width={150} priority />
@@ -52,18 +53,17 @@ const sources = verified
 
   {verified ? (
     <>
-      <p data-closed-banner={deadlines.join(',')} hidden={!closedAll} class="mt-4 rounded-2xl bg-rose-50 p-4 text-rose-900">
-        <strong>今年度的領取期限已過。</strong>以下為 {entry.year} 年的公告內容，供您了解制度；明年公告後我們會更新。
-      </p>
-      <section aria-labelledby="items-h" class="mt-6">
-        <h2 id="items-h" class="text-xl font-bold mb-3">資格、{topic.amountLabel}與申請方式</h2>
-        <div class="space-y-3">{entry.items.map((it) => <ItemCard item={it} topic={entry.topic} />)}</div>
+      <div data-closed-banner={deadlines.join(',')} hidden={!closedAll} class="mt-6">
+        <Callout><p><span class="font-medium text-foreground">今年度的領取期限已過。</span>以下為 {entry.year} 年的公告內容，供您了解制度；明年公告後我們會更新。</p></Callout>
+      </div>
+      <section aria-labelledby="items-h" class="mt-10">
+        <h2 id="items-h" class="mb-3 text-xl font-semibold">資格、{topic.amountLabel}與申請方式</h2>
+        <div class="space-y-4">{entry.items.map((it) => <ItemCard item={it} topic={entry.topic} />)}</div>
       </section>
       {entry.public_notes && entry.public_notes.length > 0 && (
-        <section aria-labelledby="notes-h" class="mt-6 rounded-2xl border border-teal-200 bg-teal-50 p-4">
-          <h2 id="notes-h" class="text-lg font-bold">先看這幾點</h2>
-          <ul class="mt-2 list-disc space-y-1 pl-5">{entry.public_notes.map((n) => <li>{n}</li>)}</ul>
-        </section>
+        <Callout id="notes-h" title="先看這幾點" class="mt-10">
+          <ul>{entry.public_notes.map((n) => <li>{n}</li>)}</ul>
+        </Callout>
       )}
       <Faq faq={entry.faq} />
     </>
@@ -72,5 +72,5 @@ const sources = verified
   )}
 
   <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} heading={verified && entry.source_type === 'media' ? '資料來源' : '官方來源'} />
-  <p class="mt-6 text-sm"><a class="text-brand-dark underline" href={`/${entry.topic}/`}>查看全部縣市比較</a></p>
+  <p class="mt-6 text-sm"><a class="text-accent-strong underline underline-offset-2" href={`/${entry.topic}/`}>查看全部縣市比較</a></p>
 </Base>

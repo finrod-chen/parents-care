@@ -3,14 +3,17 @@ import type { Faq } from '../lib/schema';
 const { faq } = Astro.props as { faq: Faq[] };
 ---
 {faq.length > 0 && (
-  <section aria-labelledby="faq-h" class="mt-8">
-    <h2 id="faq-h" class="text-xl font-bold mb-3">常見問題</h2>
-    <div class="space-y-3">
-      {faq.map((f) => (
-        <div class="rounded-2xl border border-teal-200 p-4">
-          <h3 class="font-bold">{f.q}</h3>
-          <p class="mt-1">{f.a}{f.source_url && <> <a class="text-brand-dark underline" href={f.source_url} rel="noopener">出處</a></>}</p>
-        </div>
+  <section aria-labelledby="faq-h" class="mt-10">
+    <h2 id="faq-h" class="mb-3 text-xl font-semibold">常見問題</h2>
+    {/* 原生 <details>：一次只開一題（name 相同），第一題預設展開；答案全部在 HTML 內，不靠 JavaScript */}
+    <div class="faq overflow-hidden rounded-xl border border-line bg-surface">
+      {faq.map((f, i) => (
+        <details name="faq" open={i === 0}>
+          <summary><h3 class="text-base font-medium">{f.q}</h3></summary>
+          <p class="max-w-[40em] px-4 pb-4 text-text-secondary">
+            {f.a}{f.source_url && <> <a class="text-accent-strong underline underline-offset-2" href={f.source_url} rel="noopener">出處</a></>}
+          </p>
+        </details>
       ))}
     </div>
   </section>

@@ -1,14 +1,80 @@
 @import "tailwindcss";
 
+/*
+ * 設計 token（語意化角色，依 Arc design 規範整理）
+ * 強調色（accent）只用在：使用中的導覽、連結、選取狀態、重點資料。
+ * 卡片與分隔線一律用中性的 line 色；狀態色只在真的有狀態時出現，並附文字標籤。
+ */
 @theme {
   --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-  /* 清爽青綠＋柔粉：對比皆 ≥ 4.5:1 */
-  --color-brand: #1F6F5C;
-  --color-brand-dark: #165244;
-  --color-cream: #f6fbfa;
-  --color-warm: #fff1f2;
+
+  /* 頁面與表面 */
+  --color-background: #f6fbfa;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f0f6f4;
+  --color-hero: #fff1f2; /* 品牌的溫暖底色，每頁只用在頂部那一塊 */
+
+  /* 文字 */
+  --color-foreground: #0b2b26;
+  --color-body: #1e293b;
+  --color-text-secondary: #475569;
+  --color-text-muted: #5f6f7d;
+
+  /* 線條 */
+  --color-line: #d5e3df;
+  --color-line-subtle: #e5eeeb;
+  --color-line-strong: #7f968e; /* 表單欄位邊框，對比 ≥ 3:1 */
+
+  /* 強調色（取自 logo） */
+  --color-accent: #1f6f5c;
+  --color-accent-strong: #165244;
+  --color-accent-subtle: #e2f1ec;
+
+  /* 狀態（只用於真的狀態） */
+  --color-danger: #b4233f;
+
 }
 
 html { font-size: 17px; }
-body { @apply bg-cream text-slate-800 antialiased; line-height: 1.75; }
-h1, h2, h3 { @apply text-teal-950; line-height: 1.35; }
+body { @apply bg-background text-body antialiased; line-height: 1.75; }
+h1, h2, h3 { @apply text-foreground; line-height: 1.35; }
+
+/* 鍵盤焦點：只在 :focus-visible 顯示一圈統一、低調的外框；滑鼠點擊不顯示 */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--color-accent) 65%, transparent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* 表單欄位：高度 44px（手機可點擊的最小尺寸） */
+.field {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: var(--color-body);
+  font-size: 1rem;
+}
+.field:focus-visible { border-color: var(--color-accent); border-radius: 10px; }
+.check { display: flex; align-items: flex-start; gap: 12px; min-height: 44px; padding: 10px 0; }
+.check > input { width: 20px; height: 20px; margin-top: 2px; flex: none; accent-color: var(--color-accent); }
+
+/* FAQ 折疊（原生 <details>：不需要 JavaScript，內容仍在 HTML 內） */
+.faq details + details { border-top: 1px solid var(--color-line-subtle); }
+.faq summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: 52px; padding: 12px 16px; cursor: pointer; list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: ""; flex: none; width: 9px; height: 9px; color: var(--color-text-muted);
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px); transition: transform 0.18s ease;
+}
+.faq details[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
+.faq summary:hover { background: var(--color-surface-muted); }
+@media (prefers-reduced-motion: reduce) { .faq summary::after { transition: none; } }
+
+/* 數字欄位對齊 */
+.tabular { font-variant-numeric: tabular-nums; }

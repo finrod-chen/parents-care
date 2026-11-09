@@ -51,16 +51,16 @@ const NAV = [
     {!noindex && <script is:inline async src={ADSENSE_SRC} crossorigin="anonymous"></script>}
   </head>
   <body class="min-h-screen flex flex-col">
-    <header class="border-b border-teal-200 bg-white">
+    <header class="border-b border-line bg-surface">
       <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between px-4 py-2">
         <a href="/" class="flex items-center" aria-label={`${SITE_NAME}（${SITE_DOMAIN}）首頁`}><img src="/brand/logo-horizontal.svg" alt={`${SITE_NAME} ${SITE_DOMAIN}`} width="114" height="40" class="h-10 w-auto" /></a>
-        <button id="nav-toggle" type="button" class="-mr-2 flex h-11 w-11 items-center justify-center rounded-lg text-brand-dark hover:bg-teal-50 md:hidden" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單">
+        <button id="nav-toggle" type="button" class="-mr-2 flex h-11 w-11 items-center justify-center rounded-lg text-accent-strong hover:bg-surface-muted md:hidden" aria-expanded="false" aria-controls="site-nav" aria-label="開啟選單">
           <svg id="nav-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
           <svg id="nav-icon-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" class="hidden"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
-        <nav id="site-nav" aria-label="主要導覽" class="hidden basis-full flex-col border-t border-teal-100 pt-1 text-base md:flex md:basis-auto md:flex-row md:gap-x-5 md:border-0 md:pt-0 md:text-sm">
+        <nav id="site-nav" aria-label="主要導覽" class="hidden basis-full flex-col border-t border-line-subtle pt-1 text-base md:flex md:basis-auto md:flex-row md:gap-x-5 md:border-0 md:pt-0 md:text-sm">
           {NAV.map((n) => (
-            <a href={n.href} aria-current={current.startsWith(n.href) ? 'page' : undefined} class={`block whitespace-nowrap py-3 underline-offset-4 hover:underline md:py-0 ${current.startsWith(n.href) ? 'font-bold text-brand-dark' : ''}`}>{n.label}</a>
+            <a href={n.href} aria-current={current.startsWith(n.href) ? 'page' : undefined} class={`block whitespace-nowrap py-3 underline-offset-4 hover:underline md:py-0 ${current.startsWith(n.href) ? 'font-medium text-accent-strong' : 'text-body'}`}>{n.label}</a>
           ))}
         </nav>
         <noscript><style is:inline>#site-nav{display:flex!important;flex-direction:column}#nav-toggle{display:none!important}@media(min-width:768px){#site-nav{flex-direction:row}}</style></noscript>
@@ -103,11 +103,33 @@ const NAV = [
         });
       })();
     </script>
-    <footer class="border-t border-teal-200 bg-teal-50 text-sm text-slate-600">
-      <div class="mx-auto max-w-4xl px-4 py-6 space-y-1">
-        <p>本站整理自各主管機關公開資訊，僅供參考；實際資格與金額以主管機關最新公告為準。</p>
-        <p>試算皆在您的瀏覽器本機完成，輸入的資料不會上傳。本站顯示 Google 廣告，詳見<a class="underline" href="/privacy/">隱私權政策</a>。</p>
-        <p>插圖：<a class="underline" href={CREDIT.url} rel="noopener">{CREDIT.name}</a></p>
+    <footer class="border-t border-line bg-surface text-sm text-text-secondary">
+      <div class="mx-auto max-w-4xl px-4 py-8">
+        <nav aria-label="頁尾導覽" class="grid gap-6 sm:grid-cols-3">
+          <div>
+            <p class="font-medium text-foreground">福利項目</p>
+            <ul class="mt-2 space-y-1">
+              {NAV.slice(0, 3).map((n) => <li><a class="inline-block py-1 underline-offset-4 hover:underline" href={n.href}>{n.label}</a></li>)}
+            </ul>
+          </div>
+          <div>
+            <p class="font-medium text-foreground">照顧費用試算</p>
+            <ul class="mt-2 space-y-1">
+              {NAV.slice(3).map((n) => <li><a class="inline-block py-1 underline-offset-4 hover:underline" href={n.href}>{n.label}</a></li>)}
+            </ul>
+          </div>
+          <div>
+            <p class="font-medium text-foreground">關於本站</p>
+            <ul class="mt-2 space-y-1">
+              <li><a class="inline-block py-1 underline-offset-4 hover:underline" href="/privacy/">隱私權政策</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="mt-6 max-w-[44em] space-y-1 border-t border-line-subtle pt-4 text-text-muted">
+          <p>本站整理自各主管機關公開資訊，僅供參考；實際資格與金額以主管機關最新公告為準。</p>
+          <p>試算皆在您的瀏覽器本機完成，輸入的資料不會上傳。本站顯示 Google 廣告，詳見<a class="underline" href="/privacy/">隱私權政策</a>。</p>
+          <p>插圖：<a class="underline" href={CREDIT.url} rel="noopener">{CREDIT.name}</a></p>
+        </div>
       </div>
     </footer>
   </body>

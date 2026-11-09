@@ -132,6 +132,22 @@ tests/
   - 假牙：中低收入老人方案的資格取自縣府 1999 熱線問答（114-05 更新）；**補助額度官方沒寫，維持 `null`**。新聞整理文章有寫 5 萬元、也有寫 4.4 萬元，互相矛盾又無官方出處，不採用。
   - 假牙另收錄縣府 115 年度原住民族長者裝置假牙計畫（5 年內最高 4 萬元；115 年度申請至 2026-10-31，已截止）。
 
+## UI 設計規範
+
+依 [Arc](https://uiarc.dev) 的設計規範整理（用它的 MCP 讀規範，**不安裝它的 React 元件**：Accordion 等需要 Radix、Motion、lucide-react，會讓靜態頁在每頁多載入一包 JS，拖累效能）。
+
+- **語意化 token**（`src/styles/global.css` 的 `@theme`）：`background`、`surface`、`surface-muted`、`foreground`、`body`、`text-secondary`、`text-muted`、`line`、`line-subtle`、`line-strong`、`accent`、`accent-strong`、`accent-subtle`、`danger`。頁面只用這些角色，不直接寫色板類別；`tests/design.test.ts` 會把關。
+- **強調色只用在**：使用中的導覽、連結、領取中的狀態、重點資料。卡片與分隔線一律用中性的 `line`。已截止是事實不是警告，用中性灰，不用紅色。
+- **元件模式**（Astro／原生 HTML 實作）：
+  - `Faq.astro`：原生 `<details name="faq">` 單開式折疊，答案都在 HTML 內，不需 JavaScript。
+  - `Callout.astro`：提示框，中性底色。
+  - `CompareTable.astro`：邊框卡片，表格在卡片內橫向捲動；每列只標一顆領取狀態。
+  - `ItemCard.astro`、`DeadlineBadge.astro`、頁尾導覽。
+- **表單**：欄位高度 44px（`.field`）、核取方塊整列可點（`.check`）；鍵盤焦點用統一的 `:focus-visible` 外框，滑鼠點擊不顯示。
+- **表格數字**：`tabular-nums`、不換行（單位寫在表頭）；手機上在卡片內橫向捲動。
+- **字重**：頁面標題 600、其餘 400／500（中文在 Windows 的微軟正黑體沒有 500，標題需要 600 才有層次，這是與 Arc 唯一的差異）。
+- 沒有做深色模式（token 已就緒，之後可補）。
+
 ## 廣告（Google AdSense）
 
 - 發佈商 ID 設定在 `src/lib/site.ts`（`ADSENSE_CLIENT`）；`Base.astro` 在**可被索引的頁面**載入 AdSense 腳本，`noindex` 的骨架頁（`/waitlist/`、404）不載入，避免在無內容頁面顯示廣告。

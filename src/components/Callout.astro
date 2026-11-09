@@ -1,0 +1,9 @@
+---
+/** 提示框（Arc alert 的靜態版）：中性底色與 1px 邊線，不用狀態色，也不放圖示色塊。 */
+interface Props { title?: string; id?: string; class?: string }
+const { title, id, class: cls = '' } = Astro.props;
+---
+<section aria-labelledby={title ? id : undefined} class={`rounded-xl border border-line bg-surface-muted p-4 ${cls}`}>
+  {title && <h2 id={id} class="text-base font-medium">{title}</h2>}
+  <div class={`${title ? 'mt-2 ' : ''}max-w-[40em] text-text-secondary [&_li]:mt-1 [&_ul]:list-disc [&_ul]:pl-5`}><slot /></div>
+</section>
