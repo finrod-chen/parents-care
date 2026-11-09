@@ -1,7 +1,7 @@
 # 爸媽領（bamaling.tw）
 
 讓 40–60 歲的子女查「我爸媽可以領什麼、照顧要花多少」的台灣 SEO 工具站。
-Astro 全靜態輸出 + TypeScript + Tailwind v4 + zod；試算用 Preact island，全部在瀏覽器本機運算，不收集個資、無追蹤碼。
+Astro 全靜態輸出 + TypeScript + Tailwind v4 + zod；試算用 Preact island，全部在瀏覽器本機運算、輸入的資料不上傳；站上顯示 Google AdSense 廣告（見「廣告」一節）。
 
 > 站名「爸媽領」，網域 `bamaling.tw`（設定在 `src/lib/site.ts`）。repo 名稱 `parents-care` 為專案代號。
 
@@ -131,6 +131,13 @@ tests/
   - 敬老卡：社會處「申辦須知—苗栗縣敬老愛心卡」，每月 700 點，含 115 年新增的計程車與農會規定（2026-11-01 起農會每月最高 300 點）。頁面上版日期標 110-04-15，但內文已含 115 年更新。
   - 假牙：中低收入老人方案的資格取自縣府 1999 熱線問答（114-05 更新）；**補助額度官方沒寫，維持 `null`**。新聞整理文章有寫 5 萬元、也有寫 4.4 萬元，互相矛盾又無官方出處，不採用。
   - 假牙另收錄縣府 115 年度原住民族長者裝置假牙計畫（5 年內最高 4 萬元；115 年度申請至 2026-10-31，已截止）。
+
+## 廣告（Google AdSense）
+
+- 發佈商 ID 設定在 `src/lib/site.ts`（`ADSENSE_CLIENT`）；`Base.astro` 在**可被索引的頁面**載入 AdSense 腳本，`noindex` 的骨架頁（`/waitlist/`、404）不載入，避免在無內容頁面顯示廣告。
+- `public/ads.txt`：`google.com, pub-0107538119751408, DIRECT, f08c47fec0942fa0`。
+- `/privacy/` 隱私權政策揭露 Google 廣告 Cookie 與停用方式；頁尾連結到它。
+- 沒有其他追蹤碼；Cloudflare Web Analytics 自動注入已關閉（見下方 Cloudflare 一節）。若日後要加 Google Analytics 等，需同步更新隱私權政策。
 
 ## 品牌與網域
 

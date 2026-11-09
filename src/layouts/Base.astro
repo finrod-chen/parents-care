@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE_NAME, SITE_DOMAIN } from '../lib/site';
+import { SITE_NAME, SITE_DOMAIN, ADSENSE_SRC } from '../lib/site';
 import { absUrl, ldString } from '../lib/seo';
 import { CREDIT } from '../lib/illustrations';
 import { BADGE_CLASS } from '../lib/deadline';
@@ -47,6 +47,8 @@ const NAV = [
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     {jsonLd.map((o) => <script type="application/ld+json" set:html={ldString(o)} />)}
+    {/* Google AdSense：noindex 的骨架頁（名單登記、404）不載入，避免在無內容頁面顯示廣告 */}
+    {!noindex && <script is:inline async src={ADSENSE_SRC} crossorigin="anonymous"></script>}
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="border-b border-teal-200 bg-white">
@@ -104,7 +106,7 @@ const NAV = [
     <footer class="border-t border-teal-200 bg-teal-50 text-sm text-slate-600">
       <div class="mx-auto max-w-4xl px-4 py-6 space-y-1">
         <p>本站整理自各主管機關公開資訊，僅供參考；實際資格與金額以主管機關最新公告為準。</p>
-        <p>本站不收集個人資料，試算皆在您的瀏覽器本機完成。</p>
+        <p>試算皆在您的瀏覽器本機完成，輸入的資料不會上傳。本站顯示 Google 廣告，詳見<a class="underline" href="/privacy/">隱私權政策</a>。</p>
         <p>插圖：<a class="underline" href={CREDIT.url} rel="noopener">{CREDIT.name}</a></p>
       </div>
     </footer>

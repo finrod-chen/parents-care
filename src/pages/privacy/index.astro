@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { SITE_NAME, SITE_DOMAIN } from '../../lib/site';
+import { breadcrumbLd, withSite, type Crumb } from '../../lib/seo';
+
+const path = '/privacy/';
+const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: '隱私權政策', path }];
+---
+<Base title={withSite('隱私權政策')} description={`${SITE_NAME}（${SITE_DOMAIN}）如何處理資料、Cookie 與 Google 廣告。`} path={path} jsonLd={[breadcrumbLd(crumbs)]}>
+  <Breadcrumb crumbs={crumbs} />
+  <h1 class="text-2xl font-bold">隱私權政策</h1>
+  <p class="mt-3 text-lg">{SITE_NAME}（{SITE_DOMAIN}）不需要註冊，也不提供會員功能。以下說明本站如何處理資料。</p>
+
+  <section aria-labelledby="own-h" class="mt-8">
+    <h2 id="own-h" class="text-xl font-bold mb-2">本站自己處理的資料</h2>
+    <ul class="list-disc space-y-1 pl-5">
+      <li>試算與資格檢核（重陽敬老金、長照與外籍看護費用、中低收入老人生活津貼）都在您的瀏覽器裡計算，您輸入的年齡、收入、存款等資料不會傳送到本站或任何伺服器。</li>
+      <li>本站沒有表單、沒有帳號，也沒有向您索取姓名、電話、電子郵件等個人資料。</li>
+      <li>本站由 Cloudflare 提供網站服務，Cloudflare 可能為了提供與保護服務而處理基本連線資料（例如 IP 位址、瀏覽器類型）。</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="ads-h" class="mt-8">
+    <h2 id="ads-h" class="text-xl font-bold mb-2">Google 廣告與 Cookie</h2>
+    <ul class="list-disc space-y-1 pl-5">
+      <li>本站使用 Google AdSense 顯示廣告。Google 等第三方廠商會使用 Cookie，根據您先前造訪本站或其他網站的紀錄來放送廣告。</li>
+      <li>Google 使用廣告 Cookie，讓 Google 及其合作夥伴能根據您造訪本站和／或網際網路上其他網站的紀錄，向您放送廣告。</li>
+      <li>您可以到 <a class="text-brand-dark underline" href="https://adssettings.google.com" rel="noopener">Google 廣告設定</a>停用個人化廣告，也可以到 <a class="text-brand-dark underline" href="https://www.aboutads.info" rel="noopener">aboutads.info</a> 停用第三方廠商用於個人化廣告的 Cookie。</li>
+      <li>想了解 Google 如何使用合作夥伴網站的資料，請見 <a class="text-brand-dark underline" href="https://policies.google.com/technologies/partner-sites" rel="noopener">Google 隱私權與條款</a>。</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="note-h" class="mt-8">
+    <h2 id="note-h" class="text-xl font-bold mb-2">資料內容的使用</h2>
+    <p>本站整理自各主管機關的公開資訊，僅供參考；實際資格與金額以主管機關最新公告為準。每筆資料都附有官方來源與查證日期。</p>
+  </section>
+</Base>
