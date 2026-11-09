@@ -11,36 +11,79 @@
       "how_to_apply": "裝置前向衛生局申請，資格審查後至特約牙科檢查；診所送術前計畫，核准後才製作，已先裝置不補助。",
       "deadline": null,
       "deadline_date": null,
-      "restrictions": "每人終身一次；曾領本市中低收入老人假牙補助者排除；115年度名額有限。",
+      "restrictions": "每人終身一次；曾領本市中低收入老人假牙補助者排除；115 年度名額 300 名，額滿為止。",
       "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
     }
   ],
   "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001",
-  "verified_at": "2026-11-08",
+  "verified_at": "2026-11-09",
   "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：新竹市衛生局：115年度計畫QA（2026-02-24）；新竹市政府：全口假牙最高補助6萬元（2026-02-24）",
   "faq": [
     {
-      "q": "新竹市老人假牙補助可以補助多少？",
-      "a": "新竹市 115 年度有長者免費裝置全口活動假牙計畫：裝置費 4 萬元（依核定項目最高約 6 萬元），名額有限，須事前向衛生局申請。",
+      "q": "長輩沒領安老津貼，也能申請嗎？",
+      "a": "可以，只要符合安老津貼的資產和居住條件（含領老年農民福利津貼）。但要多帶國稅局所得清單、稅務局財產清單和內政部移入出境資料。",
       "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
     },
     {
-      "q": "誰可以申請新竹市的老人假牙補助？",
-      "a": "2026-01-01前設籍新竹市；65歲以上且符合市府安老津貼／資產居住條件，或55至未滿65歲原住民符合國民年金給付標準；上下顎自然牙合計6顆以下，牙醫評估並經衛生局核准。",
+      "q": "已經自己先做好假牙，可以補申請嗎？",
+      "a": "不行。必須在裝假牙前先向衛生局申請，審查通過後才在合約診所裝，事先完成的不補助。",
       "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
     },
     {
-      "q": "新竹市老人假牙補助怎麼申請？",
-      "a": "裝置前向衛生局申請，資格審查後至特約牙科檢查；診所送術前計畫，核准後才製作，已先裝置不補助。",
+      "q": "做到一半想換診所可以嗎？",
+      "a": "可以，由原診所向衛生局說明、同意後轉介到其他合約診所，每人只能轉一次。",
       "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
     },
     {
-      "q": "新竹市老人假牙補助有什麼限制？",
-      "a": "每人終身一次；曾領本市中低收入老人假牙補助者排除；115年度名額有限。",
+      "q": "名額有多少？",
+      "a": "115年度名額300名，額滿為止。申請進度可打03-5355515問。",
+      "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
+    },
+    {
+      "q": "植牙或套筒冠可以一起補嗎？",
+      "a": "不行。人工植牙、套筒冠、各式附連體、治療性臨時假牙等特殊項目不在補助範圍。",
       "source_url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
     }
   ],
   "additional_sources": [
     "https://www.hccg.gov.tw/hccg/app/data/view?module=news&id=30122&serno=23769108-c030-4bbf-b302-764818ab420b"
-  ]
+  ],
+  "guide": {
+    "intro": [
+      "新竹市的全口假牙不是給所有長輩，而是看「安老津貼」的條件：115年1月1日前設籍新竹市、65歲以上，已領安老津貼，或符合安老津貼的資產和居住條件（領老農津貼也算）。55到未滿65歲的原住民則看是否符合國民年金給付標準。今年設籍門檻從112年放寬到115年1月1日。",
+      "牙齒條件是上下顎自然牙合計6顆（含）以下。補助內容是全口活動假牙裝置費4萬元，再加金屬骨架、柱台齒等配件，市府說每人最高可補到6萬元，終身一次。曾申請本市中低收入老人假牙補助的人不能再申請。",
+      "跟多數縣市不同，新竹市要先到衛生局（中央路241號11樓）申請資格，不是直接去診所；名額300名，額滿為止。已經自己先裝好假牙的，就不能再補。全市有34家合約診所，65歲以上長輩也能到衛生所領免費口腔篩檢券。"
+    ],
+    "steps": [
+      "帶齊證件到新竹市衛生局國民健康科（中央路241號11樓）申請，領申請表。",
+      "拿申請表和口篩券到合約牙科檢查。",
+      "診所把術前診治計畫送衛生局，由審查小組開會審查。",
+      "通過後回合約診所製作、裝置假牙，費用由衛生局撥給診所，1年內免費調整。"
+    ],
+    "documents": [
+      "身分證件、印章",
+      "最新戶籍資料（含記事或遷徙紀錄證明書）",
+      "未領安老津貼者：另附國稅局所得清單、稅務局財產清單、內政部移入出境資料",
+      "55至未滿65歲原住民：另附國民年金存簿",
+      "請他人代辦：雙方身分證、印章及授權書（衛生局網站下載）"
+    ],
+    "contacts": [
+      {
+        "unit": "新竹市衛生局國民健康科（假牙專線）",
+        "phone": "03-5355515",
+        "address": "新竹市中央路241號11樓",
+        "url": "https://dep.hcchb.gov.tw/ch/home.jsp?id=97&parentpath=0,40,88&mcustomize=onemessages_view.jsp&toolsflag=Y&dataserno=201705170001&t=HcchbOnes&mserno=201604210001"
+      },
+      {
+        "unit": "新竹市衛生局",
+        "phone": "03-5355191",
+        "address": null,
+        "url": "https://www.hccg.gov.tw/hccg/app/data/view?module=news&id=30122&serno=23769108-c030-4bbf-b302-764818ab420b"
+      }
+    ]
+  },
+  "compare": {
+    "general_full_twd": 40000,
+    "welfare_full_twd": null
+  }
 }

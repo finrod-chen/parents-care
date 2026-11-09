@@ -53,7 +53,16 @@ tests/
   "source_url": "https://官方頁面",
   "verified_at": "2026-11-08",     // 超過 365 天 → build fail
   "notes": "",
-  "faq": [{ "q": "…", "a": "…" }]  // 3–5 則，來自真實常見問題
+  "faq": [{ "q": "…", "a": "…" }],  // 3–5 則，來自真實常見問題
+  // 選填：縣市專屬導覽（每句都要能在官方頁找到）
+  "guide": {
+    "intro": ["這個縣市跟別人不一樣的地方，2–3 段"],
+    "steps": ["申請步驟…"],            // 選填
+    "documents": ["身分證…"],          // 選填
+    "contacts": [{ "unit": "…", "phone": "…", "address": null, "url": null }]  // 選填
+  },
+  // 選填（假牙補助）：跨縣市比較用，上下顎全口活動假牙最高補助（元）；沒有該方案填 null
+  "compare": { "general_full_twd": 40000, "welfare_full_twd": 44000 }
 }
 ```
 

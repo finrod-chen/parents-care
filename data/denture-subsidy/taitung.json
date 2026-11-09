@@ -20,27 +20,45 @@
   "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：臺東縣社會處：中低收入老人假牙補助（2026-05-12）；臺東縣衛生局：口腔照護／115特約診所（2026-10-30）",
   "faq": [
     {
-      "q": "台東縣老人假牙補助可以補助多少？",
-      "a": "臺東縣 115 年度有中低收入老人假牙補助，裝置最高 4 萬 4,000 元，須具指定弱勢身分並向特約診所申請，至經費用罄。",
-      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+      "q": "台東的原住民長輩要看哪份診所名單？",
+      "a": "衛生局另有「臺東縣政府原住民假牙補助合約牙科醫療院所名單」，跟中低收入老人假牙的特約診所名單分開公布。",
+      "source_url": "https://www.ttshb.gov.tw/FileList/C000042?SubCategoryID=7755c99e-fdeb-4b4b-9b2a-60d0d8345afd"
     },
     {
-      "q": "誰可以申請台東縣的老人假牙補助？",
-      "a": "設籍臺東且經醫師評估需裝置；65歲以上老人、55歲以上原住民或中度以上身障者，並具列冊低／中低收入、老人津貼、身障生活補助、公費安置或照顧補助達50%等指定資格之一。",
-      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+      "q": "中低收入老人假牙要去哪裡做？",
+      "a": "要到衛生局公布的「115年度中低收入老人裝置假牙補助計畫特約診所名單」上的診所。",
+      "source_url": "https://www.ttshb.gov.tw/FileList/C000042?SubCategoryID=7755c99e-fdeb-4b4b-9b2a-60d0d8345afd"
     },
     {
-      "q": "台東縣老人假牙補助怎麼申請？",
-      "a": "向計畫特約牙科診所申請；115年1月起至經費用罄，需特約院所與資格文件。",
-      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
-    },
-    {
-      "q": "台東縣老人假牙補助有什麼限制？",
-      "a": "同部位5年內不重複；經費用罄停收。",
-      "source_url": "https://taisoc.taitung.gov.tw/WebSite/Service/serviceDetail.aspx?menuid=lW%2BfKiAxClc%3D&page=1&id=GBvBdC1azfM%3D"
+      "q": "長輩有特殊照護需求，看牙也有補助嗎？",
+      "a": "衛生局同時公布了 115 年度「特殊需求者牙科醫療服務補助計畫」醫院名單，可以向名單上的醫院詢問。",
+      "source_url": "https://www.ttshb.gov.tw/FileList/C000042?SubCategoryID=7755c99e-fdeb-4b4b-9b2a-60d0d8345afd"
     }
   ],
   "additional_sources": [
     "https://www.ttshb.gov.tw/FileList/C000042?SubCategoryID=7755c99e-fdeb-4b4b-9b2a-60d0d8345afd"
-  ]
+  ],
+  "guide": {
+    "intro": [
+      "臺東這次只查到給弱勢長輩的「115年度中低收入老人裝置假牙補助」，沒有找到一般長者方案。衛生局在 115 年公布了這個計畫的特約診所名單，另外也有一份「臺東縣政府原住民假牙補助合約牙科醫療院所名單」，具原住民身分的長輩可以留意。",
+      "衛生局同一頁也列了 115 年度「特殊需求者牙科醫療服務補助計畫」醫院名單，家裡長輩若同時有身心障礙或特殊照護需求，可以一起問。補助對象、金額和受理期限以縣府社會處公告為準，有疑問可直接電洽衛生局。"
+    ],
+    "steps": [
+      "先到衛生局口腔照護頁下載「115年度中低收入老人裝置假牙補助計畫特約診所名單」（原住民長輩看原住民假牙補助合約院所名單）。",
+      "電話詢問特約診所是否受理，帶身分證、健保卡和福利身分證明去評估。",
+      "資格與金額有疑問時，打衛生局或社會處電話確認。"
+    ],
+    "contacts": [
+      {
+        "unit": "臺東縣衛生局",
+        "phone": "(089) 331171",
+        "address": null,
+        "url": "https://www.ttshb.gov.tw/FileList/C000042?SubCategoryID=7755c99e-fdeb-4b4b-9b2a-60d0d8345afd"
+      }
+    ]
+  },
+  "compare": {
+    "general_full_twd": "none",
+    "welfare_full_twd": 44000
+  }
 }

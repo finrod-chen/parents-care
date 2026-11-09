@@ -12,6 +12,8 @@ import { breadcrumbLd, faqLd, withSite, type Crumb } from '../lib/seo';
 import Illust from './Illust.astro';
 import { TOPIC_ILLUST } from '../lib/illustrations';
 import { allClosed } from '../lib/deadline';
+import { byTopic } from '../lib/data';
+import { compareSentences, type CompareRow } from '../lib/compare';
 
 const { entry } = Astro.props as { entry: Entry };
 const topic = topicOf(entry.topic);
@@ -34,6 +36,11 @@ const jsonLd = [breadcrumbLd(crumbs), ...(verified ? [faqLd(entry.faq)] : [])];
 const host = (u: string) => new URL(u).hostname.replace(/^www\./, '');
 const deadlines = verified ? entry.items.map((i) => i.deadline_date) : [];
 const closedAll = allClosed(deadlines);
+const guide = verified ? entry.guide : undefined;
+const compareRows: CompareRow[] = byTopic(entry.topic).flatMap((e) =>
+  e.status === 'verified' && e.compare ? [{ county: e.county, compare: e.compare }] : [],
+);
+const comparisons = verified && entry.compare ? compareSentences(compareRows, entry.county) : [];
 const sources = verified
   ? [
       { label: entry.source_label ?? `${name}官方公告`, url: entry.source_url },
@@ -56,10 +63,49 @@ const sources = verified
       <div data-closed-banner={deadlines.join(',')} hidden={!closedAll} class="mt-6">
         <Callout><p><span class="font-medium text-foreground">今年度的領取期限已過。</span>以下為 {entry.year} 年的公告內容，供您了解制度；明年公告後我們會更新。</p></Callout>
       </div>
+      {guide && (
+        <section aria-labelledby="local-h" class="mt-10">
+          <h2 id="local-h" class="mb-3 text-xl font-semibold">{name}的規定有什麼不一樣</h2>
+          <div class="max-w-[40em] space-y-3">{guide.intro.map((p) => <p>{p}</p>)}</div>
+        </section>
+      )}
       <section aria-labelledby="items-h" class="mt-10">
         <h2 id="items-h" class="mb-3 text-xl font-semibold">資格、{topic.amountLabel}與申請方式</h2>
         <div class="space-y-4">{entry.items.map((it) => <ItemCard item={it} topic={entry.topic} />)}</div>
       </section>
+      {guide?.steps && (
+        <section aria-labelledby="steps-h" class="mt-10">
+          <h2 id="steps-h" class="mb-3 text-xl font-semibold">申請流程</h2>
+          <ol class="max-w-[40em] list-decimal space-y-2 pl-6">{guide.steps.map((st) => <li>{st}</li>)}</ol>
+        </section>
+      )}
+      {guide?.documents && (
+        <section aria-labelledby="docs-h" class="mt-10">
+          <h2 id="docs-h" class="mb-3 text-xl font-semibold">要準備的文件</h2>
+          <ul class="max-w-[40em] list-disc space-y-1 pl-6">{guide.documents.map((d) => <li>{d}</li>)}</ul>
+        </section>
+      )}
+      {guide?.contacts && (
+        <section aria-labelledby="contact-h" class="mt-10">
+          <h2 id="contact-h" class="mb-3 text-xl font-semibold">承辦窗口</h2>
+          <ul class="space-y-3">
+            {guide.contacts.map((c) => (
+              <li class="rounded-xl border border-line bg-surface p-4">
+                <p class="font-medium">{c.url ? <a class="text-accent-strong underline underline-offset-2" href={c.url} rel="noopener">{c.unit}</a> : c.unit}</p>
+                {c.phone && <p class="tabular mt-1 text-text-secondary">電話：<a class="underline underline-offset-2" href={`tel:${c.phone.replace(/[^0-9#,+]/g, '').replace('#', ',')}`}>{c.phone}</a></p>}
+                {c.address && <p class="mt-1 text-text-secondary">地址：{c.address}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {comparisons.length > 0 && (
+        <section aria-labelledby="compare-h" class="mt-10">
+          <h2 id="compare-h" class="mb-3 text-xl font-semibold">和其他縣市比起來</h2>
+          <ul class="max-w-[40em] list-disc space-y-2 pl-6">{comparisons.map((c) => <li>{c}</li>)}</ul>
+          <p class="mt-3 text-sm text-text-muted">依本站各縣市資料計算，只比上下顎全口活動假牙的最高補助；實際金額依牙醫評估的假牙型式而定。</p>
+        </section>
+      )}
       {entry.public_notes && entry.public_notes.length > 0 && (
         <Callout id="notes-h" title="先看這幾點" class="mt-10">
           <ul>{entry.public_notes.map((n) => <li>{n}</li>)}</ul>
