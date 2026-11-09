@@ -16,32 +16,75 @@
     }
   ],
   "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706",
-  "verified_at": "2026-11-08",
+  "verified_at": "2026-11-09",
   "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：嘉義市社會處：115年度計畫（未標示）；嘉義市115年度計畫PDF（未標示）；衛福部1957：中低收入老人假牙補助（另有福利身分方案；其完整額度未確認，勿套用一般戶額度。）",
   "faq": [
     {
-      "q": "嘉義市老人假牙補助可以補助多少？",
-      "a": "嘉義市 115 年度一般身分長者（75 歲以上、設籍滿 5 年）假牙補助：雙顎全口 4 萬 4,000 元，診治計畫書最後收件日 2026-12-18。",
+      "q": "爸爸74歲，可以申請嘉義市一般老人假牙嗎？",
+      "a": "115年度不行。計畫認定的75歲是民國40年12月31日（含）以前出生，還要設籍嘉義市滿5年。",
+      "source_url": "https://icmp-ws.chiayi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDA4L3JlbGZpbGUvOTU1NS83ODI3MDYvOTI5NGFkYjktNDhiNy00ZTA3LWExYjMtNjVkNGI4NjNjYmI1LnBkZg%3d%3d&n=MTE15bm05bqmNzXmrbLku6XkuIrplbfogIXlgYfniZnoqIjnlasucGRm"
+    },
+    {
+      "q": "條件都符合，但一直沒收到通知單怎麼辦？",
+      "a": "先打05-2254321#153或#120找假牙承辦人，確認是沒發還是要補發。要補發可到社會處長青科窗口領或郵寄；沒發的話帶身分證和戶籍謄本到社會處（東區中山路199號）申請，證件確認後就歸還。",
       "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
     },
     {
-      "q": "誰可以申請嘉義市的老人假牙補助？",
-      "a": "75歲以上、設籍嘉義市滿5年，未曾受本計畫補助；計畫年齡界線為民國40-12-31以前出生。",
+      "q": "從東區搬到西區，設籍年數還算嗎？",
+      "a": "市府把東西區互遷視為戶籍異動，要自行舉證已在本市住滿5年以上。",
       "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
     },
     {
-      "q": "嘉義市老人假牙補助怎麼申請？",
-      "a": "至簽約牙科院所檢查，由院所送社會處審查；核准前不得先做。",
-      "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
+      "q": "補助的假牙是什麼材質？掛號費要自己付嗎？",
+      "a": "補助的是樹脂（壓克力）假牙搭配塑鋼卡環。補助只付假牙本身，掛號費、健保費和其他治療費要自己付。",
+      "source_url": "https://icmp-ws.chiayi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDA4L3JlbGZpbGUvOTU1NS83ODI3MDYvOTI5NGFkYjktNDhiNy00ZTA3LWExYjMtNjVkNGI4NjNjYmI1LnBkZg%3d%3d&n=MTE15bm05bqmNzXmrbLku6XkuIrplbfogIXlgYfniZnoqIjnlasucGRm"
     },
     {
-      "q": "嘉義市老人假牙補助有什麼限制？",
-      "a": "115年度計畫期至12/31，診治計畫書最後收件日12/18；預算或受理額度可能變動。",
+      "q": "今年還來得及申請嗎？",
+      "a": "115年度診治計畫書最後收件日是12月18日，要在這天前送達市府。6月起合約診所新增杏林、劍橋、大明三家。",
       "source_url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
     }
   ],
   "additional_sources": [
     "https://icmp-ws.chiayi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDA4L3JlbGZpbGUvOTU1NS83ODI3MDYvOTI5NGFkYjktNDhiNy00ZTA3LWExYjMtNjVkNGI4NjNjYmI1LnBkZg%3d%3d&n=MTE15bm05bqmNzXmrbLku6XkuIrplbfogIXlgYfniZnoqIjnlasucGRm",
     "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=11042"
-  ]
+  ],
+  "guide": {
+    "intro": [
+      "嘉義市的一般長者方案門檻特別高：要年滿75歲（115年度指民國40年12月31日以前出生），而且設籍嘉義市滿5年，也就是民國110年前入籍。東區、西區之間互遷也算戶籍異動，要自己舉證已經住滿5年。好處是不看福利身分，符合年齡就能申請，而且終身可補一次。",
+      "嘉義市的特色是「通知單」制：社會處會在過年後主動寄出一般身分老人假牙通知單，長輩帶身分證、健保卡和通知單直接去合約牙科就好，由診所送審。如果條件符合卻沒收到，打社會處問是未發放還是要補發，補發可到長青科窗口領或郵寄。",
+      "補助是實物給付，款項由診所向市府請領。上下顎全口最高4萬4,000元，材質是樹脂假牙配塑鋼卡環；掛號費、健保費和其他治療費要自己付。審查前診所不能先做，診治計畫書最後收件日是115年12月18日，想趕今年度要盡快找診所。"
+    ],
+    "steps": [
+      "確認長輩是民國40年12月31日前出生、民國110年前入籍嘉義市。",
+      "等社會處寄來的假牙通知單；沒收到就打05-2254321#153或#120查詢補發。",
+      "帶身分證、健保卡和通知單到115年度合約牙科做篩檢，由診所把診治計畫書、照片等送市府。",
+      "牙醫師公會審查（原則上兩週一次）通過、市府發核定函後，診所才開始製作假牙。"
+    ],
+    "documents": [
+      "身分證",
+      "健保卡",
+      "社會處發送的假牙通知單",
+      "若沒收到通知單、需臨櫃申請：身分證及戶籍謄本",
+      "中風或其他傷病致上肢不便或臉頰肌肉功能障礙者：醫師診斷證明書"
+    ],
+    "contacts": [
+      {
+        "unit": "嘉義市政府社會處長青及社會行政科",
+        "phone": "05-2254321#153、#120",
+        "address": "嘉義市東區中山路199號",
+        "url": "https://social.chiayi.gov.tw/News_Content.aspx?n=1101&s=782706"
+      },
+      {
+        "unit": "嘉義市牙醫師公會",
+        "phone": "283-3210",
+        "address": "嘉義市西區興業西路336之1號8樓之1",
+        "url": "https://icmp-ws.chiayi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDA4L3JlbGZpbGUvOTU1NS83ODI3MDYvOTI5NGFkYjktNDhiNy00ZTA3LWExYjMtNjVkNGI4NjNjYmI1LnBkZg%3d%3d&n=MTE15bm05bqmNzXmrbLku6XkuIrplbfogIXlgYfniZnoqIjnlasucGRm"
+      }
+    ]
+  },
+  "compare": {
+    "general_full_twd": 44000,
+    "welfare_full_twd": null
+  }
 }

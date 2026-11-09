@@ -26,38 +26,67 @@
     }
   ],
   "source_url": "https://www.chcg.gov.tw/DTO/social/07other/other01_con.aspx?topsn=711&data_id=15816",
-  "verified_at": "2026-11-08",
+  "verified_at": "2026-11-09",
   "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：彰化縣社會處：全口活動假牙計畫（未標示）；彰化縣政府：115年計畫PDF（未標示）；彰化縣社會處：福利身分老人假牙計畫（未標示）；彰化縣政府：115年計畫PDF（未標示）",
   "faq": [
     {
-      "q": "彰化縣老人假牙補助可以補助多少？",
-      "a": "彰化縣 65 歲以上一般戶全口活動假牙：雙顎 4 萬元、單顎 2 萬元；115 年度申請期已於 2026-09-30 結束。",
-      "source_url": "https://www.chcg.gov.tw/DTO/social/07other/other01_con.aspx?topsn=711&data_id=15816"
+      "q": "一般方案真的完全免費嗎？要自己出多少？",
+      "a": "不是全免。上下顎全口補助4萬元，長輩自付4,000元；單上顎或單下顎全口補2萬元，自付2,000元。補助款由縣府直接撥給診所，不用先墊。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/getFile.aspx?file_id=448906&file=2&type=2&did=15816"
     },
     {
-      "q": "誰可以申請彰化縣的老人假牙補助？",
-      "a": "65歲以上、設籍彰化滿3年且計畫期間仍在籍；牙醫評估需全口活動假牙，上／下顎各剩健康牙3顆以下。弱勢另走福利身分方案。",
-      "source_url": "https://www.chcg.gov.tw/DTO/social/07other/other01_con.aspx?topsn=711&data_id=15816"
+      "q": "家裡長輩領中低收入老人生活津貼，可以申請4萬元的一般方案嗎？",
+      "a": "不行。列冊低收、中低收、領中低收入老人生活津貼或身障生活補助等身分，不適用一般方案，要改申請「低收入戶及中低收入老人裝置假牙補助」，上下顎全口最高4萬4,000元。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/getFile.aspx?file_id=448906&file=2&type=2&did=15816"
     },
     {
-      "q": "彰化縣老人假牙補助怎麼申請？",
-      "a": "每年3/1至9/30向戶籍地公所辦理，後續至契約牙科院所審查，核准後裝置。",
-      "source_url": "https://www.chcg.gov.tw/DTO/social/07other/other01_con.aspx?topsn=711&data_id=15816"
+      "q": "還有牙根沒拔、牙周病沒治好，可以先申請嗎？",
+      "a": "縣府建議先依醫師計畫拔牙或治療牙周病，等治好再申請。因為同一部位終身只補一次，太早做假牙可能用不久。健保給付的治療項目照健保處理。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/getFile.aspx?file_id=448906&file=2&type=2&did=15816"
     },
     {
-      "q": "彰化縣老人假牙補助有什麼限制？",
-      "a": "同一部位終身一次；115年度申請期已於2026-09-30結束。",
-      "source_url": "https://www.chcg.gov.tw/DTO/social/07other/other01_con.aspx?topsn=711&data_id=15816"
+      "q": "做到一半想換診所可以嗎？",
+      "a": "可以，但只能換一次。要由原診所說明並填轉案申請書，送縣府轉介到其他契約院所，而且要重新提出申請；原診所已發生的費用依取模、裝戴、完成三階段比例請款。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/getFile.aspx?file_id=448906&file=2&type=2&did=15816"
     },
     {
-      "q": "彰化縣有幾種老人假牙補助方案？",
-      "a": "共 2 種：65歲以上老人全口活動假牙補助（一般戶）、低收入戶及中低收入老人假牙補助。方案的資格與額度不同，不能混用，請看上方各項說明。",
-      "source_url": "https://www.chcg.gov.tw/DTO/social/07other/other01_con.aspx?topsn=711&data_id=15816"
+      "q": "福利身分方案多久可以再補一次？",
+      "a": "同一顎或同一牙位拿過相同補助，要滿5年、經評估有需要才能再申請，5年內最高補助4萬4,000元；假牙維修不受此限，每年最高6,600元。",
+      "source_url": "https://www.chcg.gov.tw/DTO/social/getFile.aspx?file_id=451336&file=2&type=2&did=15818"
     }
   ],
   "additional_sources": [
     "https://www.chcg.gov.tw/DTO/social/getFile.aspx?file_id=448906&file=2&type=2&did=15816",
     "https://www.chcg.gov.tw/DTO/social/07other/other01_con.asp?topsn=711&data_id=15818",
     "https://www.chcg.gov.tw/DTO/social/getFile.aspx?file_id=451336&file=2&type=2&did=15818"
-  ]
+  ],
+  "guide": {
+    "intro": [
+      "彰化縣把老人假牙補助分成兩條路，而且彼此互斥：一般長者走「65歲以上老人裝置全口活動假牙」，只補全口（上下顎各剩健康牙3顆以內，或單顎全口）；家裡有低收、中低收、中低收入老人生活津貼、身障生活補助等身分的長輩，則走另一個福利身分方案，連部分假牙、固定假牙和維修都能補。有福利身分的人反而不能申請一般方案。",
+      "一般方案要設籍彰化滿3年，而且整個實施期間都要還在籍。雙顎全口補4萬元，但長輩要自付4,000元（單顎補2萬、自付2,000元），這點跟很多縣市「全額免費」不同，先跟爸媽講清楚。同一部位終身只補一次，所以縣府建議先把殘根、牙周病治好再申請，假牙才用得久。",
+      "兩個方案都是每年3月1日到9月30日收件，經費用完會提早停收。窗口是戶籍所在地的鄉鎮市公所（或村里幹事），不是直接去診所；核定函下來之前，診所不能開始做。115年度收件已在9月30日結束，想申請的話要等116年度，而縣府寫明116年度起「視財政狀況辦理」。"
+    ],
+    "steps": [
+      "帶長輩身分證和印章，到戶籍所在地公所（或找村里幹事）線上登錄並填申請表。",
+      "拿申請表到縣府的契約牙科做口腔篩檢，由診所擬診治計畫書、拍裝置前照片後送審。",
+      "審查單位初審、縣府複審通過後，縣府寄核定函給長輩。",
+      "持核定函到契約院所製作、裝置假牙，補助款由縣府直接撥給診所，長輩不用先墊付（一般方案仍要付自付額）。"
+    ],
+    "documents": [
+      "申請人身分證",
+      "印章（私章）"
+    ],
+    "contacts": [
+      {
+        "unit": "彰化縣政府社會處長青福利科",
+        "phone": "04-7532353",
+        "address": null,
+        "url": "https://www.chcg.gov.tw/DTO/social/07other/other01_con.aspx?topsn=711&data_id=15816"
+      }
+    ]
+  },
+  "compare": {
+    "general_full_twd": 40000,
+    "welfare_full_twd": 44000
+  }
 }

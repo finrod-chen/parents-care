@@ -2,58 +2,96 @@
   "status": "verified",
   "county": "pingtung",
   "year": 2026,
-  "summary": "屏東縣有一般與中低收入兩種長者假牙補助：一般方案上下顎全口活動假牙最高 3 萬元；中低收入活動假牙約 4,400 至 4 萬 4,000 元。",
+  "summary": "屏東縣有一般與中低收入兩種長者假牙補助：一般方案上下顎全口活動假牙最高 3 萬元，受理到 11 月 30 日；中低收入方案活動假牙 1 萬 7,000 至 4 萬 4,000 元。",
   "items": [
     {
       "name": "115年長者假牙裝置補助（一般方案）",
       "eligibility": "65歲以上、連續設籍屏東滿3年且計畫期間仍在籍；115年起上下顎健康牙齒數條件由各3顆放寬至各4顆。",
       "amount": "上、下顎全口活動假牙最高 3 萬元；單上顎全口 1 萬 5,000 元；單下顎全口 1 萬 5,000 元。",
       "how_to_apply": "衛生局長者假牙專區／線上補助平台及當年度合約院所；先評估、依程序核准。",
-      "deadline": "於名額截止日前申請",
-      "deadline_date": null,
+      "deadline": "每年 1 月 1 日起至 11 月 30 日止；當年度經費用罄提前停止收案。",
+      "deadline_date": "2026-11-30",
       "restrictions": null,
       "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
     },
     {
       "name": "115年中低收入老人補助裝置假牙",
       "eligibility": "設籍屏東；65歲以上或55歲以上原住民；牙醫評估需活動假牙，且具低／中低收入、老人津貼等指定福利身分。",
-      "amount": "活動假牙依型式約4,400至44,000元；維修每年最高6,600元。",
+      "amount": "活動假牙依型式 1 萬 7,000 元（單顎部分）至 4 萬 4,000 元（上下顎全口）；固定假牙每顆 4,400 元；維修每年最高 6,600 元。",
       "how_to_apply": "縣內特約牙科篩檢、資格審查及治療計畫；福利證明向戶籍地公所申請。",
-      "deadline": "2026-04-20 起受理",
+      "deadline": null,
       "deadline_date": null,
       "restrictions": "2026-04-20起受理。",
       "source_url": "https://www.ptshb.gov.tw/News_Content.aspx?n=28F4A2864D12F448&sms=9E5E0477EC9EDB58&s=F31D3B66DB0CEDC3"
     }
   ],
   "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59",
-  "verified_at": "2026-11-08",
+  "verified_at": "2026-11-09",
   "notes": "2026-11-08（依使用者指定；各來源頁面更新日期不同） 來源更新日：屏東縣衛生局：長者假牙補助條件（官方搜尋索引可確認資格變更，頁面全文未確認）；屏東縣衛生局：長者假牙資格專區（未標示）；屏東縣衛生局：中低收入老人假牙計畫（未標示）；屏東縣衛生局：115年受理公告（未標示）；屏東縣法規：假牙補助實施要點（未標示）；補充來源（未標示）；補充來源（未標示）；補充來源（未標示）；補充來源（未標示）",
   "faq": [
     {
-      "q": "屏東縣老人假牙補助可以補助多少？",
-      "a": "屏東縣有一般與中低收入兩種長者假牙補助：一般方案上下顎全口活動假牙最高 3 萬元；中低收入活動假牙約 4,400 至 4 萬 4,000 元。",
-      "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
+      "q": "今年還來得及申請一般長者的假牙補助嗎？",
+      "a": "一般長者方案的申請期間是每年 1 月 1 日到 11 月 30 日，如果當年度經費用完會提前停止收案，最好儘早去合約院所評估。",
+      "source_url": "https://ptlaw.pthg.gov.tw/LawContent.aspx?id=GL000733"
     },
     {
-      "q": "誰可以申請屏東縣的老人假牙補助？",
-      "a": "65歲以上、連續設籍屏東滿3年且計畫期間仍在籍；115年起上下顎健康牙齒數條件由各3顆放寬至各4顆。",
-      "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
+      "q": "爸媽還有幾顆好牙，符合資格嗎？",
+      "a": "115 年起放寬為上顎、下顎健康牙齒各存 4 顆（含）以內就符合，全口最高補助 3 萬元，單上顎或單下顎各 1 萬 5,000 元。",
+      "source_url": "https://ptlaw.pthg.gov.tw/LawContent.aspx?id=GL000733"
     },
     {
-      "q": "屏東縣老人假牙補助怎麼申請？",
-      "a": "衛生局長者假牙專區／線上補助平台及當年度合約院所；先評估、依程序核准。",
-      "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
+      "q": "去診所前要先準備什麼？",
+      "a": "先帶長輩的身分證、印章到戶政事務所開戶籍在籍證明，再到特約牙科院所接受評估。",
+      "source_url": "https://www.ptshb.gov.tw/News_Content.aspx?n=28F4A2864D12F448&sms=9E5E0477EC9EDB58&s=89655F270F58C410"
     },
     {
-      "q": "屏東縣有幾種老人假牙補助方案？",
-      "a": "共 2 種：115年長者假牙裝置補助（一般方案）、115年中低收入老人補助裝置假牙。方案的資格與額度不同，不能混用，請看上方各項說明。",
-      "source_url": "https://www.ptshb.gov.tw/sht/News_Content.aspx?n=6053BA399E9BB339&s=9F9900558819FE59"
+      "q": "剛搬回屏東可以申請嗎？",
+      "a": "一般長者方案要連續設籍屏東縣滿 3 年以上，而且實施期間沒有遷出、仍設籍屏東。",
+      "source_url": "https://www.ptshb.gov.tw/News_Content.aspx?n=28F4A2864D12F448&sms=9E5E0477EC9EDB58&s=89655F270F58C410"
+    },
+    {
+      "q": "中低收入的長輩可以拿比較多嗎？",
+      "a": "可以。中低收入老人方案上下顎全口活動假牙最高 4 萬 4,000 元，單顎全口 2 萬 2,000 元，固定式每顆 4,400 元最多 10 顆，維修每年最高 6,600 元；55 歲以上原住民也可申請。",
+      "source_url": "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=13014"
     }
   ],
   "additional_sources": [
     "https://www.ptshb.gov.tw/News_Content.aspx?n=28F4A2864D12F448&sms=9E5E0477EC9EDB58&s=89655F270F58C410",
     "https://www.ptshb.gov.tw/News_Content.aspx?n=28F4A2864D12F448&sms=9E5E0477EC9EDB58&s=F31D3B66DB0CEDC3",
     "https://www.ptshb.gov.tw/News_Content.aspx?n=CC774672B906BC5E&sms=2BCC4D669A46CEB9&s=AFCB2939D557D30B",
-    "https://ptlaw.pthg.gov.tw/LawContent.aspx?id=GL000733"
-  ]
+    "https://ptlaw.pthg.gov.tw/LawContent.aspx?id=GL000733",
+    "https://1957.mohw.gov.tw/servlet/QACtrl?func=QAView&sid=13014",
+    "https://onestop.pthg.gov.tw/eservice/apply_mode_directions2?itemId=648"
+  ],
+  "guide": {
+    "intro": [
+      "屏東有兩個假牙方案。一般長者方案不看收入，只要 65 歲以上、連續設籍屏東滿 3 年且計畫期間仍在籍就能申請。115 年起放寬牙齒條件，上下顎健康牙齒各剩 4 顆以內就符合，以前是 3 顆。上下顎全口最高補 3 萬元，單顎全口 1 萬 5,000 元。",
+      "一般方案每年 1 月 1 日受理到 11 月 30 日，經費用完就提前停止收案。申請前要先帶身分證和印章去戶政事務所開「戶籍在籍證明」，這一步很多家屬會漏掉。",
+      "有低收、中低收入、領中低收入老人生活津貼或身障生活補助等身分的長輩，可以走另一個中低收入老人方案，65 歲以上或 55 歲以上原住民可申請，上下顎全口最高 4 萬 4,000 元，另補固定假牙和每年 6,600 元維修。115 年起這個方案改由縣府自籌經費辦理，4 月 20 日開始受理。"
+    ],
+    "steps": [
+      "帶長輩身分證、印章到戶政事務所開立當年度的戶籍在籍證明。",
+      "帶證明到屏東縣特約牙科醫療院所，請牙醫師篩檢並核對文件。",
+      "院所擬定診治計畫，送屏東縣牙醫師公會和衛生局審查。",
+      "衛生局發函通知審核結果，長輩持核准文件回院所，在 3 個月內完成假牙裝置。"
+    ],
+    "documents": [
+      "身分證",
+      "印章（開戶籍在籍證明用）",
+      "戶籍在籍證明",
+      "（中低收入方案）低收入戶、中低收入老人生活津貼或身障生活補助等福利身分證明"
+    ],
+    "contacts": [
+      {
+        "unit": "屏東縣政府衛生局醫政科",
+        "phone": null,
+        "address": null,
+        "url": "https://onestop.pthg.gov.tw/eservice/apply_mode_directions2?itemId=648"
+      }
+    ]
+  },
+  "compare": {
+    "general_full_twd": 30000,
+    "welfare_full_twd": 44000
+  }
 }

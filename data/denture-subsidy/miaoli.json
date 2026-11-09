@@ -32,36 +32,69 @@
     "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTYyNy8zOTQzNjQvNjY1MDA5ZTAtYzQxOC00ODYwLTgyMDktNDc0ZThmMDc4ZTM0LnBkZg%3D%3D&n=5ZCI57SE54mZ56eR6Yar55mC6Ki6KOmZoinmiYDlkI3llq4tKDExMy0xMTXlubQpLnBkZg%3D%3D",
     "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDQ3L3JlbGZpbGUvMTM4MzEvOTI2MjA5L2M1ZDNlMjUxLTM5MDMtNDhkYS05MDFhLWU1NmYyMDViNjViYi5wZGY%3D&n=MTE15bm05bqm5YGH54mZ6KiI55WrLnBkZg%3D%3D"
   ],
-  "verified_at": "2026-11-08",
+  "verified_at": "2026-11-09",
   "notes": "來源：苗栗縣政府 1999 熱線常見問題「中低收入老人補助裝置假牙」（社會處，114-05-27 更新）；衛生局合約診所名單 PDF（合約期間 113–115 年）；苗栗縣政府 115 年度原住民族長者裝置假牙實施計畫申請表（114-11-25 送原民會）。 2026-11-08 補充：額度取自縣府《辦理中低收入老人補助裝置假牙實施計畫》114-10-30 修正本（PDF 已逐項核對：全口 5 萬、單顎 2.5 萬、全口併部分 4.5 萬、上下顎部分 4 萬、單顎部分 2 萬、固定式 4,400／顆、維修 6,600、5 年上限 5 萬、每年 10/30 前受理）；縣府申辦頁仍連該 PDF，未見 115 年新版。",
   "public_notes": [
     "原住民族長者專案 115 年度申請已於 2026-10-31 截止，11 月 1 日起的案件依 116 年度計畫辦理。"
   ],
   "faq": [
     {
-      "q": "苗栗縣老人假牙補助可以補助多少？",
-      "a": "苗栗縣有中低收入老人補助裝置假牙：上下顎全口活動假牙最高 5 萬元（5 年內累計上限 5 萬元），每年 10 月 30 日前向戶籍地公所申請；55 歲以上原住民另有專案，5 年內最高 4 萬元，115 年度申請已於 2026-10-31 截止。",
+      "q": "爸媽不是低收入戶，苗栗有假牙補助嗎？",
+      "a": "縣府公告的老人假牙補助只有「中低收入老人補助裝置假牙」，要是低收、中低收入戶，或領中低收入老人生活津貼、身障生活補助、政府全額收容安置等身分才符合。55 歲以上原住民另有原住民族長者裝置假牙計畫。",
       "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
     },
     {
-      "q": "誰可以申請苗栗縣的老人假牙補助？",
-      "a": "設籍本縣年滿 65 歲（原住民 55 歲）以上，經醫師評估缺牙、需裝置活動假牙，並符合下列條件之一：列冊低收入戶或中低收入戶；領有中低收入老人生活津貼；領有身心障礙者生活補助費；經各級政府全額補助收容安置；經各級政府補助身心障礙者托育費或養護費達 50% 以上。",
-      "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
+      "q": "5 年內做了兩次部分假牙，還能再補全口嗎？",
+      "a": "5 年內補助總額不能超過 5 萬元（假牙維修不在此限），同一顎或同一牙位已在其他縣市或苗栗各公所拿過相同補助，5 年內也不會再補。剩多少額度要看前面補了多少。",
+      "source_url": "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTQ2OC80MDY0My9jZjUzZWViYy00ZTU1LTQ5NTUtYmYwZC1iZjU3NGYwYzUwNTgucGRm&n=MTE05bm05Lit5L2O5pS25YWl6ICB5Lq66KOc5Yqp6KOd572u5YGH54mZ5a%2Bm5pa96KiI55Wr5L%2Bu5q2jLTExNDEwMzAucGRm&icon=..pdf"
     },
     {
-      "q": "苗栗縣老人假牙補助怎麼申請？",
-      "a": "向戶籍所在地鄉鎮市公所申請，應備文件：申請書、身分證正反面影本、福利身分別證明文件、印章。縣府公告有合約牙科醫療診（院）所名單（合約期間 113 年至 115 年）。",
-      "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
+      "q": "可以去家附近任何一家牙醫做嗎？",
+      "a": "不行，要在和縣府簽約的牙醫院所裝。縣府公告的合約名單（合約期間 113 年至 115 年）有 24 家，分布在苗栗市、竹南、頭份、後龍、公館、大湖、卓蘭、三義、南庄。",
+      "source_url": "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTYyNy8zOTQzNjQvNjY1MDA5ZTAtYzQxOC00ODYwLTgyMDktNDc0ZThmMDc4ZTM0LnBkZg%3D%3D&n=5ZCI57SE54mZ56eR6Yar55mC6Ki6KOmZoinmiYDlkI3llq4tKDExMy0xMTXlubQpLnBkZg%3D%3D"
     },
     {
-      "q": "苗栗縣老人假牙補助有什麼限制？",
-      "a": "5 年內最高補助 5 萬元（假牙維修不在此限）；同一顎或同一牙位已於其他縣市或本縣各鄉鎮市公所取得相同補助者，5 年內不予重複補助（維修除外）。固定式假牙的差額，服務提供單位可在徵得同意後向民眾收取。",
-      "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
-    },
-    {
-      "q": "苗栗縣有幾種老人假牙補助方案？",
-      "a": "共 2 種：中低收入老人補助裝置假牙、115 年度原住民族長者裝置假牙。兩者資格與額度不同，不能混用，請看上方各項說明。",
-      "source_url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
+      "q": "核准之後可以拖到明年再去裝嗎？",
+      "a": "計畫規定獲核定補助後一個月內，就要帶核定公文和診治計畫書到合約牙醫院所裝假牙。",
+      "source_url": "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDEwL3JlbGZpbGUvOTQ2OC80MDY0My9jZjUzZWViYy00ZTU1LTQ5NTUtYmYwZC1iZjU3NGYwYzUwNTgucGRm&n=MTE05bm05Lit5L2O5pS25YWl6ICB5Lq66KOc5Yqp6KOd572u5YGH54mZ5a%2Bm5pa96KiI55Wr5L%2Bu5q2jLTExNDEwMzAucGRm&icon=..pdf"
     }
-  ]
+  ],
+  "guide": {
+    "intro": [
+      "苗栗目前沒有給一般長輩的假牙補助，只有社會處主辦的「中低收入老人補助裝置假牙」，對象是設籍苗栗、65 歲以上或 55 歲以上原住民，而且是低收、中低收入戶，或領中低收入老人生活津貼、身障生活補助等身分。額度比很多縣市高：上下顎全口最高 5 萬元，但 5 年內累計也最多 5 萬元（維修不算在內）。",
+      "苗栗的流程是先到公所、再去診所：先向戶籍地鄉鎮市公所送申請，再拿申請書到指定特約牙醫篩檢。診所每月 5 日前把上個月的案件送縣府，由牙醫師公會審核小組審，縣府再發公文通知結果。核定後一個月內要到合約院所裝假牙，每年 10 月 30 日前受理申請。",
+      "55 歲以上原住民如果不是中低收入身分，另有原民會補助的「原住民族長者裝置假牙」計畫，5 年內最高 4 萬元，直接帶健保卡到特約牙科申請。115 年度這個計畫已在 10 月 31 日截止，11 月 1 日起的案件算 116 年度。"
+    ],
+    "steps": [
+      "到戶籍所在地鄉鎮市公所，帶申請書、身分證影本、福利身分證明和印章提出申請。",
+      "拿申請書到縣府指定的特約牙醫院所接受篩檢。",
+      "院所把診治計畫書和口內照片送縣府，由牙醫師公會審核小組審查，縣府再寄公文通知結果。",
+      "收到核定公文後一個月內，帶公文和診治計畫書到合約牙醫院所裝假牙；口腔狀況變了要回原篩檢院所複檢。",
+      "裝好後院所會提供至少一年調整服務，費用由院所向縣府核銷。"
+    ],
+    "documents": [
+      "申請書",
+      "身分證正反面影本",
+      "福利身分別證明文件",
+      "印章"
+    ],
+    "contacts": [
+      {
+        "unit": "苗栗縣政府社會處（縣民專線）",
+        "phone": "1999(限苗栗縣內撥打)，037-322150(外縣市)",
+        "address": "36001 苗栗市縣府路100號(第一辦公大樓)",
+        "url": "https://service.miaoli.gov.tw/FAQTable.aspx?n=1797"
+      },
+      {
+        "unit": "苗栗縣政府（原住民族長者裝置假牙計畫承辦人）",
+        "phone": "037-559240",
+        "address": null,
+        "url": "https://webws.miaoli.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDQ3L3JlbGZpbGUvMTM4MzEvOTI2MjA5L2M1ZDNlMjUxLTM5MDMtNDhkYS05MDFhLWU1NmYyMDViNjViYi5wZGY%3D&n=MTE15bm05bqm5YGH54mZ6KiI55WrLnBkZg%3D%3D"
+      }
+    ]
+  },
+  "compare": {
+    "general_full_twd": "none",
+    "welfare_full_twd": 50000
+  }
 }

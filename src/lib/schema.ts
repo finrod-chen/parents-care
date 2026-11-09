@@ -44,6 +44,36 @@ export const FaqSchema = z
   })
   .strict();
 
+export const ContactSchema = z
+  .object({
+    unit: z.string().trim().min(1),
+    phone: nullableText,
+    address: nullableText,
+    url: httpUrl.nullable(),
+  })
+  .strict();
+
+/** 縣市專屬的申辦導覽（人工撰寫，每句都要能在官方頁找到；沒有就省略該 key） */
+export const GuideSchema = z
+  .object({
+    /** 在地重點：這個縣市跟別的縣市不一樣的地方，2–3 段 */
+    intro: z.array(z.string().trim().min(1)).min(1).max(4),
+    steps: z.array(z.string().trim().min(1)).min(2).max(8).optional(),
+    documents: z.array(z.string().trim().min(1)).min(1).optional(),
+    contacts: z.array(ContactSchema).min(1).optional(),
+  })
+  .strict();
+
+/** 跨縣市比較用的結構化數字（整數元）；'none' = 確認沒有這類方案；null = 有方案但沒有可比較的官方數字 */
+export const CompareSchema = z
+  .object({
+    /** 一般長者方案：上下顎全口活動假牙最高補助 */
+    general_full_twd: z.union([z.number().int().positive(), z.literal('none')]).nullable(),
+    /** 低收／中低收等福利身分方案：上下顎全口活動假牙最高補助 */
+    welfare_full_twd: z.union([z.number().int().positive(), z.literal('none')]).nullable(),
+  })
+  .strict();
+
 const base = {
   county: z.enum(COUNTY_SLUGS),
   year: z.number().int().min(2020).max(2100),
@@ -68,6 +98,8 @@ export const VerifiedSchema = z
     source_type: z.enum(['official', 'media']).optional(),
     /** 給讀者看的重要提醒（短句）；notes 為內部查證紀錄，不會顯示在頁面上 */
     public_notes: z.array(z.string().trim().min(1)).optional(),
+    guide: GuideSchema.optional(),
+    compare: CompareSchema.optional(),
   })
   .strict();
 
@@ -86,6 +118,8 @@ export const CountyDataSchema = z.discriminatedUnion('status', [VerifiedSchema, 
 export type Item = z.infer<typeof ItemSchema>;
 export type Rules = z.infer<typeof RulesSchema>;
 export type Faq = z.infer<typeof FaqSchema>;
+export type Guide = z.infer<typeof GuideSchema>;
+export type Compare = z.infer<typeof CompareSchema>;
 export type VerifiedData = z.infer<typeof VerifiedSchema>;
 export type TodoData = z.infer<typeof TodoSchema>;
 export type CountyData = z.infer<typeof CountyDataSchema>;
