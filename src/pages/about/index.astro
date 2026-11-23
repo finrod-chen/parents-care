@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Callout from '../../components/Callout.astro';
+import { SITE_NAME, SITE_DOMAIN } from '../../lib/site';
+import { breadcrumbLd, withSite, type Crumb } from '../../lib/seo';
+import { TOPICS } from '../../lib/topics';
+import { COUNTIES } from '../../lib/counties';
+
+const path = '/about/';
+const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: '關於我們', path }];
+---
+<Base title={withSite('關於我們')} description={`${SITE_NAME}（${SITE_DOMAIN}）是什麼、整理哪些資料、如何查證，以及本站的立場與限制。`} path={path} jsonLd={[breadcrumbLd(crumbs)]}>
+  <Breadcrumb crumbs={crumbs} />
+  <h1 class="text-2xl font-semibold sm:text-3xl">關於我們</h1>
+  <p class="mt-3 text-lg">{SITE_NAME}是給子女看的長輩福利與照顧費用查詢站。很多補助的規定散在各縣市政府網站，格式不同、更新日期不一，我們把它們整理在同一個地方，並附上官方來源和查證日期。</p>
+
+  <section aria-labelledby="what-h" class="mt-10">
+    <h2 id="what-h" class="mb-2 text-xl font-semibold">整理哪些內容</h2>
+    <ul class="list-disc space-y-1 pl-5">
+      {TOPICS.map((t) => <li><a class="text-accent-strong underline underline-offset-2" href={`/${t.slug}/`}>{t.title}</a>：{t.intro}</li>)}
+      <li><a class="text-accent-strong underline underline-offset-2" href="/long-term-care/">長照給付與外籍看護費用試算</a>、<a class="text-accent-strong underline underline-offset-2" href="/low-income-elderly-allowance/">中低收入老人生活津貼資格檢核</a>：依全國統一的法規與公告計算。</li>
+    </ul>
+    <p class="mt-3">範圍是臺灣 {COUNTIES.length} 個縣市。各縣市頁面的詳細程度不同，已有在地導覽（在地重點、申請流程、應備文件、承辦窗口）的頁面才會開放搜尋引擎收錄，其餘頁面會陸續補上。</p>
+  </section>
+
+  <section aria-labelledby="how-h" class="mt-10">
+    <h2 id="how-h" class="mb-2 text-xl font-semibold">資料怎麼來、怎麼查證</h2>
+    <ul class="list-disc space-y-1 pl-5">
+      <li>以縣市政府、衛生福利部及相關主管機關的官方公告、法規和計畫文件為依據。</li>
+      <li>每筆資料都附來源連結和「資料查證日」，金額和條件以公告原文為準，不自行推算或補數字。</li>
+      <li>官方沒有公布的欄位（例如某個期限、名額或電話）會留白或標示「依公告為準」、「請洽承辦單位」，不會用推測補上。</li>
+      <li>資料查證日超過一年的資料，網站建置會直接失敗，不會繼續顯示過期內容。</li>
+    </ul>
+    <p class="mt-3">完整的查證流程與每個縣市的來源清單，請看<a class="text-accent-strong underline underline-offset-2" href="/sources/">資料來源與更新方式</a>。</p>
+  </section>
+
+  <section aria-labelledby="not-h" class="mt-10">
+    <h2 id="not-h" class="mb-2 text-xl font-semibold">本站不是什麼</h2>
+    <Callout title="請注意">
+      <ul class="list-disc space-y-1 pl-5">
+        <li>本站不是政府機關，也不代理任何申請。申請一律要向主管機關或承辦單位辦理。</li>
+        <li>試算與資格檢核的結果只是初步估算，不具任何法律效力；實際資格與金額以主管機關核定為準。</li>
+        <li>資料可能在我們查證之後又有公告更新。申請前請以頁面附的官方來源或電話再確認一次。</li>
+      </ul>
+    </Callout>
+  </section>
+
+  <section aria-labelledby="ads-h" class="mt-10">
+    <h2 id="ads-h" class="mb-2 text-xl font-semibold">廣告與獨立性</h2>
+    <p>本站顯示 Google 廣告，作為維護網站的收入。廣告不影響內容的整理方式，也不接受任何縣市、機構或業者付費調整資料。詳見<a class="text-accent-strong underline underline-offset-2" href="/privacy/">隱私權政策</a>。</p>
+  </section>
+
+  <section aria-labelledby="fix-h" class="mt-10">
+    <h2 id="fix-h" class="mb-2 text-xl font-semibold">發現資料有誤</h2>
+    <p>每個縣市頁都有官方來源連結，請先以官方公告為準。若您確定本站的整理與公告不符，歡迎透過官方來源核對後告知我們，我們會依公告更正並更新查證日。</p>
+  </section>
+</Base>

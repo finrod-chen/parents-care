@@ -12,7 +12,7 @@ import { breadcrumbLd, faqLd, withSite, type Crumb } from '../lib/seo';
 import Illust from './Illust.astro';
 import { TOPIC_ILLUST } from '../lib/illustrations';
 import { allClosed } from '../lib/deadline';
-import { byTopic } from '../lib/data';
+import { byTopic, hasLocalContent } from '../lib/data';
 import { compareSentences, type CompareRow } from '../lib/compare';
 
 const { entry } = Astro.props as { entry: Entry };
@@ -48,7 +48,7 @@ const sources = verified
     ]
   : [];
 ---
-<Base title={title} description={description} path={path} noindex={!verified} jsonLd={jsonLd}>
+<Base title={title} description={description} path={path} noindex={!hasLocalContent(entry)} jsonLd={jsonLd}>
   <Breadcrumb crumbs={crumbs} />
   <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-hero p-6 sm:flex-row sm:justify-between">
     <div>
@@ -92,8 +92,8 @@ const sources = verified
             {guide.contacts.map((c) => (
               <li class="rounded-xl border border-line bg-surface p-4">
                 <p class="font-medium">{c.url ? <a class="text-accent-strong underline underline-offset-2" href={c.url} rel="noopener">{c.unit}</a> : c.unit}</p>
-                {c.phone && <p class="tabular mt-1 text-text-secondary">電話：<a class="underline underline-offset-2" href={`tel:${c.phone.replace(/[^0-9#,+]/g, '').replace('#', ',')}`}>{c.phone}</a></p>}
-                {c.address && <p class="mt-1 text-text-secondary">地址：{c.address}</p>}
+                <p class="tabular mt-1 text-text-secondary">電話：{c.phone ? <a class="underline underline-offset-2" href={`tel:${c.phone.split("（")[0]!.replace(/[^0-9#,+]/g, '').replace('#', ',')}`}>{c.phone}</a> : '請洽承辦單位'}</p>
+                <p class="mt-1 text-text-secondary">地址：{c.address ?? '請洽承辦單位'}</p>
               </li>
             ))}
           </ul>
