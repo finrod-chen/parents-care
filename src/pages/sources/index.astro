@@ -1,0 +1,95 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { SITE_NAME } from '../../lib/site';
+import { breadcrumbLd, withSite, type Crumb } from '../../lib/seo';
+import { TOPICS } from '../../lib/topics';
+import { byTopic, hasLocalContent } from '../../lib/data';
+import { countyName } from '../../lib/counties';
+import { national } from '../../lib/national';
+
+const path = '/sources/';
+const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: '資料來源與更新方式', path }];
+const host = (u: string) => new URL(u).hostname.replace(/^www\./, '');
+const nat = national();
+const natBlocks = [
+  { title: '長照給付與外籍看護費用試算', href: '/long-term-care/', verified_at: nat.ltc.verified_at, sources: nat.ltc.sources },
+  { title: '中低收入老人生活津貼資格檢核', href: '/low-income-elderly-allowance/', verified_at: nat.allowance.verified_at, sources: nat.allowance.sources },
+];
+---
+<Base title={withSite('資料來源與更新方式')} description={`${SITE_NAME}的資料來自哪些官方網站、怎麼查證、多久更新，以及各縣市頁面的來源清單。`} path={path} jsonLd={[breadcrumbLd(crumbs)]}>
+  <Breadcrumb crumbs={crumbs} />
+  <h1 class="text-2xl font-semibold sm:text-3xl">資料來源與更新方式</h1>
+  <p class="mt-3 text-lg">本站每一筆縣市資料都附官方來源連結和查證日。這一頁說明我們怎麼整理，並列出全部來源。</p>
+
+  <section aria-labelledby="flow-h" class="mt-10">
+    <h2 id="flow-h" class="mb-2 text-xl font-semibold">查證流程</h2>
+    <ol class="max-w-[40em] list-decimal space-y-2 pl-6">
+      <li>找來源：優先採用縣市政府、衛生福利部和主管機關網站上的公告、法規與計畫全文。</li>
+      <li>逐項核對：資格（年齡、身分、設籍年限）、金額或上限、應備文件、申請流程、受理期間、承辦單位與電話。附件（PDF）和網頁不一致時，以較新、較完整的公告為準，並在資料中註明。</li>
+      <li>記錄查證日：核對完成的日期寫入該縣市資料的「資料查證日」，頁面上會顯示。</li>
+      <li>查不到就不寫：官方沒有公布的欄位標示「依公告為準」或「請洽承辦單位」，不使用推測值。</li>
+      <li>只有媒體報導、沒有官方頁面可引用的內容，會在資料中標示來源性質，並且不作為主要依據。</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="update-h" class="mt-10">
+    <h2 id="update-h" class="mb-2 text-xl font-semibold">更新方式</h2>
+    <ul class="list-disc space-y-1 pl-5">
+      <li>各縣市每年的受理期間、金額和名額常有調整，查證日距今太久的資料我們會優先重新核對。</li>
+      <li>資料查證日超過一年的資料，網站建置時會被擋下，不會繼續顯示。</li>
+      <li>期限已過的項目，頁面會標示「已截止」，並保留當年的公告內容供參考，等新年度公告後再更新。</li>
+    </ul>
+  </section>
+
+  {TOPICS.map((t) => {
+    const rows = byTopic(t.slug);
+    return (
+      <section aria-labelledby={`${t.slug}-h`} class="mt-10">
+        <h2 id={`${t.slug}-h`} class="mb-2 text-xl font-semibold">{t.title}：各縣市來源</h2>
+        <div class="overflow-hidden rounded-xl border border-line bg-surface">
+          <div class="overflow-x-auto overscroll-x-contain">
+            <table class="tabular w-full min-w-[32rem] border-collapse text-left text-sm">
+              <caption class="sr-only">{t.title}各縣市資料來源</caption>
+              <thead>
+                <tr class="border-b border-line bg-surface-muted text-text-secondary">
+                  <th scope="col" class="whitespace-nowrap px-4 py-3 font-medium">縣市</th>
+                  <th scope="col" class="px-4 py-3 font-medium">官方來源</th>
+                  <th scope="col" class="whitespace-nowrap px-4 py-3 font-medium">查證日</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((e) => {
+                  const urls = e.status === 'verified' ? [e.source_url, ...(e.additional_sources ?? [])] : [];
+                  return (
+                    <tr class="border-t border-line-subtle align-top first:border-t-0">
+                      <th scope="row" class="whitespace-nowrap px-4 py-3 text-left font-medium">
+                        {hasLocalContent(e) ? <a class="text-accent-strong underline underline-offset-2" href={`/${t.slug}/${e.county}/`}>{countyName(e.county)}</a> : countyName(e.county)}
+                      </th>
+                      <td class="px-4 py-3">
+                        <ul class="space-y-1">
+                          {urls.map((u) => <li><a class="break-all text-accent-strong underline underline-offset-2" href={u} rel="noopener">{host(u)}</a></li>)}
+                        </ul>
+                      </td>
+                      <td class="whitespace-nowrap px-4 py-3">{e.status === 'verified' ? e.verified_at : '無'}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  {natBlocks.map((b) => (
+    <section class="mt-10" aria-label={b.title}>
+      <h2 class="mb-2 text-xl font-semibold"><a class="text-accent-strong underline underline-offset-2" href={b.href}>{b.title}</a>：法規與公告來源</h2>
+      <p class="mb-2 tabular text-text-secondary">資料查證日：{b.verified_at}</p>
+      <ul class="max-w-[44em] list-disc space-y-1 pl-5">
+        {b.sources.map((s) => <li><a class="text-accent-strong underline underline-offset-2" href={s.url} rel="noopener">{s.label}</a></li>)}
+      </ul>
+    </section>
+  ))}
+</Base>

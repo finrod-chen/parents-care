@@ -75,6 +75,15 @@ export function overviewIndexable(topic: TopicSlug): boolean {
   return byTopic(topic).some(isVerified);
 }
 
+/**
+ * 縣市頁是否有「該縣市自己的內容」：已查證，且有在地導覽（guide：在地重點、流程、文件、窗口）。
+ * 沒有的頁面只有資料檔的摘要與項目，與其他縣市結構相同，視為薄內容，不索引。
+ * 補上 guide 後會自動放行（頁面 meta 與 sitemap 都用這個函式判斷）。
+ */
+export function hasLocalContent(e: Entry): boolean {
+  return e.status === 'verified' && !!e.guide;
+}
+
 /** 固定不索引、不進 sitemap 的頁面（骨架頁等） */
 export const STATIC_NOINDEX_PATHS = ['/waitlist/'] as const;
 
@@ -82,7 +91,7 @@ export const STATIC_NOINDEX_PATHS = ['/waitlist/'] as const;
 export function noindexUrls(): Set<string> {
   const s = new Set<string>();
   for (const p of STATIC_NOINDEX_PATHS) s.add(`${SITE_URL}${p}`);
-  for (const e of all()) if (e.status === 'todo') s.add(`${SITE_URL}/${e.topic}/${e.county}/`);
+  for (const e of all()) if (!hasLocalContent(e)) s.add(`${SITE_URL}/${e.topic}/${e.county}/`);
   for (const t of TOPIC_SLUGS) if (!overviewIndexable(t)) s.add(`${SITE_URL}/${t}/`);
   return s;
 }
