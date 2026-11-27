@@ -38,3 +38,32 @@ export function countyName(slug: string): string {
   if (!c) throw new Error(`未知的縣市 slug：${slug}`);
   return c.name;
 }
+
+/**
+ * 鄰近縣市（地理相鄰或最近），每縣市 3–4 個，供頁面互連使用。
+ * 離島以相近的離島與最近的本島縣市為主。
+ */
+export const NEIGHBORS: Record<CountySlug, readonly CountySlug[]> = {
+  taipei: ['new-taipei', 'keelung', 'taoyuan'],
+  'new-taipei': ['taipei', 'keelung', 'taoyuan', 'yilan'],
+  taoyuan: ['new-taipei', 'taipei', 'hsinchu-county'],
+  taichung: ['miaoli', 'changhua', 'nantou'],
+  tainan: ['kaohsiung', 'chiayi-county', 'chiayi-city'],
+  kaohsiung: ['tainan', 'pingtung', 'taitung'],
+  keelung: ['taipei', 'new-taipei', 'taoyuan'],
+  'hsinchu-city': ['hsinchu-county', 'miaoli', 'taoyuan'],
+  'chiayi-city': ['chiayi-county', 'tainan', 'yunlin'],
+  'hsinchu-county': ['hsinchu-city', 'miaoli', 'taoyuan'],
+  miaoli: ['hsinchu-county', 'hsinchu-city', 'taichung'],
+  changhua: ['taichung', 'yunlin', 'nantou'],
+  nantou: ['taichung', 'changhua', 'yunlin', 'chiayi-county'],
+  yunlin: ['chiayi-county', 'changhua', 'chiayi-city', 'nantou'],
+  'chiayi-county': ['chiayi-city', 'yunlin', 'tainan'],
+  pingtung: ['kaohsiung', 'taitung', 'tainan'],
+  yilan: ['hualien', 'new-taipei', 'taoyuan'],
+  hualien: ['taitung', 'yilan', 'nantou'],
+  taitung: ['hualien', 'pingtung', 'kaohsiung'],
+  penghu: ['tainan', 'chiayi-county', 'kinmen'],
+  kinmen: ['lienchiang', 'penghu', 'taichung'],
+  lienchiang: ['kinmen', 'keelung', 'penghu'],
+};

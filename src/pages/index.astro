@@ -5,7 +5,7 @@ import { TOPICS } from '../lib/topics';
 import { COUNTIES } from '../lib/counties';
 import { all } from '../lib/data';
 import { SITE_NAME } from '../lib/site';
-import { breadcrumbLd } from '../lib/seo';
+import { breadcrumbLd, organizationLd, websiteLd } from '../lib/seo';
 import Illust from '../components/Illust.astro';
 
 const availability: Record<string, Record<string, 'verified' | 'todo'>> = {};
@@ -15,7 +15,7 @@ for (const e of all()) (availability[e.topic] ??= {})[e.county] = e.status;
   title={`${SITE_NAME}：查爸媽可以領什麼補助、照顧要花多少`}
   description="輸入爸媽的年齡與居住縣市，查重陽敬老金、老人假牙補助、敬老卡等福利。每筆資料附官方來源與查證日期。"
   path="/"
-  jsonLd={[breadcrumbLd([{ name: '首頁', path: '/' }])]}
+  jsonLd={[breadcrumbLd([{ name: '首頁', path: '/' }]), websiteLd(), organizationLd()]}
 >
   <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-hero p-6 sm:flex-row sm:justify-between">
     <div>
@@ -42,6 +42,22 @@ for (const e of all()) (availability[e.topic] ??= {})[e.county] = e.status;
           <p class="mt-1 text-sm">{t.intro}</p>
         </li>
       ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="about-h" class="mt-10">
+    <h2 id="about-h" class="mb-2 text-xl font-semibold">{SITE_NAME}在做什麼</h2>
+    <div class="max-w-[40em] space-y-3">
+      <p>長輩的補助散在各縣市政府的網站，同一個項目在不同縣市的年齡、金額、申請地點都不一樣。{SITE_NAME}把重陽敬老金、老人假牙補助、敬老卡這三類常被問到的福利，依 22 個縣市整理成同一種格式，方便子女直接比較，也能把長照與外籍看護的費用算清楚。</p>
+      <p>每個縣市頁都附官方來源連結和資料查證日期。我們只採用縣市政府與主管機關公告的內容；官方沒有公布的欄位，頁面上會寫「依公告為準」或「請洽承辦單位」，不會用推測補上。查證流程與全部來源請看<a class="text-accent-strong underline underline-offset-2" href="/sources/">資料來源與更新方式</a>，網站的立場與限制請看<a class="text-accent-strong underline underline-offset-2" href="/about/">關於我們</a>。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="county-h" class="mt-10">
+    <h2 id="county-h" class="mb-2 text-xl font-semibold">依縣市查老人福利</h2>
+    <p class="mb-3 max-w-[40em]">選擇爸媽戶籍所在的縣市，一頁看完該縣市的敬老卡、假牙補助與重陽敬老金。</p>
+    <ul class="grid grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-4">
+      {COUNTIES.map((c) => <li><a class="inline-block py-1 text-accent-strong underline underline-offset-2" href={`/county/${c.slug}/`}>{c.name}老人福利</a></li>)}
     </ul>
   </section>
 

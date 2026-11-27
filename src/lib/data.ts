@@ -4,6 +4,7 @@ import { COUNTIES, COUNTY_SLUGS, type CountySlug } from './counties';
 import { TOPIC_SLUGS, type TopicSlug } from './topics';
 import { CountyDataSchema, freshnessError, type CountyData } from './schema';
 import { SITE_URL } from './site';
+import { national } from './national';
 
 export type Entry = CountyData & { topic: TopicSlug };
 
@@ -97,3 +98,29 @@ export function noindexUrls(): Set<string> {
 }
 
 export const countyNameOf = (slug: CountySlug) => COUNTIES.find((c) => c.slug === slug)!.name;
+
+/** 某縣市在各主題的資料（依主題表順序） */
+export function byCounty(county: CountySlug): Entry[] {
+  return TOPIC_SLUGS.flatMap((t) => (find(t, county) ? [find(t, county)!] : []));
+}
+
+const maxDate = (ds: (string | null | undefined)[]): string | undefined => ds.filter((d): d is string => !!d).sort().pop();
+
+/**
+ * sitemap 的 lastmod：縣市頁＝該頁資料的「最後查證」日；縣市總覽＝該縣市各主題最新的查證日；
+ * 主題總覽與首頁＝其下最新的查證日。沒有資料依據的頁面不給 lastmod（不編造日期）。
+ */
+export function lastmodFor(url: string): string | undefined {
+  const path = url.replace(SITE_URL, '');
+  const verifiedAt = (e: Entry) => (e.status === 'verified' ? e.verified_at : null);
+  let m = path.match(/^\/(chongyang-bonus|denture-subsidy|senior-card)\/([a-z-]+)\/$/);
+  if (m) return maxDate(all().filter((e) => e.topic === m![1] && e.county === m![2]).map(verifiedAt));
+  m = path.match(/^\/county\/([a-z-]+)\/$/);
+  if (m) return maxDate(all().filter((e) => e.county === m![1]).map(verifiedAt));
+  m = path.match(/^\/(chongyang-bonus|denture-subsidy|senior-card)\/$/);
+  if (m) return maxDate(all().filter((e) => e.topic === m![1]).map(verifiedAt));
+  if (path === '/' || path === '/sources/') return maxDate(all().map(verifiedAt));
+  if (path === '/long-term-care/') return national().ltc.verified_at;
+  if (path === '/low-income-elderly-allowance/') return national().allowance.verified_at;
+  return undefined;
+}

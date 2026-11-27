@@ -1,0 +1,35 @@
+---
+import type { Entry } from '../lib/data';
+import DeadlineBadge from './DeadlineBadge.astro';
+import Callout from './Callout.astro';
+import { pendingYear, rocYear } from '../lib/year';
+
+interface Props { entry: Entry }
+const { entry } = Astro.props as Props;
+if (entry.status !== 'verified') throw new Error('StatusLine 只用於已查證資料');
+
+/** 依「最後可領日」分組顯示每一組的現況；badge 由瀏覽器端依今天日期更新，不會因為沒重新建置而過期 */
+const groups = new Map<string, string[]>();
+for (const it of entry.items) if (it.deadline_date) groups.set(it.deadline_date, [...(groups.get(it.deadline_date) ?? []), it.name]);
+const dated = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
+const pending = pendingYear(entry.year);
+const roc = rocYear(entry.year);
+---
+{(dated.length > 0 || pending) && (
+  <Callout title="申請現況" id="status-h" class="mt-6">
+    {pending && (
+      <p>目前頁面是 {roc} 年度（{entry.year}）的公告內容；{pending.currentRoc} 年度（{pending.current}）的公告尚待更新。</p>
+    )}
+    {dated.length > 0 && (
+      <ul>
+        {dated.map(([date, names]) => (
+          <li>
+            {names.length === entry.items.length && entry.items.length > 1 ? '全部項目' : names.join('、')}（{roc} 年度，期限 {date}）：
+            <DeadlineBadge date={date} />
+          </li>
+        ))}
+      </ul>
+    )}
+    {dated.length > 0 && <p class="mt-2">下一年度（{roc + 1} 年度）開放時間以主管機關公告為準，公布後我們會更新。</p>}
+  </Callout>
+)}

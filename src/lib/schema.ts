@@ -64,6 +64,14 @@ export const GuideSchema = z
   })
   .strict();
 
+/** 人工撰寫的搜尋結果標題與摘要（只在預設格式不符合該頁搜尋用字時使用）。title 不含站名後綴。 */
+export const SeoSchema = z
+  .object({
+    title: z.string().trim().min(1).optional(),
+    description: z.string().trim().min(1).optional(),
+  })
+  .strict();
+
 /** 跨縣市比較用的結構化數字（整數元）；'none' = 確認沒有這類方案；null = 有方案但沒有可比較的官方數字 */
 export const CompareSchema = z
   .object({
@@ -100,6 +108,7 @@ export const VerifiedSchema = z
     public_notes: z.array(z.string().trim().min(1)).optional(),
     guide: GuideSchema.optional(),
     compare: CompareSchema.optional(),
+    seo: SeoSchema.optional(),
   })
   .strict();
 

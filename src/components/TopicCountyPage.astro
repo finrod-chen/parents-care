@@ -8,7 +8,10 @@ import VerifiedBadge from './VerifiedBadge.astro';
 import type { Entry } from '../lib/data';
 import { countyName } from '../lib/counties';
 import { topicOf } from '../lib/topics';
-import { breadcrumbLd, faqLd, withSite, type Crumb } from '../lib/seo';
+import { articleLd, breadcrumbLd, faqLd, type Crumb } from '../lib/seo';
+import { countyPageMeta } from '../lib/page-meta';
+import StatusLine from './StatusLine.astro';
+import RelatedLinks from './RelatedLinks.astro';
 import Illust from './Illust.astro';
 import { TOPIC_ILLUST } from '../lib/illustrations';
 import { allClosed } from '../lib/deadline';
@@ -21,18 +24,17 @@ const name = countyName(entry.county);
 const path = `/${entry.topic}/${entry.county}/`;
 const verified = entry.status === 'verified';
 
-const h1 = `${name}${topic.title}`;
-const title = verified ? withSite(`${h1}${entry.year}：${topic.amountLabel}、資格與申請方式`) : withSite(h1);
-const description = verified
-  ? `${entry.summary}（資料最後查證：${entry.verified_at}）`
-  : `${h1}的資格、金額與申請方式。`;
+const { h1, headline, title, description } = countyPageMeta(entry);
 
 const crumbs: Crumb[] = [
   { name: '首頁', path: '/' },
   { name: topic.title, path: `/${entry.topic}/` },
   { name: name, path },
 ];
-const jsonLd = [breadcrumbLd(crumbs), ...(verified ? [faqLd(entry.faq)] : [])];
+const jsonLd = [
+  breadcrumbLd(crumbs),
+  ...(verified ? [faqLd(entry.faq), articleLd({ headline, description, path, dateModified: entry.verified_at })] : []),
+];
 const host = (u: string) => new URL(u).hostname.replace(/^www\./, '');
 const deadlines = verified ? entry.items.map((i) => i.deadline_date) : [];
 const closedAll = allClosed(deadlines);
@@ -60,6 +62,7 @@ const sources = verified
 
   {verified ? (
     <>
+      <StatusLine entry={entry} />
       <div data-closed-banner={deadlines.join(',')} hidden={!closedAll} class="mt-6">
         <Callout><p><span class="font-medium text-foreground">今年度的領取期限已過。</span>以下為 {entry.year} 年的公告內容，供您了解制度；明年公告後我們會更新。</p></Callout>
       </div>
@@ -116,6 +119,8 @@ const sources = verified
   ) : (
     <p class="mt-3 text-lg">{name}的{topic.title}資料準備中。</p>
   )}
+
+  {verified && <RelatedLinks entry={entry} />}
 
   <VerifiedBadge verifiedAt={entry.verified_at} sources={sources} heading={verified && entry.source_type === 'media' ? '資料來源' : '官方來源'} />
   <p class="mt-6 text-sm"><a class="text-accent-strong underline underline-offset-2" href={`/${entry.topic}/`}>查看全部縣市比較</a></p>
