@@ -1,0 +1,29 @@
+---
+import type { Entry } from '../lib/data';
+import { COUNTIES, NEIGHBORS, countyName } from '../lib/counties';
+import { TOPICS, topicOf } from '../lib/topics';
+
+interface Props { entry: Entry }
+const { entry } = Astro.props as Props;
+const name = countyName(entry.county);
+const topic = topicOf(entry.topic);
+const others = TOPICS.filter((t) => t.slug !== entry.topic);
+const neighbors = NEIGHBORS[entry.county];
+const link = 'text-accent-strong underline underline-offset-2';
+---
+<section aria-labelledby="related-h" class="mt-10">
+  <h2 id="related-h" class="mb-3 text-xl font-semibold">{name}的其他長輩福利</h2>
+  <ul class="max-w-[40em] list-disc space-y-1 pl-6">
+    {others.map((t) => <li><a class={link} href={`/${t.slug}/${entry.county}/`}>{name}{t.title}</a></li>)}
+    <li><a class={link} href={`/county/${entry.county}/`}>{name}老人福利總整理</a>：{name}所有福利一頁看完</li>
+    <li><a class={link} href="/low-income-elderly-allowance/">中低收入老人生活津貼資格檢核</a>：每月領的津貼，全國統一規定</li>
+    <li><a class={link} href="/long-term-care/">長照給付與外籍看護費用試算</a></li>
+  </ul>
+</section>
+<section aria-labelledby="nearby-h" class="mt-10">
+  <h2 id="nearby-h" class="mb-3 text-xl font-semibold">鄰近縣市的{topic.title}</h2>
+  <p class="mb-2 max-w-[40em]">爸媽或家人住在{name}隔壁的縣市，可以對照看看各縣市的差別。</p>
+  <ul class="max-w-[40em] list-disc space-y-1 pl-6">
+    {neighbors.map((n) => <li><a class={link} href={`/${entry.topic}/${n}/`}>{countyName(n)}{topic.title}</a></li>)}
+  </ul>
+</section>

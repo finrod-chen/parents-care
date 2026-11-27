@@ -1,0 +1,2 @@
+# /sitemap.xml 是常見的預設位置，轉到 @astrojs/sitemap 實際輸出的索引檔
+/sitemap.xml /sitemap-index.xml 301

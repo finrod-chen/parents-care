@@ -1,0 +1,10 @@
+---
+import CountyOverviewPage from '../../components/CountyOverviewPage.astro';
+import { COUNTIES } from '../../lib/counties';
+
+export function getStaticPaths() {
+  return COUNTIES.map((c) => ({ params: { county: c.slug }, props: { county: c.slug } }));
+}
+const { county } = Astro.props;
+---
+<CountyOverviewPage county={county} />

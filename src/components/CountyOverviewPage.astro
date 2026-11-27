@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumb from './Breadcrumb.astro';
+import Faq from './Faq.astro';
+import Callout from './Callout.astro';
+import DeadlineBadge from './DeadlineBadge.astro';
+import VerifiedBadge from './VerifiedBadge.astro';
+import Illust from './Illust.astro';
+import { byCounty } from '../lib/data';
+import { NEIGHBORS, countyName, type CountySlug } from '../lib/counties';
+import { topicOf } from '../lib/topics';
+import { articleLd, breadcrumbLd, faqLd, withSite, type Crumb } from '../lib/seo';
+import type { Faq as FaqItem } from '../lib/schema';
+
+interface Props { county: CountySlug }
+const { county } = Astro.props as Props;
+const name = countyName(county);
+const path = `/county/${county}/`;
+const entries = byCounty(county).flatMap((e) => (e.status === 'verified' ? [e] : []));
+const year = Math.max(...entries.map((e) => e.year));
+const dates = entries.map((e) => e.verified_at).sort();
+const latest = dates[dates.length - 1]!;
+
+const title = withSite(`${name}老人福利總整理 ${year}：敬老卡、假牙補助、重陽敬老金`);
+const firstSentence = (s: string) => (s.split(/(?<=。)/)[0] ?? s).trim();
+let description = `${name}老人福利一次看：`;
+for (const e of entries) {
+  const next = firstSentence(e.summary);
+  if ((description + next).length > 110) break;
+  description += next;
+}
+description += `資料最後查證：${latest}。`;
+
+const crumbs: Crumb[] = [{ name: '首頁', path: '/' }, { name: `${name}老人福利`, path }];
+// 每個主題挑出該縣市最常被問的第一題，合成這頁的 FAQ（問答原文來自各主題頁，附同一個官方來源）
+const faq: FaqItem[] = entries.map((e) => e.faq[0]!).slice(0, 3);
+const jsonLd = [
+  breadcrumbLd(crumbs),
+  faqLd(faq),
+  articleLd({ headline: `${name}老人福利總整理 ${year}`, description, path, dateModified: latest }),
+];
+const sources = entries.flatMap((e) => [{ label: `${name}${topicOf(e.topic).title}`, url: e.source_url }]);
+const link = 'text-accent-strong underline underline-offset-2';
+---
+<Base title={title} description={description} path={path} jsonLd={jsonLd}>
+  <Breadcrumb crumbs={crumbs} />
+  <section class="flex flex-col-reverse items-center gap-4 rounded-3xl bg-hero p-6 sm:flex-row sm:justify-between">
+    <div>
+      <h1 class="text-2xl font-semibold sm:text-3xl">{name}老人福利總整理 {year}</h1>
+      <p class="mt-3 text-lg">爸媽住{name}，可以領的敬老卡、假牙補助、重陽敬老金，一頁看完金額、資格與申請方式。</p>
+    </div>
+    <Illust id="grandparents-smile" width={170} priority />
+  </section>
+
+  <nav aria-label="本頁內容" class="mt-6 text-sm">
+    <ul class="flex flex-wrap gap-x-4 gap-y-1">
+      {entries.map((e) => <li><a class={link} href={`#${e.topic}`}>{topicOf(e.topic).title}</a></li>)}
+      <li><a class={link} href="#tools">每月津貼與長照試算</a></li>
+    </ul>
+  </nav>
+
+  {entries.map((e) => {
+    const t = topicOf(e.topic);
+    return (
+      <section id={e.topic} aria-labelledby={`${e.topic}-h`} class="mt-10 scroll-mt-4">
+        <h2 id={`${e.topic}-h`} class="mb-2 text-xl font-semibold">{name}{t.title}</h2>
+        <p class="max-w-[40em]">{e.summary}</p>
+        <ul class="mt-3 max-w-[40em] space-y-3">
+          {e.items.map((it) => (
+            <li class="rounded-xl border border-line bg-surface p-4">
+              <p class="font-medium">{it.name} <DeadlineBadge date={it.deadline_date} /></p>
+              {it.amount && <p class="mt-1"><span class="text-text-secondary">{t.amountLabel}：</span>{it.amount}</p>}
+              {it.eligibility && <p class="mt-1"><span class="text-text-secondary">對象：</span>{it.eligibility}</p>}
+              {it.how_to_apply && <p class="mt-1"><span class="text-text-secondary">怎麼申請：</span>{it.how_to_apply}</p>}
+            </li>
+          ))}
+        </ul>
+        <p class="mt-3"><a class={link} href={`/${e.topic}/${county}/`}>{name}{t.title}完整說明、常見問題與官方來源</a></p>
+      </section>
+    );
+  })}
+
+  <section id="tools" aria-labelledby="tools-h" class="mt-10 scroll-mt-4">
+    <h2 id="tools-h" class="mb-2 text-xl font-semibold">每月領的津貼與長照費用</h2>
+    <p class="max-w-[40em]">以下兩項是全國統一的規定，只有部分標準依縣市不同，可以直接輸入爸媽的情況試算。</p>
+    <ul class="mt-2 max-w-[40em] list-disc space-y-1 pl-6">
+      <li><a class={link} href="/low-income-elderly-allowance/">中低收入老人生活津貼資格檢核</a>：輸入{name}的收入與存款，檢核能不能領</li>
+      <li><a class={link} href="/long-term-care/">長照給付與外籍看護費用試算</a>：比較長照服務與聘僱外籍看護的費用</li>
+    </ul>
+  </section>
+
+  <Callout title="申請前先確認" id="check-h" class="mt-10">
+    <ul>
+      <li>各項福利的資格、金額與受理期間以{name}主管機關最新公告為準；每個項目都附有官方來源連結。</li>
+      <li>有期限的項目，頁面會標示「領取中」或「已截止」；已截止的項目保留當年公告內容，供了解制度。</li>
+    </ul>
+  </Callout>
+
+  <Faq faq={faq} />
+
+  <section aria-labelledby="nearby-h" class="mt-10">
+    <h2 id="nearby-h" class="mb-2 text-xl font-semibold">鄰近縣市的老人福利</h2>
+    <ul class="max-w-[40em] list-disc space-y-1 pl-6">
+      {NEIGHBORS[county].map((n) => <li><a class={link} href={`/county/${n}/`}>{countyName(n)}老人福利總整理</a></li>)}
+    </ul>
+  </section>
+
+  <VerifiedBadge verifiedAt={latest} sources={sources} />
+</Base>
